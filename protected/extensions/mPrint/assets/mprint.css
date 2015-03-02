@@ -1,0 +1,47 @@
+.grid-view
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 100%
+}
+
+.grid-view th,.grid-view td
+{
+    border:1px solid #ddd;
+    padding: 0.3em 0.6em;
+    vertical-align: top;
+}
+
+.grid-view th
+{
+    text-align: right;
+    /*width: 160px;*/
+    font-size: .8em;
+}
+table  {
+	  border: 1px solid #000;
+	  page-break-inside:auto;
+	  border-collapse: collapse;
+}
+th {
+	color:#000;
+  border: 1px solid #000;	
+  background-color:lightgrey;
+}
+td {
+  border: 1px solid #000;	
+}
+td,th{
+	padding: 3px 7px 2px 7px;
+}
+tr    { page-break-inside:avoid; page-break-after:auto }
+thead { display:table-header-group }
+tfoot { display:table-footer-group }
+body {font-family:  Arial, Helvetica, sans-serif;}
+#czesc_drukowana {
+ width: 100%; 
+}
+
+.filters {
+	display: none !important;
+}
