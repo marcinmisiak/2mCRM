@@ -59,14 +59,14 @@ $items = array (
 						array (
 								'label' => 'Funkcje użytkowników',
 								'url' => array (
-										'/funkcja/admin' 
+										'functions/admin' 
 								) ,
 								'visible'=>Yii::app ()->user->checkAccess('administrator'),
 						),
 						array (
 								'label' => 'Użytkownicy',
 								'url' => array (
-										'/uzytkownik/admin' 
+										'users/admin' 
 								),
 								'visible' => Yii::app ()->user->checkAccess ( 'administrator' ),
 						),

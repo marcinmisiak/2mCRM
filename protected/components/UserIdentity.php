@@ -6,17 +6,17 @@
  */
 class UserIdentity extends CUserIdentity
 {
-	private $id;
+	private $_id;
 	public function authenticate()
 	{
-		$record=Uzytkownik::model()->findByAttributes(array('login'=>$this->username) );
+		$record=Users::model()->findByAttributes(array('username'=>$this->username) );
 		if($record===null)
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		else if($record->haslo!==md5($this->password))
+		else if($record->password!==hash('sha256', $this->password))
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else
 		{
-			$this->id=$record->iduzytkownik;
+			$this->_id=$record->id;
 			$this->setState('roles', $record->roles);
 			$this->errorCode=self::ERROR_NONE;
 		}
@@ -24,6 +24,6 @@ class UserIdentity extends CUserIdentity
 	}
 	
 	public function getId(){
-		return $this->id;
+		return $this->_id;
 	}
 }
