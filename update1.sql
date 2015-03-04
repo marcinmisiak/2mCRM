@@ -1,0 +1,69 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+ALTER SCHEMA `mjkr`  DEFAULT CHARACTER SET utf8  DEFAULT COLLATE utf8_general_ci ;
+
+ALTER TABLE `mjkr`.`users` 
+ADD COLUMN `imie` VARCHAR(20) NULL DEFAULT NULL AFTER `last_login`,
+ADD COLUMN `nazwisko` VARCHAR(30) NULL DEFAULT NULL AFTER `imie`,
+ADD COLUMN `telefon` VARCHAR(11) NULL DEFAULT NULL AFTER `nazwisko`,
+ADD COLUMN `email_pryw` VARCHAR(250) NULL DEFAULT NULL AFTER `telefon`,
+ADD COLUMN `skype` VARCHAR(200) NULL DEFAULT NULL AFTER `email_pryw`,
+ADD COLUMN `opis` TEXT NULL DEFAULT NULL AFTER `skype`,
+ADD COLUMN `roles` VARCHAR(20) NULL DEFAULT NULL AFTER `opis`,
+ADD COLUMN `functions_id` INT(11) NULL DEFAULT NULL AFTER `roles`,
+ADD INDEX `nazwisko` (`nazwisko` ASC),
+ADD INDEX `fk_users_functions1_idx` (`functions_id` ASC);
+
+CREATE TABLE IF NOT EXISTS `mjkr`.`uzytkownik` (
+  `iduzytkownik` INT(11) NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(130) NOT NULL,
+  `haslo` VARCHAR(32) NOT NULL,
+  `imie` VARCHAR(24) NOT NULL,
+  `nazwisko` VARCHAR(30) NOT NULL,
+  `telefon` VARCHAR(11) NULL DEFAULT NULL,
+  `email_pryw` VARCHAR(145) NULL DEFAULT NULL,
+  `email_sl` VARCHAR(145) NULL DEFAULT NULL,
+  `skype` VARCHAR(145) NULL DEFAULT NULL,
+  `opis` TEXT NULL DEFAULT NULL,
+  `roles` VARCHAR(45) NOT NULL DEFAULT 'telemarketer',
+  `funkcja_idfunkcja` INT(11) NOT NULL,
+  PRIMARY KEY (`iduzytkownik`),
+  INDEX `fk_uzytkownik_funkcja_idx` (`funkcja_idfunkcja` ASC),
+  CONSTRAINT `fk_uzytkownik_funkcja`
+    FOREIGN KEY (`funkcja_idfunkcja`)
+    REFERENCES `mjkr`.`funkcja` (`idfunkcja`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `mjkr`.`funkcja` (
+  `idfunkcja` INT(11) NOT NULL AUTO_INCREMENT,
+  `nazwa` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idfunkcja`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `mjkr`.`functions` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+ALTER TABLE `mjkr`.`users` 
+ADD CONSTRAINT `fk_users_functions1`
+  FOREIGN KEY (`functions_id`)
+  REFERENCES `mjkr`.`functions` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
