@@ -2,12 +2,14 @@
 /**
  * The following variables are available in this template:
  * - $this: the BootstrapCode object
+ * @author Marcin Misiak 2mmarcinmisiak@gmail.com
  */
 ?>
 <?php echo "<?php\n"; ?>
 /* @var $this <?php echo $this->getControllerClass(); ?> */
 /* @var $model <?php echo $this->getModelClass(); ?> */
 /* @var $form BSActiveForm */
+/* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
 <?php echo "?>\n"; ?>
 
 <?php echo "<?php \$form=\$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
@@ -19,7 +21,7 @@
     'enableAjaxValidation'=>false,
 )); ?>\n"; ?>
 
-    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+    <p class="help-block">Pola oznaczone <span class="required">*</span> są wymagane.</p>
 
     <?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
 
@@ -32,6 +34,6 @@ foreach ($this->tableSchema->columns as $column) :
     <?php echo "<?php echo " . $this->generateActiveControlGroup($this->modelClass, $column) . "; ?>\n"; ?>
 <?php endforeach; ?>
 
-    <?php echo "<?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>\n"; ?>
+    <?php echo "<?php echo BsHtml::submitButton('Zapisz', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>\n"; ?>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>

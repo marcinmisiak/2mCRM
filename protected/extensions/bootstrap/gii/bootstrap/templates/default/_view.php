@@ -2,11 +2,13 @@
 /**
  * The following variables are available in this template:
  * - $this: the BootstrapCode object
+ * @author Marcin Misiak 2mmarcinmisiak@gmail.com
  */
 ?>
 <?php echo "<?php\n"; ?>
 /* @var $this <?php echo $this->getControllerClass(); ?> */
 /* @var $data <?php echo $this->getModelClass(); ?> */
+/* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
 <?php echo "?>\n"; ?>
 
 <div class="view">

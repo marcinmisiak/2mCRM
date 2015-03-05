@@ -2,11 +2,13 @@
 /**
  * The following variables are available in this template:
  * - $this: the BootstrapCode object
+ * @author Marcin Misiak 2mmarcinmisiak@gmail.com
  */
 ?>
 <?php echo "<?php\n"; ?>
 /* @var $this <?php echo $this->getControllerClass(); ?> */
 /* @var $dataProvider CActiveDataProvider */
+/* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
 <?php echo "?>\n"; ?>
 
 <?php
@@ -18,8 +20,8 @@ echo "\$this->breadcrumbs=array(
 ?>
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create <?php echo $this->modelClass; ?>', 'url'=>array('create')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage <?php echo $this->modelClass; ?>', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz <?php echo $this->modelClass; ?>', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Zarządzaj <?php echo $this->modelClass; ?>', 'url'=>array('admin')),
 );
 ?>
 

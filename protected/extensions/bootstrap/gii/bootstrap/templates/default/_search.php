@@ -2,12 +2,14 @@
 /**
  * The following variables are available in this template:
  * - $this: the BootstrapCode object
+ * @author Marcin Misiak 2mmarcinmisiak@gmail.com
  */
 ?>
 <?php echo "<?php\n"; ?>
 /* @var $this <?php echo $this->getControllerClass(); ?> */
 /* @var $model <?php echo $this->getModelClass(); ?> */
 /* @var $form BSActiveForm */
+/* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
 <?php echo "?>\n"; ?>
 
 <?php echo "<?php \$form=\$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
@@ -26,7 +28,7 @@
 <?php endforeach; ?>
 
     <div class="form-actions">
-        <?php echo "<?php echo BsHtml::submitButton('Search',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>\n" ?>
+        <?php echo "<?php echo BsHtml::submitButton('Szukaj',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>\n" ?>
     </div>
 
 <?php echo "<?php \$this->endWidget(); ?>\n"; ?>

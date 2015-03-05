@@ -54,8 +54,41 @@ $items = array (
 				'label' => 'Ustawienia',
 				'icon' => BsHtml::GLYPHICON_COG,
 				'url' => '#',
-				
+				'visible'=>Yii::app ()->user->checkAccess('administrator'),
 				'items' => array (
+						
+						array (
+								'label' => 'Typ usługi',
+								'url' => array (
+										'tuslugi/admin'
+								) ,
+						),
+						array (
+								'label' => 'Usługi',
+								'url' => array (
+										'uslugi/admin'
+								) ,
+						),
+						array (
+								'label' => 'Status kienta',
+								'url' => array (
+										'status/admin'
+								) ,
+						),
+						
+						array (
+								'label' => 'Status kontaktu',
+								'url' => array (
+										'kontaktStatus/admin'
+								) ,
+						),
+						array (
+								'label' => 'Sposób kontaktu',
+								'url' => array (
+										'kontaktSposob/admin'
+								) ,
+						)
+						,
 						array (
 								'label' => 'Funkcje użytkowników',
 								'url' => array (
