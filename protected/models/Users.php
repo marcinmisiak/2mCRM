@@ -152,4 +152,11 @@ class Users extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	/**
+	 * zraca imie nazwoko login email do listy dropdown
+	 */
+	public function getLabel() {
+		return $this->imie ." ".$this->nazwisko . " " .$this->email ." ".$this->username;
+	}
 }

@@ -18,15 +18,20 @@
  * @property string $notatka
  * @property integer $rozmowa_konczaca
  * @property integer $status_id
+ * @property string $users_id
  *
  * The followings are the available model relations:
  * @property Status $status
+ * @property Users $users
  * @property Domains[] $domains
  * @property Osoba[] $osobas
  * @property Uslugi[] $uslugis
  */
 class Klient extends CActiveRecord
 {
+	const DNS_A = 'A'; // this will check for the domain Dns A record
+	const DNS_MX = 'MX'; // This will check for MX Records
+	const DNS_NS = 'NS'; // This will check for the NS Records
 	/**
 	 * @return string the associated database table name
 	 */
@@ -43,7 +48,7 @@ class Klient extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('nazwa, status_id', 'required'),
+			array('nazwa, status_id, users_id', 'required'),
 			array('rozmowa_konczaca, status_id', 'numerical', 'integerOnly'=>true),
 			array('nazwa, adrrej_adres', 'length', 'max'=>200),
 			array('adrrej_kod', 'length', 'max'=>6),
@@ -51,10 +56,13 @@ class Klient extends CActiveRecord
 			array('adrrej_kraj', 'length', 'max'=>45),
 			array('nip, regon, krs', 'length', 'max'=>20),
 			array('www, email', 'length', 'max'=>250),
+			array('users_id', 'length', 'max'=>11),
 			array('notatka', 'safe'),
+				array('email','email'),
+				array('www','ext.validators.DomainValidator', 'type'=>self::DNS_A),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nazwa, adrrej_adres, adrrej_kod, adrrej_miasto, adrrej_kraj, nip, regon, krs, www, email, notatka, rozmowa_konczaca, status_id', 'safe', 'on'=>'search'),
+			array('id, nazwa, adrrej_adres, adrrej_kod, adrrej_miasto, adrrej_kraj, nip, regon, krs, www, email, notatka, rozmowa_konczaca, status_id, users_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,6 +75,7 @@ class Klient extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'status' => array(self::BELONGS_TO, 'Status', 'status_id'),
+			'users' => array(self::BELONGS_TO, 'Users', 'users_id'),
 			'domains' => array(self::MANY_MANY, 'Domains', 'klient_has_domains(klient_id, domains_id)'),
 			'osobas' => array(self::MANY_MANY, 'Osoba', 'klient_has_osoba(klient_id, osoba_id)'),
 			'uslugis' => array(self::MANY_MANY, 'Uslugi', 'klient_has_uslugi(klient_id, uslugi_id)'),
@@ -80,19 +89,20 @@ class Klient extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'nazwa' => 'Nazwa',
-			'adrrej_adres' => 'Adrrej Adres',
-			'adrrej_kod' => 'Adrrej Kod',
-			'adrrej_miasto' => 'Adrrej Miasto',
-			'adrrej_kraj' => 'Adrrej Kraj',
-			'nip' => 'Nip',
+			'nazwa' => 'Pełna nazwa',
+			'adrrej_adres' => 'Adres rejestracji - ulica, nr',
+			'adrrej_kod' => 'Adres rejestracji',
+			'adrrej_miasto' => 'Adres rejestracji',
+			'adrrej_kraj' => 'Adres rejestracji',
+			'nip' => 'NIP',
 			'regon' => 'Regon',
-			'krs' => 'Krs',
-			'www' => 'Www',
-			'email' => 'Email',
+			'krs' => 'KRS',
+			'www' => 'www',
+			'email' => 'e-mail',
 			'notatka' => 'Notatka',
-			'rozmowa_konczaca' => 'Rozmowa Konczaca',
+			'rozmowa_konczaca' => 'Rozmowa kończaca',
 			'status_id' => 'Status',
+			'users_id' => 'Opiekun klienta',
 		);
 	}
 
@@ -128,6 +138,7 @@ class Klient extends CActiveRecord
 		$criteria->compare('notatka',$this->notatka,true);
 		$criteria->compare('rozmowa_konczaca',$this->rozmowa_konczaca);
 		$criteria->compare('status_id',$this->status_id);
+		$criteria->compare('users_id',$this->users_id,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

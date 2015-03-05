@@ -19,7 +19,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('tuslugi_id')); ?>:</b>
-	<?php echo CHtml::encode($data->tuslugi_id); ?>
+	<?php echo CHtml::encode($data->tuslugi->nazwa); ?>
 	<br />
 
 

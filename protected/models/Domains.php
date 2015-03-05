@@ -96,7 +96,7 @@ class Domains extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('user_id',$this->user_id,true);
-		$criteria->compare('name',$this->name,true);
+		$criteria->compare('name',$this->name);
 		$criteria->compare('expiry_date',$this->expiry_date,true);
 		$criteria->compare('registrar',$this->registrar,true);
 		$criteria->compare('added_date',$this->added_date,true);
@@ -118,5 +118,19 @@ class Domains extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	public function getButtons() {
+		
+		//$but=  CHtml::link(BsHtml::icon(BsHtml::GLYPHICON_ARROW_LEFT), Yii::app()->createAbsoluteUrl('klient/createAddDomain/'.$this->id), 
+		//		array('method'=>'POST', 'data'=>array('idaaa'=>$this->id), 'update'=>'#domeny_obecne'));
+		//return $but;
+		
+		return BsHtml::ajaxButton(
+				BsHtml::icon(BsHtml::GLYPHICON_ARROW_LEFT),
+				Yii::app()->createUrl('klient/createAddDomain/', array('id'=>$this->name)),
+				array('method'=>'POST', 'data'=>array('idaaa'=>$this->id), 'update'=>'#domeny_obecne'),
+				array('color' => BsHtml::BUTTON_COLOR_INFO, 'size' => BsHtml::BUTTON_SIZE_SMALL,)
+				);
 	}
 }

@@ -28,6 +28,7 @@ class KontaktSposob extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+				array('nazwa', 'required'),
 			array('nazwa', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

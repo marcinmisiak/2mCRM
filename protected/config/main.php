@@ -68,7 +68,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=mjkr',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '123siec',
 			'charset' => 'utf8',
 		),
 		
@@ -87,6 +87,7 @@ return array(
 				
 				array(
 					'class'=>'CWebLogRoute',
+						
 				),
 				
 			),
