@@ -18,4 +18,8 @@ $this->menu=array(
 
 <?php echo BsHtml::pageHeader('Utwórz','Klient') ?>
 
-<?php $this->renderPartial('_form', array('model'=>$model, 'domains'=>$domains)); ?>
+<?php // $this->renderPartial('_formCreate', array('model'=>$model, 'domains'=>$domains));
+$this->renderPartial('_form', array('model'=>$model, 'domains'=>$domains));
+?>
+
+

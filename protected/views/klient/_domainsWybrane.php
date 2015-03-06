@@ -7,18 +7,27 @@
 $this->widget('bootstrap.widgets.BsGridView',array(
 		'id'=>'domainsWybrane-grid',
 		'dataProvider'=>$dataProvider,
-		//'filter'=>Domains::model(),
+		//'filter'=>Domains::model(), nalezy dodrobi metote searchWybrane()
 		'columns'=>array(
-			//	array('type'=>'raw', 'value' => '$data->getButtons()'),
 				'name',
-				//'expiry_date',
-				//'registrar',
-				//'added_date',
-
 				'client',
-
-				// 'email',
-
+				array(
+						'class'=>'bootstrap.widgets.BsButtonColumn',
+						'template'=>'{usun}',
+						'buttons'=>array(
+								'usun'=>array(
+										'label'=>BsHtml::icon(BsHtml::GLYPHICON_CIRCLE_ARROW_RIGHT),
+										
+										'url'=>'Yii::app()->controller->createUrl("klient/createDeleteDomain/",array("id"=>$data->id))',
+										'options' => array('ajax' =>
+												array('type' => 'POST',
+														'url'=>'js:$(this).attr("href")',
+														'success' => 'js:function(data) { $.fn.yiiGridView.update("domains-grid"); $.fn.yiiGridView.update("domainsWybrane-grid")}'),
+														'alt'=>'usuń'
+										),
+								),
+						),
+				),
 
 		),
    )); 

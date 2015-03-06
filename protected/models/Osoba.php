@@ -13,10 +13,11 @@
  * @property string $email_pryw
  * @property string $email_sl
  * @property integer $aktywny
+ * @property integer $klient_id
  *
  * The followings are the available model relations:
- * @property Klient[] $klients
  * @property KontaktHistoria[] $kontaktHistorias
+ * @property Klient $klient
  */
 class Osoba extends CActiveRecord
 {
@@ -36,14 +37,15 @@ class Osoba extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('aktywny', 'numerical', 'integerOnly'=>true),
+			array('imie, nazwisko, klient_id', 'required'),
+			array('aktywny, klient_id', 'numerical', 'integerOnly'=>true),
 			array('imie', 'length', 'max'=>24),
 			array('nazwisko', 'length', 'max'=>30),
 			array('telefon, telefon_kom', 'length', 'max'=>15),
 			array('email, email_pryw, email_sl', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, imie, nazwisko, telefon, telefon_kom, email, email_pryw, email_sl, aktywny', 'safe', 'on'=>'search'),
+			array('id, imie, nazwisko, telefon, telefon_kom, email, email_pryw, email_sl, aktywny, klient_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,8 +57,8 @@ class Osoba extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'klients' => array(self::MANY_MANY, 'Klient', 'klient_has_osoba(osoba_id, klient_id)'),
 			'kontaktHistorias' => array(self::HAS_MANY, 'KontaktHistoria', 'osoba_id'),
+			'klient' => array(self::BELONGS_TO, 'Klient', 'klient_id'),
 		);
 	}
 
@@ -67,14 +69,15 @@ class Osoba extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'imie' => 'Imie',
+			'imie' => 'Imię',
 			'nazwisko' => 'Nazwisko',
 			'telefon' => 'Telefon',
-			'telefon_kom' => 'Telefon Kom',
+			'telefon_kom' => 'Telefon komórkowy',
 			'email' => 'Email',
-			'email_pryw' => 'Email Pryw',
-			'email_sl' => 'Email Sl',
+			'email_pryw' => 'Email prywatny',
+			'email_sl' => 'Email służbowy',
 			'aktywny' => 'Aktywny',
+			'klient_id' => 'Klient',
 		);
 	}
 
@@ -105,6 +108,7 @@ class Osoba extends CActiveRecord
 		$criteria->compare('email_pryw',$this->email_pryw,true);
 		$criteria->compare('email_sl',$this->email_sl,true);
 		$criteria->compare('aktywny',$this->aktywny);
+		$criteria->compare('klient_id',$this->klient_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

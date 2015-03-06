@@ -55,6 +55,7 @@ class Domains extends CActiveRecord
 		return array(
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 			'klients' => array(self::MANY_MANY, 'Klient', 'klient_has_domains(domains_id, klient_id)'),
+			'not_in_hasDomains'=>array(self::HAS_MANY,'KlientHasDomains', 'domains_id', 'condition'=>'not_in_hasDomains.domains_id is null' ),
 		);
 	}
 
@@ -108,6 +109,39 @@ class Domains extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**
+	 * szukaj nie powiazanych z klientami
+	 * @return CActiveDataProvider
+	 */
+	public function searchWolne()
+	{
+		$criteria= new CDbCriteria;
+		$criteria->addNotInCondition('id', $this->id);
+		$klienthasdomais = KlientHasDomains::model()->findAll($criteria);
+		$domeny_zajente = array();
+		foreach ($klienthasdomais as $khd){
+			array_push($domeny_zajente, $khd['domains_id']);
+		}
+	
+		$criteria=new CDbCriteria;
+		//$criteria->with = array('not_in_hasDomains');
+		//$criteria->addNotInCondition('kl', $values)
+	
+		$criteria->addNotInCondition('id',$domeny_zajente);
+		//$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('name',$this->name);
+		//$criteria->compare('expiry_date',$this->expiry_date,true);
+		//$criteria->compare('registrar',$this->registrar,true);
+		//$criteria->compare('added_date',$this->added_date,true);
+		$criteria->compare('client',$this->client,true);
+		//$criteria->compare('phone',$this->phone,true);
+	//	$criteria->compare('email',$this->email,true);
+	
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+		));
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -128,9 +162,11 @@ class Domains extends CActiveRecord
 		
 		return BsHtml::ajaxButton(
 				BsHtml::icon(BsHtml::GLYPHICON_ARROW_LEFT),
-				Yii::app()->createUrl('klient/createAddDomain/', array('id'=>$this->name)),
-				array('method'=>'POST', 'data'=>array('idaaa'=>$this->id), 'update'=>'#domeny_obecne'),
+				Yii::app()->createUrl('klient/createAddDomain/', array('id'=>$this->id)),
+				array('method'=>'POST', 'data'=>array('idaaa'=>$this->name), 'update'=>'#domeny_obecne'),
 				array('color' => BsHtml::BUTTON_COLOR_INFO, 'size' => BsHtml::BUTTON_SIZE_SMALL,)
 				);
+		
+	return	CHtml::link(BsHtml::icon(BsHtml::GLYPHICON_ARROW_LEFT), Yii::app()->createUrl('klient/createAddDomain/', array('id'=>$this->id)));
 	}
 }

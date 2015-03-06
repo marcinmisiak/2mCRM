@@ -32,7 +32,7 @@ class KlientController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createAddDomain'),
+				'actions'=>array('create','update','createAddDomain','createDeleteDomain','updateDeleteDomain','updateAddDomain'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -79,7 +79,25 @@ class KlientController extends Controller
 		{
 			$model->attributes=$_POST['Klient'];
 			if($model->save())
+			{
+				$session = Yii::app()->session;
+				$domaindID = array();
+				if (!empty($session['domainsID'])) {
+					$domaindID = $session['domainsID'];
+					$domaindID = array_unique($domaindID);
+				foreach ($domaindID as $domains_id){
+					$klienHasDomains = new KlientHasDomains();
+					$klienHasDomains->domains_id = $domains_id;
+					$klienHasDomains->klient_id = $model->id;
+					
+					$klienHasDomains->save();
+				}
+				
+				unset($session['domainsID']);
+				}
+				
 				$this->redirect(array('view','id'=>$model->id));
+			}
 		}
 		
 		if (Yii::app()->user->checkAccess("koordynator")) {
@@ -199,6 +217,10 @@ class KlientController extends Controller
 		}
 	}
 	
+	/**
+	 * przy dodawaniu nowego uzytkownika zapisujemy wybran domeny w sessji
+	 * @param unknown $id
+	 */
 	public function actioncreateAddDomain($id) {
 		$session = Yii::app()->session;
 		$domaindID = array();
@@ -222,5 +244,43 @@ class KlientController extends Controller
 						),
 				));
 		$this->renderPartial("_domainsWybrane",array('dataProvider'=>$dataProvider));
+	}
+	
+	public function actioncreateDeleteDomain($id) {
+		$session = Yii::app()->session;
+		$domaindID = array();
+		if (!empty($session['domainsID']))
+			$domaindID = $session['domainsID'];
+	
+		$domaindID = array_diff($domaindID, [$id]);
+		$session['domainsID']=$domaindID;
+	
+	
+		$criteria= new CDbCriteria;
+		$criteria->addInCondition('id', $domaindID);
+			
+		$domenyWybrane = Domains::model()->findAll($criteria);
+		$dataProvider=new CArrayDataProvider($domenyWybrane,
+				array(
+						'id'=>'id',
+							
+						'pagination'=>array(
+								'pageSize'=>100,
+						),
+				));
+		$this->renderPartial("_domainsWybrane",array('dataProvider'=>$dataProvider));
+	}
+	
+	
+	public function actionupdateAddDomain($id,$klient_id) {
+		$klientHasDomains = new KlientHasDomains;
+		$klientHasDomains->klient_id = $klient_id;
+		$klientHasDomains->domains_id = $id;
+		return $klientHasDomains->save();
+	}
+	
+	public function actionupdateDeleteDomain($id,$klient_id) {
+		$row = KlientHasDomains::model()->deleteAllByAttributes(array('klient_id'=>$klient_id, 'domains_id'=>$id));
+		return $row;
 	}
 }

@@ -19,5 +19,5 @@ $this->menu=array(
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Aktualizacja','Klient '.$model->id) ?>
+<?php echo BsHtml::pageHeader('Aktualizacja','Klient '.$model->nazwa) ?>
 <?php $this->renderPartial('_form', array('model'=>$model,'domains'=>$domains)); ?>

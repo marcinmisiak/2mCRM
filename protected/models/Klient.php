@@ -77,7 +77,7 @@ class Klient extends CActiveRecord
 			'status' => array(self::BELONGS_TO, 'Status', 'status_id'),
 			'users' => array(self::BELONGS_TO, 'Users', 'users_id'),
 			'domains' => array(self::MANY_MANY, 'Domains', 'klient_has_domains(klient_id, domains_id)'),
-			'osobas' => array(self::MANY_MANY, 'Osoba', 'klient_has_osoba(klient_id, osoba_id)'),
+			'osobas' => array(self::HAS_MANY, 'Osoba', 'klient_id'),
 			'uslugis' => array(self::MANY_MANY, 'Uslugi', 'klient_has_uslugi(klient_id, uslugi_id)'),
 		);
 	}
@@ -90,10 +90,10 @@ class Klient extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nazwa' => 'Pełna nazwa',
-			'adrrej_adres' => 'Adres rejestracji - ulica, nr',
-			'adrrej_kod' => 'Adres rejestracji',
-			'adrrej_miasto' => 'Adres rejestracji',
-			'adrrej_kraj' => 'Adres rejestracji',
+			'adrrej_adres' => 'Adres rejestracji - ULICA, nr',
+			'adrrej_kod' => 'Adres rejestracji KOD',
+			'adrrej_miasto' => 'Adres rejestracji MIASTO',
+			'adrrej_kraj' => 'Adres rejestracji KRAJ',
 			'nip' => 'NIP',
 			'regon' => 'Regon',
 			'krs' => 'KRS',
