@@ -37,6 +37,7 @@ $items = array (
 				'label' => 'Raporty',
 				'icon' => BsHtml::GLYPHICON_PRINT,
 				// 'url'=>'',
+				'visible' => Yii::app ()->user->checkAccess ( 'administrator' ),
 				'items' => array (
 						array (
 								'label' => 'raport 1',
@@ -48,7 +49,7 @@ $items = array (
 				)
 				,
 				
-				'visible' => ! Yii::app ()->user->isGuest 
+				
 		),
 		array (
 				'label' => 'Ustawienia',
@@ -109,7 +110,6 @@ $items = array (
 				)
 				,
 				
-				'visible' => ! Yii::app ()->user->isGuest 
 		),
 		
 		array (
