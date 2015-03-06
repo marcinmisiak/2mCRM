@@ -5,13 +5,13 @@
 
 
 $this->breadcrumbs=array(
-	'Uslugis'=>array('index'),
+	'Usługi'=>array('index'),
 	'Zarządzaj',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Uslugi', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz Uslugi', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Usług', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz Usługe', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -28,7 +28,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo BsHtml::pageHeader('Zarządzaj','Uslugis') ?>
+<?php echo BsHtml::pageHeader('Zarządzaj','Usługami') ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><?php echo BsHtml::button('Zaawansowane szukanie',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
@@ -48,10 +48,13 @@ $('.search-form form').submit(function(){
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-        		'id',
+        		
 		'nazwa',
 		'opis',
-		'tuslugi_id',
+		array('name'=> 'tuslugi_id', 
+				'filter'=> CHtml::listData(Tuslugi::model()->findAll(array('order'=>'nazwa')), 'id', 'nazwa'),
+				'value'=>'$data->tuslugi->nazwa'
+        ),
 				array(
 					'class'=>'bootstrap.widgets.BsButtonColumn',
 				),

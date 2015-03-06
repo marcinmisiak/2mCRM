@@ -5,7 +5,7 @@
 
 
 $this->breadcrumbs=array(
-	'Statuses'=>array('index'),
+	'Statusy klienta'=>array('index'),
 	'Zarządzaj',
 );
 
@@ -48,7 +48,7 @@ $('.search-form form').submit(function(){
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-        		'id',
+        		
 		'nazwa',
 				array(
 					'class'=>'bootstrap.widgets.BsButtonColumn',

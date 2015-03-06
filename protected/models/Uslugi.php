@@ -31,7 +31,7 @@ class Uslugi extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('tuslugi_id', 'required'),
+			array('tuslugi_id, nazwa', 'required'),
 			array('tuslugi_id', 'numerical', 'integerOnly'=>true),
 			array('nazwa', 'length', 'max'=>45),
 			array('opis', 'safe'),
@@ -63,7 +63,7 @@ class Uslugi extends CActiveRecord
 			'id' => 'ID',
 			'nazwa' => 'Nazwa',
 			'opis' => 'Opis',
-			'tuslugi_id' => 'Tuslugi',
+			'tuslugi_id' => 'Typ usługi',
 		);
 	}
 

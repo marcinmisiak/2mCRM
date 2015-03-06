@@ -20,7 +20,7 @@
 
     <?php echo $form->textFieldControlGroup($model,'nazwa',array('maxlength'=>45)); ?>
     <?php echo $form->textAreaControlGroup($model,'opis',array('rows'=>6)); ?>
-    <?php echo $form->textFieldControlGroup($model,'tuslugi_id'); ?>
+    <?php echo $form->dropDownListControlGroup($model,'tuslugi_id',CHtml::listData(Tuslugi::model()->findAll(array('order'=>'nazwa')), 'id', 'nazwa'),array('empty'=>'Wybierz...')); ?>
 
     <?php echo BsHtml::submitButton('Zapisz', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 

@@ -87,6 +87,7 @@ return array(
 				
 				array(
 					'class'=>'CWebLogRoute',
+						
 				),
 				
 			),
@@ -100,6 +101,7 @@ return array(
 		'adminEmail'=>'maciej.krawczyk@mjkr.pl',
 		'meta_description' => 'tu wpisz opis strony',
 		'meta_keywords' =>'slowa, kluczowe, z przecinakami',
-		'roles'=>array('administrator'=>'administrator','menager'=>'menedżer zespołu','telemarketer'=> 'telemarketer','redaktor'=>'redaktor')
+			
+		'roles'=>array('administrator'=>'administrator','koordynator'=>'koordynator', 'redaktor'=>'redaktor', 'telemarketer'=> 'telemarketer')
 	),
 );

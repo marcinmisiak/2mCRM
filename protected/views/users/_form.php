@@ -31,7 +31,7 @@
     
    
     
-    <?php echo $form->dropDownListControlGroup($model,'roles',Yii::app()->params['roles']); ?>
+    <?php echo $form->dropDownListControlGroup($model,'roles',Yii::app()->params['roles'], array('empty' => 'Wybierz ...')); ?>
     <?php echo $form->dropDownListControlGroup($model,'functions_id', CHtml::listData(Functions::model()->findAll(array('order'=>'name')),'id','name'), array('empty' => 'Wybierz ...')); ?>
     
 

@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+=======
+/config/
+>>>>>>> branch 'master' of https://github.com/marcinmisiak/2mCRM
 /runtime/
+/.gitignore

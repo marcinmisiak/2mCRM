@@ -6,16 +6,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Tuslugis'=>array('index'),
+	'Typy usług'=>array('index'),
 	'Utwórz',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Tuslugi', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Zarządzaj Tuslugi', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Typów usług', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Zarządzaj Typami usług', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Utwórz','Tuslugi') ?>
+<?php echo BsHtml::pageHeader('Utwórz','Typ usługi') ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
