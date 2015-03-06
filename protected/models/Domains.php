@@ -94,7 +94,7 @@ class Domains extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('name',$this->name);
@@ -107,6 +107,31 @@ class Domains extends CActiveRecord
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+		));
+	}
+	
+	/**
+	 * szukanie dla palelu telemarketera
+	 * @return CActiveDataProvider
+	 */
+	public function searchPanel()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+	
+		$criteria=new CDbCriteria;
+	
+		$criteria->order="expiry_date ASC";
+		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('name',$this->name);
+		$criteria->compare('expiry_date',$this->expiry_date,true);
+		$criteria->compare('registrar',$this->registrar,true);
+		$criteria->compare('added_date',$this->added_date,true);
+		$criteria->compare('client',$this->client,true);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('email',$this->email,true);
+	
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
 		));
 	}
 	
