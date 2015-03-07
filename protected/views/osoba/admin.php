@@ -1,17 +1,17 @@
 <?php
-/* @var $this KlientController */
-/* @var $model Klient */
+/* @var $this OsobaController */
+/* @var $model Osoba */
 /* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
 
 
 $this->breadcrumbs=array(
-	'Klients'=>array('index'),
+	'Osobas'=>array('index'),
 	'Zarządzaj',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Klient', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz Klient', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Osoba', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz Osoba', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -20,7 +20,7 @@ $('.search-button').click(function(){
 	return false;
 });
 $('.search-form form').submit(function(){
-	$('#klient-grid').yiiGridView('update', {
+	$('#osoba-grid').yiiGridView('update', {
 		data: $(this).serialize()
 	});
 	return false;
@@ -28,7 +28,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo BsHtml::pageHeader('Zarządzaj','Klients') ?>
+<?php echo BsHtml::pageHeader('Zarządzaj','Osobas') ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><?php echo BsHtml::button('Zaawansowane szukanie',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
@@ -44,26 +44,21 @@ $('.search-form form').submit(function(){
         <!-- search-form -->
 
         <?php $this->widget('bootstrap.widgets.BsGridView',array(
-			'id'=>'klient-grid',
+			'id'=>'osoba-grid',
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
         		'id',
-		'nazwa',
-		'adrrej_adres',
-		'adrrej_kod',
-		'adrrej_miasto',
-		'adrrej_kraj',
-		/*
-		'nip',
-		'regon',
-		'krs',
-		'www',
+		'imie',
+		'nazwisko',
+		'telefon',
+		'telefon_kom',
 		'email',
-		'notatka',
-		'rozmowa_konczaca',
-		'status_id',
-		'users_id',
+		/*
+		'email_pryw',
+		'email_sl',
+		'aktywny',
+		'klient_id',
 		*/
 				array(
 					'class'=>'bootstrap.widgets.BsButtonColumn',

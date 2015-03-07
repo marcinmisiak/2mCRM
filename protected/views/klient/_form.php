@@ -137,41 +137,53 @@ if ($model->id) {
 		</div>
 		<div role="tabpanel" class="tab-pane" id="osoby">
 		
-		<?php 
-			if ($model->id) {
-				$osoby = Osoba::model()->findAllByAttributes(array('klient_id'=>$model->id));
-				
-				$osobyDP = new CArrayDataProvider ( $osoby, array (
-						'id' => 'id',
-				
-						'pagination' => array (
-								'pageSize' => 50
-						)
-				) );
-				
-	$this->renderPartial ( "_osoby", array (
-			'osoby' => $osobyDP,
-			'klient_id' => $model->id 
-	) );
-	} else {
-		//TODO: zapamietanie w session przy nowym kliencie tak jak w domains
-		echo "<P>zapisz klienta potem dodaj osoby kontaktowe";
-	}
+		<?php
+		if ($model->id) {
+			$osoby = Osoba::model ()->findAllByAttributes ( array (
+					'klient_id' => $model->id 
+			) );
+			
+			$osobyDP = new CArrayDataProvider ( $osoby, array (
+					'id' => 'id',
+					
+					'pagination' => array (
+							'pageSize' => 50 
+					) 
+			) );
+			
+			$this->renderPartial ( "_osoby", array (
+					'osoby' => $osobyDP,
+					'klient_id' => $model->id 
+			) );
+		} else {
+			// TODO: zapamietanie w session przy nowym kliencie tak jak w domains
+			echo "<P>zapisz klienta potem dodaj osoby kontaktowe";
+		}
 		?>
 		
 		
 		</div>
-		<div role="tabpanel" class="tab-pane active" id="uslugi">
-		<?php 	if ($model->id) {
-				$uslugi = $model->uslugis;
-	$this->renderPartial ( "_uslugi", array (
-			'uslugi' => $uslugi,
-			'klient_id' => $model->id 
-	) );
-	} else {
-		//TODO: zapamietanie w session przy nowym kliencie tak jak w domains
-		echo "<P>zapisz klienta potem dodaj usługi ";
-	}
+		<div role="tabpanel" class="tab-pane" id="uslugi">
+		<?php
+		
+if ($model->id) {
+			$uslugi = $model->uslugis;
+			$klientHasUslugi = new KlientHasUslugi();
+			$klientHasUslugi->unsetAttributes();
+			$klientHasUslugi->klient_id = $model->id;
+			
+			if(isset($_GET['KlientHasUslugi']) && $_GET['ajax']=='uslugi-grid') 
+				$klientHasUslugi->attributes = $_GET['KlientHasUslugi'];
+			
+			$this->renderPartial ( "_uslugi", array (
+					'uslugi' => $uslugi,
+					'klientHasUslugi' => $klientHasUslugi,
+					'klient_id' => $model->id 
+			) );
+		} else {
+			// TODO: zapamietanie w session przy nowym kliencie tak jak w domains
+			echo "<P>zapisz klienta potem dodaj usługi ";
+		}
 		?>
 		</div>
     <?php echo BsHtml::submitButton('Zapisz', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>

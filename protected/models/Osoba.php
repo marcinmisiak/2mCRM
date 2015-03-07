@@ -43,6 +43,7 @@ class Osoba extends CActiveRecord
 			array('nazwisko', 'length', 'max'=>30),
 			array('telefon, telefon_kom', 'length', 'max'=>15),
 			array('email, email_pryw, email_sl', 'length', 'max'=>200),
+			array('email, email_pryw, email_sl', 'email'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, imie, nazwisko, telefon, telefon_kom, email, email_pryw, email_sl, aktywny, klient_id', 'safe', 'on'=>'search'),

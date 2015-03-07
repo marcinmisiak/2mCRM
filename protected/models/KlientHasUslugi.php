@@ -4,12 +4,17 @@
  * This is the model class for table "klient_has_uslugi".
  *
  * The followings are the available columns in table 'klient_has_uslugi':
+ * @property integer $id
  * @property integer $klient_id
  * @property integer $uslugi_id
  * @property string $data_od
  * @property string $data_do
  * @property string $kwota
  * @property integer $zaplacone
+ *
+ * The followings are the available model relations:
+ * @property Klient $klient
+ * @property Uslugi $uslugi
  */
 class KlientHasUslugi extends CActiveRecord
 {
@@ -29,13 +34,13 @@ class KlientHasUslugi extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('klient_id, uslugi_id', 'required'),
+			array('klient_id, uslugi_id, data_od, data_do', 'required'),
 			array('klient_id, uslugi_id, zaplacone', 'numerical', 'integerOnly'=>true),
 			array('kwota', 'length', 'max'=>10),
-			array('data_od, data_do', 'safe'),
+			array('data_od, data_do', 'date', 'format'=>'yyyy-M-d'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('klient_id, uslugi_id, data_od, data_do, kwota, zaplacone', 'safe', 'on'=>'search'),
+			array('id, klient_id, uslugi_id, data_od, data_do, kwota, zaplacone', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +52,8 @@ class KlientHasUslugi extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'klient' => array(self::BELONGS_TO, 'Klient', 'klient_id'),
+			'uslugi' => array(self::BELONGS_TO, 'Uslugi', 'uslugi_id'),
 		);
 	}
 
@@ -56,6 +63,7 @@ class KlientHasUslugi extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'id' => 'ID',
 			'klient_id' => 'Klient',
 			'uslugi_id' => 'Uslugi',
 			'data_od' => 'Data Od',
@@ -83,6 +91,7 @@ class KlientHasUslugi extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('id',$this->id);
 		$criteria->compare('klient_id',$this->klient_id);
 		$criteria->compare('uslugi_id',$this->uslugi_id);
 		$criteria->compare('data_od',$this->data_od,true);

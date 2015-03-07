@@ -1,6 +1,6 @@
 <?php
 /* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
-class KlientController extends Controller
+class KlientHasUslugiController extends Controller
 {
 	/**
 	* @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -32,12 +32,13 @@ class KlientController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createAddDomain','createDeleteDomain','updateDeleteDomain','updateAddDomain'),
+				'actions'=>array('create','update','validate'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
+					'roles'=>array('telemarketer','koordynator'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -62,53 +63,26 @@ class KlientController extends Controller
 	*/
 	public function actionCreate()
 	{
-		$domains = new Domains('searchWolne');
-		$domains->unsetAttributes();
-		if(isset($_GET['Domains']))
-			$domains->attributes=$_GET['Domains'];
-		
-		
-		
-		
-		$model=new Klient;
+		$model=new KlientHasUslugi;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Klient']))
+		if(isset($_POST['KlientHasUslugi']))
 		{
-			$model->attributes=$_POST['Klient'];
-			if($model->save())
-			{
-				$session = Yii::app()->session;
-				$domaindID = array();
-				if (!empty($session['domainsID'])) {
-					$domaindID = $session['domainsID'];
-					$domaindID = array_unique($domaindID);
-				foreach ($domaindID as $domains_id){
-					$klienHasDomains = new KlientHasDomains();
-					$klienHasDomains->domains_id = $domains_id;
-					$klienHasDomains->klient_id = $model->id;
-					
-					$klienHasDomains->save();
-				}
-				
-				unset($session['domainsID']);
-				}
-				
-				$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['KlientHasUslugi'];
+			if($model->save()) {
+				echo "jest";
+			}else {
+				var_dump($model->getErrors());
 			}
+				return true;
+			//	$this->redirect(array('view','id'=>$model->id));
 		}
-		
-		if (Yii::app()->user->checkAccess("koordynator")) {
-			$model->scenario ="administrator";
-		} else {
-			$model->users_id = Yii::app()->user->id;
-		}
-		
-		$this->render('create',array(
-		'model'=>$model, 'domains'=>$domains
-		));
+
+		//$this->render('create',array(
+		//'model'=>$model,
+		//));
 	}
 
 	/**
@@ -118,31 +92,29 @@ class KlientController extends Controller
 	*/
 	public function actionUpdate($id)
 	{
-		
-		$domains = new Domains('searchWolne');
-		$domains->unsetAttributes();
-		if(isset($_GET['Domains']))
-			$domains->attributes=$_GET['Domains'];
-		
-		
-		
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
 		 $this->performAjaxValidation($model);
 
-		if(isset($_POST['Klient']))
+		if(isset($_POST['KlientHasUslugi']))
 		{
-			$model->attributes=$_POST['Klient'];
+			$model->attributes=$_POST['KlientHasUslugi'];
+			
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('update',array(
-			'model'=>$model,'domains'=>$domains
+			'model'=>$model,
 		));
 	}
 
+	public function actionValidate()
+	{
+		$model=new KlientHasUslugi;
+		 $this->performAjaxValidation($model);
+	}
 	/**
 	* Deletes a particular model.
 	* If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -168,7 +140,7 @@ class KlientController extends Controller
 	*/
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Klient');
+		$dataProvider=new CActiveDataProvider('KlientHasUslugi');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -179,10 +151,10 @@ class KlientController extends Controller
 	*/
 	public function actionAdmin()
 	{
-		$model=new Klient('search');
+		$model=new KlientHasUslugi('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Klient']))
-			$model->attributes=$_GET['Klient'];
+		if(isset($_GET['KlientHasUslugi']))
+			$model->attributes=$_GET['KlientHasUslugi'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -193,12 +165,12 @@ class KlientController extends Controller
 	* Returns the data model based on the primary key given in the GET variable.
 	* If the data model is not found, an HTTP exception will be raised.
 	* @param integer $id the ID of the model to be loaded
-	* @return Klient the loaded model
+	* @return KlientHasUslugi the loaded model
 	* @throws CHttpException
 	*/
 	public function loadModel($id)
 	{
-		$model=Klient::model()->findByPk($id);
+		$model=KlientHasUslugi::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -206,81 +178,14 @@ class KlientController extends Controller
 
 	/**
 	* Performs the AJAX validation.
-	* @param Klient $model the model to be validated
+	* @param KlientHasUslugi $model the model to be validated
 	*/
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='klient-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='klient-has-uslugi-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-	}
-	
-	/**
-	 * przy dodawaniu nowego uzytkownika zapisujemy wybran domeny w sessji
-	 * @param unknown $id
-	 */
-	public function actioncreateAddDomain($id) {
-		$session = Yii::app()->session;
-		$domaindID = array();
-		if (!empty($session['domainsID']))
-			$domaindID = $session['domainsID'];
-		
-		array_push($domaindID, $id);
-		$session['domainsID']=$domaindID;
-		
-		
-		$criteria= new CDbCriteria;
-		$criteria->addInCondition('id', $domaindID);
-		 
-		$domenyWybrane = Domains::model()->findAll($criteria);
-		$dataProvider=new CArrayDataProvider($domenyWybrane,
-				array(
-						'id'=>'id',
-						 
-						'pagination'=>array(
-								'pageSize'=>100,
-						),
-				));
-		$this->renderPartial("_domainsWybrane",array('dataProvider'=>$dataProvider));
-	}
-	
-	public function actioncreateDeleteDomain($id) {
-		$session = Yii::app()->session;
-		$domaindID = array();
-		if (!empty($session['domainsID']))
-			$domaindID = $session['domainsID'];
-	
-		$domaindID = array_diff($domaindID, [$id]);
-		$session['domainsID']=$domaindID;
-	
-	
-		$criteria= new CDbCriteria;
-		$criteria->addInCondition('id', $domaindID);
-			
-		$domenyWybrane = Domains::model()->findAll($criteria);
-		$dataProvider=new CArrayDataProvider($domenyWybrane,
-				array(
-						'id'=>'id',
-							
-						'pagination'=>array(
-								'pageSize'=>100,
-						),
-				));
-		$this->renderPartial("_domainsWybrane",array('dataProvider'=>$dataProvider));
-	}
-	
-	
-	public function actionupdateAddDomain($id,$klient_id) {
-		$klientHasDomains = new KlientHasDomains;
-		$klientHasDomains->klient_id = $klient_id;
-		$klientHasDomains->domains_id = $id;
-		return $klientHasDomains->save();
-	}
-	
-	public function actionupdateDeleteDomain($id,$klient_id) {
-		$row = KlientHasDomains::model()->deleteAllByAttributes(array('klient_id'=>$klient_id, 'domains_id'=>$id));
-		return $row;
 	}
 }

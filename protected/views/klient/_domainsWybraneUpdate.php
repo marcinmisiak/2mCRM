@@ -18,7 +18,7 @@ $this->widget('bootstrap.widgets.BsGridView',array(
 								'usun'=>array(
 										'label'=>BsHtml::icon(BsHtml::GLYPHICON_CIRCLE_ARROW_RIGHT),
 										
-										'url'=>'Yii::app()->controller->createUrl("klient/createDeleteDomain/",array("id"=>$data->id))',
+										'url'=>'Yii::app()->controller->createUrl("klient/updateDeleteDomain/",array("id"=>$data->id,"klient_id"=>'.$klient_id.'))',
 										'options' => array('ajax' =>
 												array('type' => 'POST',
 														'url'=>'js:$(this).attr("href")',
