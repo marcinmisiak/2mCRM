@@ -5,13 +5,13 @@
 
 
 $this->breadcrumbs=array(
-	'Klients'=>array('index'),
+	'Klientci'=>array('index'),
 	'Zarządzaj',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Klient', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz Klient', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Klientóœ', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Utwórz Klienta', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -48,18 +48,20 @@ $('.search-form form').submit(function(){
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-        		'id',
+        		
 		'nazwa',
 		'adrrej_adres',
-		'adrrej_kod',
-		'adrrej_miasto',
-		'adrrej_kraj',
-		/*
+		array('header'=>'Adres Kod, Miasto, Kraj',
+				'value' => 	'$data->adrrej_kod ." ". $data->adrrej_miasto ." ". $data->adrrej_kraj'),
+		
 		'nip',
 		'regon',
 		'krs',
 		'www',
 		'email',
+		//array('name'=>'domains.name',
+		//'value'=> 'getDomains()'),
+					/*
 		'notatka',
 		'rozmowa_konczaca',
 		'status_id',

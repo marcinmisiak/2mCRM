@@ -25,7 +25,7 @@ $items = array (
 								'url' => array (
 										'/klient/admin' 
 								),
-								'visible' => Yii::app ()->user->checkAccess ( 'administrator' ) 
+								'visible' => Yii::app ()->user->checkAccess ( array( 'administrator','koordynator')  ) 
 						),
 					
 				),
@@ -37,7 +37,7 @@ $items = array (
 				'label' => 'Raporty',
 				'icon' => BsHtml::GLYPHICON_PRINT,
 				// 'url'=>'',
-				'visible' => Yii::app ()->user->checkAccess ( 'administrator' ),
+				'visible' => Yii::app ()->user->checkAccess ( array( 'administrator','koordynator') ),
 				'items' => array (
 						array (
 								'label' => 'raport 1',

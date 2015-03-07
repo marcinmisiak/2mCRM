@@ -28,8 +28,9 @@ $this->menu=array(
 	),
 	'data'=>$model,
 	'attributes'=>array(
-		'id',
+	
 		'nazwa',
+			'telefon',
 		'adrrej_adres',
 		'adrrej_kod',
 		'adrrej_miasto',

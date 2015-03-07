@@ -39,6 +39,11 @@ class DomainsController extends Controller
 				'actions'=>array('admin','delete'),
 				'users'=>array('admin'),
 			),
+				
+				array('allow',
+						'actions'=>array('przydziel'),
+						'roles'=>array('administrator','koordynator'),
+				),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -175,5 +180,14 @@ class DomainsController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionPrzydziel($id) {
+		$model = $this->loadModel($id);
+		$users = Users::model ()->findAll ( array (
+							'condition' => "roles != ''",
+							'order' => 'nazwisko' 
+					));
+		$this->render('_przydziel', array('domena'=>$model, 'users'=>$users));
 	}
 }

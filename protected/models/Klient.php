@@ -29,9 +29,11 @@
  */
 class Klient extends CActiveRecord
 {
+	
 	const DNS_A = 'A'; // this will check for the domain Dns A record
 	const DNS_MX = 'MX'; // This will check for MX Records
 	const DNS_NS = 'NS'; // This will check for the NS Records
+	public $bez_telefonu;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -55,6 +57,7 @@ class Klient extends CActiveRecord
 			array('adrrej_miasto', 'length', 'max'=>50),
 			array('adrrej_kraj', 'length', 'max'=>45),
 			array('nip, regon, krs', 'length', 'max'=>20),
+				array('telefon, users_id', 'length', 'max'=>11),
 			array('www, email', 'length', 'max'=>250),
 			array('users_id', 'length', 'max'=>11),
 			array('notatka', 'safe'),
@@ -62,7 +65,7 @@ class Klient extends CActiveRecord
 				array('www','ext.validators.DomainValidator', 'type'=>self::DNS_A),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nazwa, adrrej_adres, adrrej_kod, adrrej_miasto, adrrej_kraj, nip, regon, krs, www, email, notatka, rozmowa_konczaca, status_id, users_id', 'safe', 'on'=>'search'),
+			array('bez_telefonu, id, nazwa, adrrej_adres, adrrej_kod, adrrej_miasto, adrrej_kraj, nip, regon, krs, www, email, notatka, rozmowa_konczaca, status_id, users_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -77,8 +80,10 @@ class Klient extends CActiveRecord
 			'status' => array(self::BELONGS_TO, 'Status', 'status_id'),
 			'users' => array(self::BELONGS_TO, 'Users', 'users_id'),
 			'domains' => array(self::MANY_MANY, 'Domains', 'klient_has_domains(klient_id, domains_id)'),
-			'osobas' => array(self::HAS_MANY, 'Osoba', 'klient_id'),
-			'uslugis' => array(self::MANY_MANY, 'Uslugi', 'klient_has_uslugi(klient_id, uslugi_id)'),
+			'klientHasUslugis' => array(self::HAS_MANY, 'KlientHasUslugi', 'klient_id'),
+			// 'osobas' => array(self::HAS_MANY, 'Osoba', 'klient_id'),
+			 'uslugis' => array(self::MANY_MANY, 'Uslugi', 'klient_has_uslugi(klient_id, uslugi_id)'),
+			'KlientHasDomains' => array(self::HAS_MANY, 'KlientHasDomains', 'klient_id'),
 		);
 	}
 
@@ -103,6 +108,8 @@ class Klient extends CActiveRecord
 			'rozmowa_konczaca' => 'Rozmowa kończaca',
 			'status_id' => 'Status',
 			'users_id' => 'Opiekun klienta',
+				'telefon' => 'Telefon',
+				'bez_telefonu'=>'Klient bez telefonu'
 		);
 	}
 
@@ -133,17 +140,67 @@ class Klient extends CActiveRecord
 		$criteria->compare('nip',$this->nip,true);
 		$criteria->compare('regon',$this->regon,true);
 		$criteria->compare('krs',$this->krs,true);
+		$criteria->compare('telefon',$this->telefon,true);
 		$criteria->compare('www',$this->www,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('notatka',$this->notatka,true);
 		$criteria->compare('rozmowa_konczaca',$this->rozmowa_konczaca);
 		$criteria->compare('status_id',$this->status_id);
 		$criteria->compare('users_id',$this->users_id,true);
+		
+		if( $this->bez_telefonu == 1) {
+			$criteria->addCondition("telefon = ''");
+			//$criteria->addCondition("telefon is null");
+			//$criteria->addCondition('telefon IS NULL', 'OR');
+			
+		//	var_dump($criteria);exit;
+			//$criteria->compare('telefon', '');
+			//$criteria->compare('telefon', ' is null');
+			//var_dump($criteria);exit;
+		} 
+		if ($this->bez_telefonu == 2){
+			$criteria->addCondition("telefon != ''");
+		}
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
+	
+	/**
+	 * pokaz klientow bez domen 
+	 * @return CActiveDataProvider
+	 */
+	public function searchBezDanych()
+	{
+	
+		$criteria=new CDbCriteria;
+	//$criteria->with=array('domains');
+		//$criteria->addCondition('domains_domains.domains_id is null');
+	//$this->domains
+		$criteria->compare('id',$this->id);
+		$criteria->compare('nazwa',$this->nazwa,true);
+		$criteria->compare('adrrej_adres',$this->adrrej_adres,true);
+		$criteria->compare('adrrej_kod',$this->adrrej_kod,true);
+		$criteria->compare('adrrej_miasto',$this->adrrej_miasto,true);
+		$criteria->compare('adrrej_kraj',$this->adrrej_kraj,true);
+		$criteria->compare('nip',$this->nip,true);
+		$criteria->compare('regon',$this->regon,true);
+		$criteria->compare('krs',$this->krs,true);
+		$criteria->compare('telefon',$this->telefon,true);
+		$criteria->compare('www',$this->www,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('notatka',$this->notatka,true);
+		$criteria->compare('rozmowa_konczaca',$this->rozmowa_konczaca);
+		$criteria->compare('status_id',$this->status_id);
+		$criteria->compare('users_id',$this->users_id,true);
+	
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+		));
+	}
+	
+	
 
 	/**
 	 * Returns the static model of the specified AR class.

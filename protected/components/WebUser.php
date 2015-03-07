@@ -19,6 +19,10 @@ class WebUser extends CWebUser
 			return true; // admin role has access to everything
 		}
 		// allow access if the operation request is the current user's role
+		if(is_array($operation)) { // Check if multiple roles are available
+			return (array_search($role,$operation)!==false);
+		}
+		
 		return ($operation === $role);
 	}
 }

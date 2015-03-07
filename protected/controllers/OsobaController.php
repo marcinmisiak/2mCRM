@@ -32,7 +32,7 @@ class OsobaController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createKlient'),
+				'actions'=>array('create','update','createKlient','UpdateKlient'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -121,6 +121,25 @@ class OsobaController extends Controller
 
 		$this->render('update',array(
 			'model'=>$model,
+		));
+	}
+	
+	public function actionUpdateKlient($id,$klient_id)
+	{
+		$model=$this->loadModel($id);
+	
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+	
+		if(isset($_POST['Osoba']))
+		{
+			$model->attributes=$_POST['Osoba'];
+			if($model->save())
+				$this->redirect(array('/klient/update','id'=>$klient_id));
+		}
+	
+		$this->render('update',array(
+				'model'=>$model,
 		));
 	}
 

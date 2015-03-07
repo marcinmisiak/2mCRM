@@ -40,6 +40,7 @@ $form = $this->beginWidget ( 'bootstrap.widgets.BsActiveForm', array (
     <?php echo $form->errorSummary($model); ?>
 
     <?php echo $form->textFieldControlGroup($model,'nazwa',array('maxlength'=>200)); ?>
+    <?php echo $form->textFieldControlGroup($model,'telefon',array('maxlength'=>12)); ?>
     <?php echo $form->textFieldControlGroup($model,'adrrej_adres',array('maxlength'=>200)); ?>
     <?php echo $form->textFieldControlGroup($model,'adrrej_kod',array('maxlength'=>6)); ?>
     <?php echo $form->textFieldControlGroup($model,'adrrej_miasto',array('maxlength'=>50)); ?>
@@ -167,7 +168,7 @@ if ($model->id) {
 		<?php
 		
 if ($model->id) {
-			$uslugi = $model->uslugis;
+			//$uslugi = $model->uslugis;
 			$klientHasUslugi = new KlientHasUslugi();
 			$klientHasUslugi->unsetAttributes();
 			$klientHasUslugi->klient_id = $model->id;
@@ -176,7 +177,7 @@ if ($model->id) {
 				$klientHasUslugi->attributes = $_GET['KlientHasUslugi'];
 			
 			$this->renderPartial ( "_uslugi", array (
-					'uslugi' => $uslugi,
+					//'uslugi' => $uslugi,
 					'klientHasUslugi' => $klientHasUslugi,
 					'klient_id' => $model->id 
 			) );

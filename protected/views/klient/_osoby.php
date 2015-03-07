@@ -9,7 +9,7 @@ return false;
 
 
 ?>
-
+<div id="osobaInfo"></div>
 <div class="panel panel-default">
 <div class="panel-heading">Lista kontaktów</div>
 <div class="panel-body">
@@ -35,19 +35,23 @@ if (!empty($osoby)) {
 						'class'=>'bootstrap.widgets.BsButtonColumn',
 						'template'=>'{usun} {update}',
 						'buttons'=>array(
+								'deleteConfirmation'=>"js:'Do you really want to delete record with ID '+$(this).parent().parent().children(':nth-child(2)').text()+'?'",
 								'usun'=>array(
 										'label'=>BsHtml::icon(BsHtml::GLYPHICON_TRASH),
 										'data-original-title' =>'Usuń',
-										'url'=>'Yii::app()->controller->createUrl("klient/updateDeleteDomain/",array("id"=>$data->id,"klient_id"=>'.$klient_id.'))',
+										'url'=>'Yii::app()->controller->createUrl("/osoba/delete/",array("id"=>$data->id))',
 										'options' => array('ajax' =>
 												array('type' => 'POST',
 														'url'=>'js:$(this).attr("href")',
+														'error'=>'js:alert("nie udalo sie usunac osoby")',
 														'success' => 'js:function(data) { $.fn.yiiGridView.update("domains-grid"); $.fn.yiiGridView.update("domainsWybrane-grid")}'),
 												'alt'=>'usuń'
 										),
+										'options'=>array( 'title'=>'usuń'),
+										 
 								),
 								'update' => array(
-										'url'=>'Yii::app()->controller->createUrl("/osoba/update/",array("id"=>$data->id))',
+										'url'=>'Yii::app()->controller->createUrl("/osoba/updateKlient/",array("id"=>$data->id,"klient_id"=>'.$klient_id.'))',
  							)
 						),
 				),

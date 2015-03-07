@@ -20,6 +20,8 @@
  */
 class Domains extends CActiveRecord
 {
+	public $expiry_date_od; //data wygasniecie od 
+	public $expiry_date_do;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -41,7 +43,7 @@ class Domains extends CActiveRecord
 			array('name, registrar, client, phone, email', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, name, expiry_date, registrar, added_date, client, phone, email', 'safe', 'on'=>'search'),
+			array('id, user_id, name, expiry_date, registrar, added_date, client, phone, email, expiry_date_do, expiry_date_od', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -104,11 +106,18 @@ class Domains extends CActiveRecord
 		$criteria->compare('client',$this->client,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
+		
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>$criteria, 'sort'=>array(
+    'defaultOrder'=>array(
+      'expiry_date'=>false
+    )),
+				
 		));
 	}
+	
 	
 	/**
 	 * szukanie dla palelu telemarketera
@@ -129,9 +138,14 @@ class Domains extends CActiveRecord
 		$criteria->compare('client',$this->client,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('email',$this->email,true);
+		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
 	
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
+				'sort'=>array(
+					'defaultOrder'=>array(
+      					'expiry_date'=>false
+    				)),
 		));
 	}
 	
@@ -165,6 +179,39 @@ class Domains extends CActiveRecord
 	
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
+		));
+	}
+	
+	/**
+	 * pokaz domeny nei zwiazane z klient
+	 * @return CActiveDataProvider
+	 */
+	public function searchBezKlienow()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+	
+		$criteria=new CDbCriteria;
+		$criteria->together = true;
+	  $criteria->with=array('klient_has_domains'=>'klients');
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('name',$this->name);
+		$criteria->compare('expiry_date',$this->expiry_date,true);
+		$criteria->compare('registrar',$this->registrar,true);
+		$criteria->compare('added_date',$this->added_date,true);
+		$criteria->compare('client',$this->client,true);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
+	
+		$criteria->addCondition('klients_klients.domains_id is  null');
+	
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria, 'sort'=>array(
+						'defaultOrder'=>array(
+								'expiry_date'=>false
+						)),
+	
 		));
 	}
 
