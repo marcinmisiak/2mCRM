@@ -106,6 +106,7 @@ class Domains extends CActiveRecord
 		$criteria->compare('client',$this->client,true);
 		$criteria->compare('phone',$this->phone,true);
 		$criteria->compare('email',$this->email,true);
+		if (!empty( $this->expiry_date_od))
 		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
 		
 
@@ -207,10 +208,15 @@ class Domains extends CActiveRecord
 		$criteria->addCondition('klients_klients.domains_id is  null');
 	
 		return new CActiveDataProvider($this, array(
-				'criteria'=>$criteria, 'sort'=>array(
+				'criteria'=>$criteria, 
+				'sort'=>array(
 						'defaultOrder'=>array(
 								'expiry_date'=>false
-						)),
+						)
+				),
+				'pagination'=>array(
+						'pageSize'=>5,
+				),
 	
 		));
 	}

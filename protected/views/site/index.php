@@ -18,6 +18,14 @@ if (! Yii::app ()->user->isGuest) {
 	}
 	
 	if ( Yii::app ()->user->checkAccess ( array('koordynator','administrator') ) ){
+		$pracownicy = new Users('search');
+		$pracownicy->unsetAttributes();
+		$pracownicy->maRole =true;
+		
+		if (isset($_GET['Users']))
+			$pracownicy->attributes=$_GET['Users'];
+		
+		
 		$klienci = new Klient("search");
 		$klienci->unsetAttributes();
 		$klienci->bez_telefonu=1;
@@ -39,7 +47,7 @@ if (! Yii::app ()->user->isGuest) {
 		if(isset($_GET['Domains']))
 			$domains->attributes=$_GET['Domains'];
 		//var_dump($_GET['Domains']);
-		$this->renderPartial('_panelKoordynatora',array('klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od));
+		$this->renderPartial('_panelKoordynatora',array('pracownicy'=>$pracownicy, 'klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od));
 	}
 } else {
 	?>

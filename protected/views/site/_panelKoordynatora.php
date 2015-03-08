@@ -1,16 +1,55 @@
+<h2>Panel koordynatora</h2>
 <div class="row">
 <div class="col-sm-7">
 <div class="panel panel-default">
-<div class="panel-heading">Klienci</div>
+<div class="panel-heading">Pracownicy</div>
+<div class="panel-body">
+<?php $this->widget('bootstrap.widgets.BsGridView',array(
+		'id'=>'users-grid',
+		'dataProvider'=>$pracownicy->search(),
+		'filter'=>$pracownicy,
+		
+		'columns'=>array(
+			'imie','nazwisko','roles',
+				array('name'=>'id', 'value'=>'$data->getButtonK()',
+						'type'=>'raw', 'filter'=>'','header'=>''
+						
+				),
+// 				array(
+// 						'class'=>'bootstrap.widgets.BsButtonColumn',
+// 						'buttons'=>array(
+							
+// 								'update' => array(
+// 										'url'=>'Yii::app()->controller->createUrl("/klient/update/",array("id"=>$data->id))',
+// 								),
+// 								'view' => array(
+// 										'url'=>'Yii::app()->controller->createUrl("/users/$data->id")',
+// 								)
+// 						),
+// 				),
+
+		),
+));
+?>
+<div id="div_pracownik"></div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">Klienci/Prospekt</div>
 <div class="panel-body">
 <?php $this->widget('bootstrap.widgets.BsGridView',array(
 		'id'=>'klienci-grid',
 		'dataProvider'=>$klienci->search(),
 		'filter'=>$klienci,
-			
+		
 		'columns'=>array(
 			 array('name'=>	'bez_telefonu', 'filter'=>array("2"=>'Ma telefon', "1"=>"Bez telefonu")),
-				'nazwa', 'email',
+				'nazwa', 'email', 
+				array('name' =>'status_id',
+				'value'=> '$data->status->nazwa',
+						'filter' => CHtml::listData(Status::model()->findAll(array('order'=>'nazwa')), 'id', 'nazwa'),
+),
 				array(
 						'class'=>'bootstrap.widgets.BsButtonColumn',
 						'buttons'=>array(

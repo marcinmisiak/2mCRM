@@ -31,6 +31,7 @@ class UsersController extends Controller
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
+			
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update'),
 				'roles'=>array('administrator'),
@@ -39,6 +40,7 @@ class UsersController extends Controller
 				'actions'=>array('admin','delete'),
 				'roles'=>array('administrator'),
 			),
+			array('allow','actions'=>array('ViewKlient'), 'roles'=>array('koordynator')),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -184,5 +186,19 @@ class UsersController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionViewKlient($id)
+	{
+		$domains = new Domains();
+		$domains->unsetAttributes();
+		$domains->user_id = $id;
+		if(isset($_GET['Domains'])) {
+			$domains->attributes=$_GET['Domains'];
+		}
+		
+		$this->renderPartial('viewKlient',array(
+				'model'=>$this->loadModel($id), 'domains'=>$domains
+		));
 	}
 }

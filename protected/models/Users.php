@@ -27,6 +27,7 @@
  */
 class Users extends CActiveRecord
 {
+	public $maRole; //pokaz z niepusta roles
 	/**
 	 * @return string the associated database table name
 	 */
@@ -62,7 +63,7 @@ class Users extends CActiveRecord
 				
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, email, username, password, logins, last_login, imie, nazwisko, telefon, email_pryw, skype, opis, roles, functions_id', 'safe', 'on'=>'search'),
+			array('maRole ,id, email, username, password, logins, last_login, imie, nazwisko, telefon, email_pryw, skype, opis, roles, functions_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -99,7 +100,7 @@ class Users extends CActiveRecord
 			'email_pryw' => 'Email Pryw',
 			'skype' => 'Skype',
 			'opis' => 'Opis',
-			'roles' => 'Roles',
+			'roles' => 'Rola',
 			'functions_id' => 'Functions',
 		);
 	}
@@ -136,7 +137,10 @@ class Users extends CActiveRecord
 		$criteria->compare('opis',$this->opis,true);
 		$criteria->compare('roles',$this->roles,true);
 		$criteria->compare('functions_id',$this->functions_id);
-
+		
+		if($this->maRole) {
+		$criteria->addCondition('roles is not null');
+		}
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -158,5 +162,17 @@ class Users extends CActiveRecord
 	 */
 	public function getLabel() {
 		return $this->imie ." ".$this->nazwisko . " " .$this->email ." ".$this->username;
+	}
+	
+	public function getButtonK() {
+	return	BsHtml::ajaxLink(
+		BsHtml::icon(BsHtml::GLYPHICON_CERTIFICATE),
+		Yii::app()->controller->createUrl('users/viewKlient/'.$this->id),
+		array(
+		'method'=>'POST',
+		'update'=>'#div_pracownik'
+			
+				)
+				);
 	}
 }
