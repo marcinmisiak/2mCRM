@@ -221,6 +221,40 @@ class Domains extends CActiveRecord
 		));
 	}
 
+	public function searchPrzydzilenie()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+	
+		$criteria=new CDbCriteria;
+		// $criteria->together = true;
+		$criteria->with=array('przydzielenie');
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('user_id',$this->user_id,true);
+		$criteria->compare('name',$this->name);
+		$criteria->compare('expiry_date',$this->expiry_date,true);
+		$criteria->compare('registrar',$this->registrar,true);
+		$criteria->compare('added_date',$this->added_date,true);
+		$criteria->compare('client',$this->client,true);
+		$criteria->compare('phone',$this->phone,true);
+		$criteria->compare('email',$this->email,true);
+		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
+	
+		$criteria->addCondition('klients_klients.domains_id is  null');
+	
+		return new CActiveDataProvider($this, array(
+				'criteria'=>$criteria,
+				'sort'=>array(
+						'defaultOrder'=>array(
+								'expiry_date'=>false
+						)
+				),
+				'pagination'=>array(
+						'pageSize'=>5,
+				),
+	
+		));
+	}
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!

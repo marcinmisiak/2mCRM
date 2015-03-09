@@ -17,7 +17,7 @@ if (! Yii::app ()->user->isGuest) {
 		$this->renderPartial('_panelTeleparketera',array('domains'=>$domains));
 	}
 	
-	if ( Yii::app ()->user->checkAccess ( array('koordynator','administrator') ) ){
+	if ( Yii::app ()->user->checkAccess ( array('koordynator') ) ){
 		$pracownicy = new Users('search');
 		$pracownicy->unsetAttributes();
 		$pracownicy->maRole =true;
@@ -46,8 +46,20 @@ if (! Yii::app ()->user->isGuest) {
 		// $domains->klients = array('id'=>NULL);
 		if(isset($_GET['Domains']))
 			$domains->attributes=$_GET['Domains'];
-		//var_dump($_GET['Domains']);
-		$this->renderPartial('_panelKoordynatora',array('pracownicy'=>$pracownicy, 'klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od));
+		
+		//	$domains = new Domains();
+		$domains->unsetAttributes();
+		//$domains->user_id = $id;
+		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domains-grid') {
+			$domains->attributes=$_GET['Domains'];
+		}
+		$domains_dostepne = new Domains('search');
+		$domains_dostepne->unsetAttributes();
+		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domenyDostepne-grid' ) {
+			$domains_dostepne->attributes = $_GET['Domains'];
+		}
+		
+		$this->renderPartial('_panelKoordynatora',array('pracownicy'=>$pracownicy,  'klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od, 'domains_dostepne'=>$domains_dostepne));
 	}
 } else {
 	?>

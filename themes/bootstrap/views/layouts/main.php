@@ -37,7 +37,7 @@ $cs->registerCoreScript ( 'jquery', CClientScript::POS_END )->registerCoreScript
 include ('topmenu.php');
 
 ?>
-<div class="container" id="page">
+<div class="container-fluid" id="page">
 <?php
 $this->widget ( 'bootstrap.widgets.BsNavbar', array (
 		
@@ -53,11 +53,14 @@ $this->widget ( 'bootstrap.widgets.BsNavbar', array (
 						'items' => $items 
 				) 
 		),
-		'container' => true 
+		//'container' => true ,
+		'position' => BsHtml::NAVBAR_POSITION_STATIC_TOP
 ) );
 ?>
+</div>
 
 
+<div class="container-fluid">
 
 <?php if(isset($this->breadcrumbs)):?>
 		<?php

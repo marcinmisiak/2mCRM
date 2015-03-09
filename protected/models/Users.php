@@ -164,14 +164,20 @@ class Users extends CActiveRecord
 		return $this->imie ." ".$this->nazwisko . " " .$this->email ." ".$this->username;
 	}
 	
+	/**
+	 * przyski panelu koordynatora
+	 * @return string
+	 */
 	public function getButtonK() {
 	return	BsHtml::ajaxLink(
 		BsHtml::icon(BsHtml::GLYPHICON_CERTIFICATE),
 		Yii::app()->controller->createUrl('users/viewKlient/'.$this->id),
 		array(
 		'method'=>'POST',
-		'update'=>'#div_pracownik'
-			
+		'update'=>'#div_pracownik',
+		'beforeSend'=>'function() { 
+				$("#div_pracownik").html("Ładuje..");
+				 }'
 				)
 				);
 	}

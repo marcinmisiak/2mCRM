@@ -190,15 +190,14 @@ class UsersController extends Controller
 	
 	public function actionViewKlient($id)
 	{
-		$domains = new Domains();
-		$domains->unsetAttributes();
-		$domains->user_id = $id;
-		if(isset($_GET['Domains'])) {
-			$domains->attributes=$_GET['Domains'];
-		}
+		
+		
+		//przydzione domeny do pracownika
+		$przydzielenie = new Przydzielenie('search');
+		$przydzielenie->users_id =$id;
 		
 		$this->renderPartial('viewKlient',array(
-				'model'=>$this->loadModel($id), 'domains'=>$domains
+				'model'=>$this->loadModel($id),  'przydzielenie'=>$przydzielenie
 		));
 	}
 }

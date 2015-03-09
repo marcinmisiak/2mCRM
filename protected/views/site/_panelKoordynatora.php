@@ -1,6 +1,6 @@
 <h2>Panel koordynatora</h2>
 <div class="row">
-<div class="col-sm-7">
+
 <div class="panel panel-default">
 <div class="panel-heading">Pracownicy</div>
 <div class="panel-body">
@@ -31,10 +31,95 @@
 		),
 ));
 ?>
-<div id="div_pracownik"></div>
+<div class="panel panel-default">
+<div class="panel-body">
+
+<div class="col-lg-6">
+<div class="panel panel-default">
+
+
+<span id="div_pracownik"></span>
+
 </div>
 </div>
 
+
+
+<div class="col-lg-6">
+<div class="panel panel-default">
+<div class="panel-heading"><h4>domeny dostępne</h4></div>
+<div class="panel-body">
+
+
+
+<?php $this->widget('bootstrap.widgets.BsGridView',array(
+		'id'=>'domenyDostepne-grid',
+		'dataProvider'=>$domains_dostepne->search(),
+		'filter'=>$domains_dostepne,
+		
+		'columns'=>array(
+		'name',
+		'client',
+		'expiry_date',
+		array('name'=>'expiry_date_od',
+'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'model'=>$domains_dostepne, 
+                'attribute'=>'expiry_date_od', 
+                'language' => 'pl',
+                'htmlOptions' => array(
+                    // 'id' => 'datepicker_for_expiry_date_do',
+                    'size' => '10',
+                ),
+                'defaultOptions' => array(  // (#3)
+                    'showOn' => 'focus', 
+                    'dateFormat' => 'Y-m-dd',
+                    'showOtherMonths' => true,
+                    'selectOtherMonths' => true,
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                    'showButtonPanel' => true,
+                )
+            ), 
+            true),
+),
+				array('name'=>'expiry_date_do',
+						'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+								'model'=>$domains_dostepne,
+								'attribute'=>'expiry_date_do',
+								'language' => 'pl',
+								'htmlOptions' => array(
+										'id' => 'datepicker_for_eexpiry_date_do',
+										'size' => '10',
+								),
+								'defaultOptions' => array(  // (#3)
+										'showOn' => 'focus',
+										'dateFormat' => 'yy-mm-dd',
+										'showOtherMonths' => true,
+										'selectOtherMonths' => true,
+										'changeMonth' => true,
+										'changeYear' => true,
+										'showButtonPanel' => true,
+								)
+						),
+								true),
+				)
+			
+			
+				
+			),
+));
+
+
+?>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">Klienci/Prospekt</div>
 <div class="panel-body">
@@ -74,7 +159,9 @@
   </div>
 </div>
 </div>
-<div class="col-sm-5">
+</div>
+
+<div class="col-sm-12">
 <div class="panel panel-default">
   <div class="panel-heading">
   Domeny bez klienta (data wygaśniecia od: <?php echo date('Y-m-d',$expiry_data_od); ?>)
@@ -115,7 +202,7 @@
   </div>
 </div>
 </div>
-</div>
+
 
 <!-- Modal -->
 <div id="modalPrzydziel" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
