@@ -196,6 +196,9 @@ class UsersController extends Controller
 		$przydzielenie = new Przydzielenie('search');
 		$przydzielenie->users_id =$id;
 		
+		
+		
+		
 		$this->renderPartial('viewKlient',array(
 				'model'=>$this->loadModel($id),  'przydzielenie'=>$przydzielenie
 		));

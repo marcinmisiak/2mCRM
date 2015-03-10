@@ -1,3 +1,6 @@
+<?php 
+
+?>
 <h2>Panel koordynatora</h2>
 <div class="row">
 
@@ -8,7 +11,6 @@
 		'id'=>'users-grid',
 		'dataProvider'=>$pracownicy->search(),
 		'filter'=>$pracownicy,
-		
 		'columns'=>array(
 			'imie','nazwisko','roles',
 				array('name'=>'id', 'value'=>'$data->getButtonK()',
@@ -30,15 +32,37 @@
 
 		),
 ));
+if(!empty($przydzielenie->users_id)){
 ?>
 <div class="panel panel-default">
 <div class="panel-body">
 
 <div class="col-lg-6">
 <div class="panel panel-default">
+<div class="panel-heading"><h4>Domeny przydzielone</h4></div>
+<div class="panel-body">
 
+<?php $this->widget('bootstrap.widgets.BsGridView',array(
+		'id'=>'domenyPrzydzielone-grid',
+		'dataProvider'=>$przydzielenie->search(),
+		'filter'=>$przydzielenie,
+		
+		'columns'=>array(
+				'kiedy',
+				
+			array('name'=>'wykonano', 'filter'=>array("0"=>"Nie","1"=>"Tak")),
+		'domains.name',
+		'domains.client',
+		'domains.expiry_date',
+			
+				
+			),
+));
 
-<span id="div_pracownik"></span>
+?>
+
+</div>
+
 
 </div>
 </div>
@@ -50,29 +74,45 @@
 <div class="panel-heading"><h4>domeny dostępne</h4></div>
 <div class="panel-body">
 
+<?php
 
 
-<?php $this->widget('bootstrap.widgets.BsGridView',array(
-		'id'=>'domenyDostepne-grid',
-		'dataProvider'=>$domains_dostepne->search(),
-		'filter'=>$domains_dostepne,
+Yii::app()->clientScript->registerScript('szukajDomaneyDostepne', "
+
+$('#buttonSzujakDostepneDomeny').click(function(){
+	$('#domenyDostepne-grid').yiiGridView('update', {
+		data: $('#formDomenyDostepne').serialize()
+	});
+	return false;
+});
+
 		
-		'columns'=>array(
-		'name',
-		'client',
-		'expiry_date',
-		array('name'=>'expiry_date_od',
-'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+
+				
+");
+ 
+ 
+ $form=$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
+    'action'=>"#",
+    'method'=>'get',
+ 		'id'=>"formDomenyDostepne",
+ 		'layout'=>BsHtml::FORM_LAYOUT_INLINE,
+)); 
+echo $form->label($domains_dostepne, 'expiry_date_od', array('class' => 'control-label'));
+echo $this->widget('zii.widgets.jui.CJuiDatePicker', array(
                 'model'=>$domains_dostepne, 
                 'attribute'=>'expiry_date_od', 
                 'language' => 'pl',
                 'htmlOptions' => array(
                     // 'id' => 'datepicker_for_expiry_date_do',
                     'size' => '10',
+                		'class'=> 'form-label',
                 ),
-                'defaultOptions' => array(  // (#3)
+                'options' => array(  
+                		
                     'showOn' => 'focus', 
-                    'dateFormat' => 'Y-m-dd',
+                    'dateFormat' => 'yy-mm-dd',
+                		'altFormat' => 'yy-mm-dd', // show to user format
                     'showOtherMonths' => true,
                     'selectOtherMonths' => true,
                     'changeMonth' => true,
@@ -80,32 +120,75 @@
                     'showButtonPanel' => true,
                 )
             ), 
-            true),
+            true);
+echo $form->label($domains_dostepne, 'expiry_date_do', array('class' => 'control-label'));
+echo $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+		'model'=>$domains_dostepne,
+		'attribute'=>'expiry_date_do',
+		'language' => 'pl',
+		'htmlOptions' => array(
+				//'id' => 'datepicker_for_eexpiry_date_do',
+				'size' => '10',
+				'class'=> 'form-label',
+		),
+		'options' => array(
+				
+				'showButtonPanel'=>true,
+				'showOn' => 'focus',
+				'dateFormat' => 'yy-mm-dd',
+				'altFormat' => 'yy-mm-dd', // show to user format
+				'showOtherMonths' => true,
+				'selectOtherMonths' => true,
+				'changeMonth' => true,
+				'changeYear' => true,
+				'showButtonPanel' => true,
+		)
 ),
-				array('name'=>'expiry_date_do',
-						'filter' => $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-								'model'=>$domains_dostepne,
-								'attribute'=>'expiry_date_do',
-								'language' => 'pl',
-								'htmlOptions' => array(
-										'id' => 'datepicker_for_eexpiry_date_do',
-										'size' => '10',
+		true);
+
+echo $form->textFieldControlGroup($domains_dostepne, 'name');
+echo $form->textFieldControlGroup($domains_dostepne, 'client');
+
+
+?>
+<input type="hidden" value="domenyDostepne-grid" name="ajax">
+   
+        <?php echo BsHtml::ajaxSubmitButton('Szukaj', Yii::app()->createUrl('site/panelKoordynatora'), array('method'=>'get', 'data'=>'$(this).serialize()'), array('id'=>'buttonSzujakDostepneDomeny', 'color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
+  
+
+<?php 
+$this->endWidget(); //koniex form szukania
+
+
+?>
+
+<?php $this->widget('bootstrap.widgets.BsGridView',array(
+		'id'=>'domenyDostepne-grid',
+		'dataProvider'=>$domains_dostepne->search(),
+		//'filter'=>$domains_dostepne,
+		
+		'columns'=>array(
+				array(
+						'class'=>'bootstrap.widgets.BsButtonColumn',
+						'template'=>'{add}',
+						'buttons'=>array(
+								'add'=>array(
+										'label'=>BsHtml::icon(BsHtml::GLYPHICON_ARROW_LEFT),
+										'url'=>'Yii::app()->controller->createUrl("/przydzielanie/przydziel/", array("id"=>"$data->id", "users_id"=>"'.$przydzielenie->users_id.'"))',
+										'options' => array('ajax' =>
+												array('type' => 'POST',
+														 'url'=>'js:$(this).attr("href")',
+														
+														'success' => 'js:function(data) { $.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid")}')
+										),
 								),
-								'defaultOptions' => array(  // (#3)
-										'showOn' => 'focus',
-										'dateFormat' => 'yy-mm-dd',
-										'showOtherMonths' => true,
-										'selectOtherMonths' => true,
-										'changeMonth' => true,
-										'changeYear' => true,
-										'showButtonPanel' => true,
-								)
 						),
-								true),
-				)
-			
+				),
 			
 				
+		'name',
+		'client',
+		'expiry_date'
 			),
 ));
 
@@ -119,6 +202,9 @@
 </div>
 
 </div>
+<?php 
+} //konies users_id nioe puste
+?>
 <div class="row">
 <div class="panel panel-default">
 <div class="panel-heading">Klienci/Prospekt</div>

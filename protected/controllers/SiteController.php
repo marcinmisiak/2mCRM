@@ -2,6 +2,38 @@
 
 class SiteController extends Controller
 {
+	public function filters()
+	{
+		return array(
+				'accessControl', // perform access control for CRUD operations
+				'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+	
+	public function accessRules()
+	{
+		return array(
+				array('allow',  // allow all users to perform 'index' and 'view' actions
+						'actions'=>array('index','error','login','logout'),
+						'users'=>array('*'),
+				),
+					
+				array('allow', // allow authenticated user to perform 'create' and 'update' actions
+						'actions'=>array('create','update'),
+						'roles'=>array('administrator'),
+				),
+				array('allow', // allow admin user to perform 'admin' and 'delete' actions
+						'actions'=>array('admin','delete'),
+						'roles'=>array('administrator'),
+				),
+				array('allow','actions'=>array('PanelKoordynatora'), 'roles'=>array('koordynator')),
+				array('deny',  // deny all users
+						'users'=>array('*'),
+				),
+		);
+	}
+	
+	
 	/**
 	 * Declares class-based actions.
 	 */
@@ -31,6 +63,8 @@ class SiteController extends Controller
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 	}
+	
+	
 
 	/**
 	 * This is the action to handle external exceptions.
@@ -105,5 +139,65 @@ class SiteController extends Controller
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
+	}
+	
+	
+	public function actionPanelKoordynatora() {
+		$pracownicy = new Users('search');
+		$pracownicy->unsetAttributes();
+		$pracownicy->maRole =true;
+		
+		if (isset($_GET['Users']))
+			$pracownicy->attributes=$_GET['Users'];
+		
+		
+		$klienci = new Klient("search");
+		$klienci->unsetAttributes();
+		$klienci->bez_telefonu=1;
+		
+		if (isset($_GET['Klient']))
+			$klienci->attributes=$_GET['Klient'];
+		
+		
+		$domains = new Domains('searchBezKlienta');
+		$domains->unsetAttributes();
+		
+		$date_od = strtotime("-1 day");
+		$domains->expiry_date_od = date('Y-m-d', $date_od);
+		
+		$date = strtotime("+100 years");
+		$domains->expiry_date_do = date('Y-m-d', $date);
+		
+		// $domains->klients = array('id'=>NULL);
+		if(isset($_GET['Domains']))
+			$domains->attributes=$_GET['Domains'];
+		
+		//	$domains = new Domains();
+		$domains->unsetAttributes();
+		//$domains->user_id = $id;
+		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domains-grid') {
+			$domains->attributes=$_GET['Domains'];
+		}
+		
+		$domains_dostepne = new Domains('search');
+		$domains_dostepne->unsetAttributes();
+		$date_dostepne_od = strtotime("-1 day");
+		$domains_dostepne->expiry_date_od = date('Y-m-d', $date_dostepne_od);
+		$date_dostepne_do = strtotime("+10 years");
+		$domains_dostepne->expiry_date_do = date('Y-m-d', $date_dostepne_do);
+		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domenyDostepne-grid' ) {
+			$domains_dostepne->attributes = $_GET['Domains'];
+		}
+		
+		
+		$przydzielenie = new Przydzielenie('search');
+		$przydzielenie->unsetAttributes();
+		if(isset($_GET['user_id'])) {			
+		$przydzielenie->users_id =$_GET['user_id'];
+		} else {
+			$przydzielenie->users_id=0; //oj brzydko
+		}
+		$this->render('_panelKoordynatora',array('przydzielenie'=>$przydzielenie, 'pracownicy'=>$pracownicy,  'klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od, 'domains_dostepne'=>$domains_dostepne));
+		
 	}
 }

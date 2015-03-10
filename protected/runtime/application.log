@@ -7630,3 +7630,861 @@ in C:\xampp\htdocs\2mCRM\index.php (13)
 in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
 in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
 in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:11:00 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:11:00 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:11:21 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:11:21 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:15:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:15:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:16:40 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:16:40 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:16:46 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:16:46 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:18:14 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:18:14 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:18:41 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:18:41 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:25:12 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:25:12 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:25:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:25:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:27:57 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:27:57 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:28:08 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:28:08 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:28:35 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:28:35 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (48)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:29:37 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (52)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:29:37 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\views\site\index.php (52)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (32)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:39:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "panelKoordynatora".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('panelKoordynato...')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelKoordynato...')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelKoord...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+HTTP_REFERER=http://localhost/2mCRM/index.php
+---
+2015/03/10 09:39:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "panelKoordynatora".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('panelKoordynato...')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelKoordynato...')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelKoord...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+HTTP_REFERER=http://localhost/2mCRM/index.php
+---
+2015/03/10 09:44:34 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (141)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:44:34 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (141)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:52:06 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:52:06 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:52:06 [error] [php] Undefined index: ajax (C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php:178)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora?Domains%5Bexpiry_date_od%5D=2015-03-09&Domains%5Bexpiry_date_do%5D=2015-03-31&yt2=
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (178)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:54:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:54:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:55:58 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:55:58 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:56:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:56:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:56:42 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:56:42 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:56:53 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 09:56:53 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:05:56 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:05:56 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:06:06 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:06:06 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:09:17 [error] [exception.CException] exception 'CException' with message 'Właściwość "BsActiveForm.type" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('type', 'inline')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(197): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\xampp\htdocs\2mCRM\protected\views\site\_panelKoordynatora.php(75): CBaseController->beginWidget('bootstrap.widge...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_panelKoordynat...', Array, true)
+#8 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(192): CController->render('_panelKoordynat...', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelKoordynatora()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelKoordynato...')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelKoord...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 10:10:22 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:10:22 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:14:31 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:14:31 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:14:47 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:14:47 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:15:41 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:15:41 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:16:11 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:16:11 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:14 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:14 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:30 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:48 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:48 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:56 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:18:56 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:08 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:08 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:20 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:20 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:34 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:34 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:45 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:19:45 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:36:25 [error] [php] Undefined variable: domains_dostepne (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:49)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(201): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (49)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (201)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:39:31 [error] [php] Undefined variable: domains_dostepne (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:49)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(204): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (49)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (204)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:56:26 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:56:26 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:56:39 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 10:56:39 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:39:25 [error] [php] Object of class Przydzielenie could not be converted to string (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:29)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(204): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (29)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (204)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:39:59 [error] [php] Object of class Przydzielenie could not be converted to string (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:29)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(204): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (29)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (204)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:40:02 [error] [php] Object of class Przydzielenie could not be converted to string (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:29)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(204): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (29)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (204)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:40:37 [error] [php] Object of class Przydzielenie could not be converted to string (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:29)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(204): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (29)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (204)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:40:40 [error] [php] Object of class Przydzielenie could not be converted to string (C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php:29)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): UsersController->renderFile()
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php(204): UsersController->renderPartial()
+#2 unknown(0): UsersController->actionViewKlient()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): UsersController->runAction()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): UsersController->filterAccessControl()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): UsersController->runActionWithFilters()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): UsersController->run()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/users/viewKlient/466
+in C:\xampp\htdocs\2mCRM\protected\views\users\viewKlient.php (29)
+in C:\xampp\htdocs\2mCRM\protected\controllers\UsersController.php (204)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:50:49 [error] [php] Undefined variable: przydzielenie (C:\xampp\htdocs\2mCRM\protected\views\site\_panelKoordynatora.php:51)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(192): SiteController->render()
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelKoordynatora()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+in C:\xampp\htdocs\2mCRM\protected\views\site\_panelKoordynatora.php (51)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (192)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 11:52:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 11:52:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 11:54:34 [error] [exception.CException] exception 'CException' with message 'Klasa BsActiveForm i jej zachowania nie posiadają metody lub domknięcia "hidden".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\2mCRM\protected\views\site\_panelKoordynatora.php(53): CComponent->__call('hidden', Array)
+#1 C:\xampp\htdocs\2mCRM\protected\views\site\_panelKoordynatora.php(53): BsActiveForm->hidden(Object(Przydzielenie), 'kiedy')
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_panelKoordynat...', Array, true)
+#6 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(192): CController->render('_panelKoordynat...', Array)
+#7 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelKoordynatora()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelKoordynato...')
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelKoord...')
+#18 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+HTTP_REFERER=http://localhost/2mCRM/
+---
+2015/03/10 11:55:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 11:55:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 11:55:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 11:59:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 11:59:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 12:09:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 12:53:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Nie można ustalić żądania "przydzielanie/przydziel".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 13:24:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('przydziel')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 13:35:55 [error] [exception.CException] exception 'CException' with message 'Kontroler PrzydzielanieController nie może znaleźć wymaganego widoku "viewKlient".' in C:\xampp\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php(121): CController->renderPartial('viewKlient', Array)
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): PrzydzielanieController->actionPrzydziel()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('przydziel')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/10 13:43:06 [error] [php] Undefined index: domains_id (C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PrzydzielanieController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PrzydzielanieController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): PrzydzielanieController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PrzydzielanieController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel?Przydzielenie_page=2
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (102)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 13:53:09 [error] [php] Undefined variable: user_id (C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php:195)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (195)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:00:46 [error] [php] Undefined index: domains_id (C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PrzydzielanieController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PrzydzielanieController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): PrzydzielanieController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PrzydzielanieController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel?Przydzielenie_page=2
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (102)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:01:38 [error] [php] Undefined index: domains_id (C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PrzydzielanieController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PrzydzielanieController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): PrzydzielanieController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PrzydzielanieController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (102)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:09:44 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:09:44 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:09:56 [error] [php] Undefined index: domains_id (C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PrzydzielanieController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PrzydzielanieController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): PrzydzielanieController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PrzydzielanieController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (102)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:10:48 [error] [php] Undefined index: domains_id (C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PrzydzielanieController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PrzydzielanieController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): PrzydzielanieController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PrzydzielanieController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (102)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:10:58 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:10:58 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:11:19 [error] [php] Undefined index: domains_id (C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php:102)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): PrzydzielanieController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): PrzydzielanieController->filterAccessControl()
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): PrzydzielanieController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): PrzydzielanieController->run()
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (102)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:12:44 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:12:44 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:14:54 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:14:54 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:15:50 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:15:50 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:16:43 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 14:16:43 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:29:02 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Twoje żądanie jest nieprawidłowe.' in C:\xampp\htdocs\yii\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('przydziel')
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#10 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora?user_id=466
+---
+2015/03/10 15:31:36 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:31:36 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:31:54 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:31:54 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:32:46 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:32:46 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:32:57 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:32:57 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:34:34 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mjkr`.`przydzielenie`, CONSTRAINT `fk_przydzielenia_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: INSERT INTO `przydzielenie` (`wykonano`, `kiedy`, `users_id`, `domains_id`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php (105)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/10 15:34:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mjkr`.`przydzielenie`, CONSTRAINT `fk_przydzielenia_users1` FOREIGN KEY (`users_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `przydzielenie` (`wykonano`, `kiedy`, `users_id`, `domains_id`) VALUES (:yp0, :yp1, :yp2, :yp3)' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1080): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(809): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\PrzydzielanieController.php(105): CActiveRecord->save()
+#3 [internal function]: PrzydzielanieController->actionPrzydziel('24100', '0')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(PrzydzielanieController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(PrzydzielanieController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('przydziel')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('przydzielanie/p...')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/2mCRM/index.php/przydzielanie/przydziel/24100?users_id=0
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---

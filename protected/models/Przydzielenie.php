@@ -87,7 +87,8 @@ class Przydzielenie extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-
+		//$criteria->with=array('domains');
+		//$criteria->together=true;
 		$criteria->compare('id',$this->id);
 		$criteria->compare('kiedy',$this->kiedy,true);
 		$criteria->compare('wykonano',$this->wykonano);

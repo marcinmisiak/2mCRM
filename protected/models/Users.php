@@ -169,16 +169,22 @@ class Users extends CActiveRecord
 	 * @return string
 	 */
 	public function getButtonK() {
-	return	BsHtml::ajaxLink(
-		BsHtml::icon(BsHtml::GLYPHICON_CERTIFICATE),
-		Yii::app()->controller->createUrl('users/viewKlient/'.$this->id),
-		array(
-		'method'=>'POST',
-		'update'=>'#div_pracownik',
-		'beforeSend'=>'function() { 
-				$("#div_pracownik").html("Ładuje..");
-				 }'
-				)
-				);
+// 	return	BsHtml::ajaxLink(
+// 		BsHtml::icon(BsHtml::GLYPHICON_CERTIFICATE),
+// 		Yii::app()->controller->createUrl('users/viewKlient/'.$this->id),
+// 		array(
+// 		'method'=>'POST',
+// 		'update'=>'#div_pracownik',
+// 		'beforeSend'=>'function() { 
+// 				$("#div_pracownik").html("Ładuje..");
+// 				 $("#Przydzielenie_users_id").val('.$this->id.'); 
+// 				 }'
+// 				)
+// 				);
+	
+	return 	 BsHtml::link(BsHtml::icon(BsHtml::GLYPHICON_ADJUST), Yii::app()->controller->createUrl('site/panelKoordynatora/', array('user_id'=>$this->id)));
+		 
+		 
+	
 	}
 }
