@@ -17,6 +17,7 @@
  * The followings are the available model relations:
  * @property Users $user
  * @property Klient[] $klients
+ * @property Przydzielenie[] $przydzielenies
  */
 class Domains extends CActiveRecord
 {
@@ -58,6 +59,7 @@ class Domains extends CActiveRecord
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 			'klients' => array(self::MANY_MANY, 'Klient', 'klient_has_domains(domains_id, klient_id)'),
 			'not_in_hasDomains'=>array(self::HAS_MANY,'KlientHasDomains', 'domains_id', 'condition'=>'not_in_hasDomains.domains_id is null' ),
+			'przydzielenies' => array(self::HAS_MANY, 'Przydzielenie', 'domains_id'),
 		);
 	}
 
@@ -221,13 +223,18 @@ class Domains extends CActiveRecord
 		));
 	}
 
-	public function searchPrzydzilenie()
+	/**
+	 * pokazuj domeny bez domen przydzilnoych juz pracownikom- panelKoordynatora
+	 * 
+	 * @return CActiveDataProvider
+	 */
+	public function searchPrzydzielanie()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 	
 		$criteria=new CDbCriteria;
-		// $criteria->together = true;
-		$criteria->with=array('przydzielenie');
+		 $criteria->together = true;
+		$criteria->with=array('przydzielenies');
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('name',$this->name);
@@ -239,7 +246,7 @@ class Domains extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
 	
-		$criteria->addCondition('klients_klients.domains_id is  null');
+		$criteria->addCondition('przydzielenies.domains_id is null');
 	
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,

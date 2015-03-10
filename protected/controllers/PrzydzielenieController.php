@@ -1,6 +1,6 @@
 <?php
 /* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
-class KlientHasUslugiController extends Controller
+class PrzydzielenieController extends Controller
 {
 	/**
 	* @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,18 +28,14 @@ class KlientHasUslugiController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('view'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','validate'),
-				'users'=>array('@'),
+				'actions'=>array('przydziel','delete'),
+				'roles'=>array('koordynator'),
 			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-					'roles'=>array('telemarketer','koordynator'),
-			),
+		
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -63,26 +59,21 @@ class KlientHasUslugiController extends Controller
 	*/
 	public function actionCreate()
 	{
-		$model=new KlientHasUslugi;
+		$model=new Przydzielenie;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['KlientHasUslugi']))
+		if(isset($_POST['Przydzielenie']))
 		{
-			$model->attributes=$_POST['KlientHasUslugi'];
-			if($model->save()) {
-				echo "jest";
-			}else {
-				var_dump($model->getErrors());
-			}
-				return true;
-			//	$this->redirect(array('view','id'=>$model->id));
+			$model->attributes=$_POST['Przydzielenie'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		//$this->render('create',array(
-		//'model'=>$model,
-		//));
+		$this->render('create',array(
+		'model'=>$model,
+		));
 	}
 
 	/**
@@ -95,12 +86,11 @@ class KlientHasUslugiController extends Controller
 		$model=$this->loadModel($id);
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['KlientHasUslugi']))
+		if(isset($_POST['Przydzielenie']))
 		{
-			$model->attributes=$_POST['KlientHasUslugi'];
-			
+			$model->attributes=$_POST['Przydzielenie'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -110,11 +100,6 @@ class KlientHasUslugiController extends Controller
 		));
 	}
 
-	public function actionValidate()
-	{
-		$model=new KlientHasUslugi;
-		 $this->performAjaxValidation($model);
-	}
 	/**
 	* Deletes a particular model.
 	* If deletion is successful, the browser will be redirected to the 'admin' page.
@@ -128,8 +113,8 @@ class KlientHasUslugiController extends Controller
 			$this->loadModel($id)->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+			//if(!isset($_GET['ajax']))
+			//	 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -140,7 +125,7 @@ class KlientHasUslugiController extends Controller
 	*/
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('KlientHasUslugi');
+		$dataProvider=new CActiveDataProvider('Przydzielenie');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -151,10 +136,10 @@ class KlientHasUslugiController extends Controller
 	*/
 	public function actionAdmin()
 	{
-		$model=new KlientHasUslugi('search');
+		$model=new Przydzielenie('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['KlientHasUslugi']))
-			$model->attributes=$_GET['KlientHasUslugi'];
+		if(isset($_GET['Przydzielenie']))
+			$model->attributes=$_GET['Przydzielenie'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -165,12 +150,12 @@ class KlientHasUslugiController extends Controller
 	* Returns the data model based on the primary key given in the GET variable.
 	* If the data model is not found, an HTTP exception will be raised.
 	* @param integer $id the ID of the model to be loaded
-	* @return KlientHasUslugi the loaded model
+	* @return Przydzielenie the loaded model
 	* @throws CHttpException
 	*/
 	public function loadModel($id)
 	{
-		$model=KlientHasUslugi::model()->findByPk($id);
+		$model=Przydzielenie::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -178,14 +163,33 @@ class KlientHasUslugiController extends Controller
 
 	/**
 	* Performs the AJAX validation.
-	* @param KlientHasUslugi $model the model to be validated
+	* @param Przydzielenie $model the model to be validated
 	*/
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='klient-has-uslugi-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='przydzielenie-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	/**
+	 * przydzielanie domeny na panelu koordynatora
+	 * @param unknown $id
+	 * @param unknown $users_id
+	 */
+	public function actionPrzydziel($id,$users_id) {
+	
+		$model = new Przydzielenie();
+		$model->kiedy = date('Y-m-d H:i:s',time());
+		$model->wykonano=0;
+		$model->users_id=$users_id;
+		$model->domains_id =$id;
+		$model->save();
+	
+	
+		Yii::app()->end();
+	
 	}
 }

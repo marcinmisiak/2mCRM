@@ -1,12 +1,12 @@
 <?php
-/* @var $this KlientHasUslugiController */
-/* @var $model KlientHasUslugi */
+/* @var $this PrzydzielenieController */
+/* @var $model Przydzielenie */
 /* @var $form BSActiveForm */
 /* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
 ?>
 
 <?php $form=$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
-    'id'=>'klient-has-uslugi-form',
+    'id'=>'przydzielenie-form',
     // Please note: When you enable ajax validation, make sure the corresponding
     // controller action is handling ajax validation correctly.
     // There is a call to performAjaxValidation() commented in generated controller code.
@@ -18,12 +18,10 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->textFieldControlGroup($model,'klient_id'); ?>
-    <?php echo $form->textFieldControlGroup($model,'uslugi_id'); ?>
-    <?php echo $form->textFieldControlGroup($model,'data_od'); ?>
-    <?php echo $form->textFieldControlGroup($model,'data_do'); ?>
-    <?php echo $form->textFieldControlGroup($model,'kwota',array('maxlength'=>10)); ?>
-    <?php echo $form->textFieldControlGroup($model,'zaplacone'); ?>
+    <?php echo $form->textFieldControlGroup($model,'kiedy'); ?>
+    <?php echo $form->textFieldControlGroup($model,'wykonano'); ?>
+    <?php echo $form->textFieldControlGroup($model,'domains_id',array('maxlength'=>10)); ?>
+    <?php echo $form->textFieldControlGroup($model,'users_id',array('maxlength'=>11)); ?>
 
     <?php echo BsHtml::submitButton('Zapisz', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 

@@ -190,13 +190,19 @@ class SiteController extends Controller
 		}
 		
 		
+		
 		$przydzielenie = new Przydzielenie('search');
 		$przydzielenie->unsetAttributes();
+		$przydzielenie->wykonano=0;
 		if(isset($_GET['user_id'])) {			
 		$przydzielenie->users_id =$_GET['user_id'];
 		} else {
 			$przydzielenie->users_id=0; //oj brzydko
 		}
+		if(isset($_GET['Przydzielenie'])) {
+			$przydzielenie->attributes=$_GET['Przydzielenie'];
+		}
+		
 		$this->render('_panelKoordynatora',array('przydzielenie'=>$przydzielenie, 'pracownicy'=>$pracownicy,  'klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od, 'domains_dostepne'=>$domains_dostepne));
 		
 	}
