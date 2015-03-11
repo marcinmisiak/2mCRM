@@ -19,6 +19,8 @@
     <?php echo $form->errorSummary($model); ?>
 
     <?php echo $form->textFieldControlGroup($model,'nazwa',array('maxlength'=>45)); ?>
+    
+    <?php echo $form->dropDownListControlGroup($model,'zamkniety',array("Nie","Tak")); ?>
 
     <?php echo BsHtml::submitButton('Zapisz', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 

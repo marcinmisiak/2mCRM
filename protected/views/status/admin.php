@@ -49,7 +49,7 @@ $('.search-form form').submit(function(){
 			'filter'=>$model,
 			'columns'=>array(
         		
-		'nazwa',
+		'nazwa','zamkniety',
 				array(
 					'class'=>'bootstrap.widgets.BsButtonColumn',
 				),

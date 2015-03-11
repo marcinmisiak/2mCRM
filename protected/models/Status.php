@@ -29,10 +29,11 @@ class Status extends CActiveRecord
 		// will receive user inputs.
 		return array(
 				array('nazwa', 'required'),
+				array('zamkniety', 'numerical', 'integerOnly'=>true),
 			array('nazwa', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nazwa', 'safe', 'on'=>'search'),
+			array('id, nazwa,  zamkniety', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,6 +57,7 @@ class Status extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'nazwa' => 'Nazwa',
+				'zamkniety' => 'Zamkniety',
 		);
 	}
 
@@ -79,6 +81,7 @@ class Status extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('nazwa',$this->nazwa,true);
+		$criteria->compare('zamkniety',$this->zamkniety);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
