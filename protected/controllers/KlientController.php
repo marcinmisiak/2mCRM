@@ -32,7 +32,7 @@ class KlientController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createAddDomain','createDeleteDomain','updateDeleteDomain','updateAddDomain'),
+				'actions'=>array('create','update','createAddDomain','createDeleteDomain','updateDeleteDomain','updateAddDomain','createByDomain'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -283,5 +283,55 @@ class KlientController extends Controller
 	public function actionupdateDeleteDomain($id,$klient_id) {
 		$row = KlientHasDomains::model()->deleteAllByAttributes(array('klient_id'=>$klient_id, 'domains_id'=>$id));
 		return $row;
+	}
+	
+	/**
+	 * Tworzy klient na podstawie domains
+	 * @param int $id domains_id
+	 */
+	public function actioncreateByDomain($id) {
+		$domain = Domains::model()->findByPk($id);
+		if (empty($domain->id)) {
+			echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, "Nie utworzyłem klienta na podstawie domeny ". $domain->name);
+			Yii::app()->end();
+		}
+		
+		$klientHasDomains = KlientHasDomains::model()->findByAttributes(array("domains_id"=>$id));
+		
+		if (!empty($klientHasDomains)) {
+			$klient = Klient::model()->findByPk($klientHasDomains->klient_id);
+			echo BsHtml::alert(BsHtml::ALERT_COLOR_WARNING, "Istnieje klient z domęną: ". $domain->name ."<P>". BsHtml::linkButton("Aktualizuj klienta $klient->nazwa",
+					  array('color' => BsHtml::BUTTON_COLOR_PRIMARY, 'url'=>Yii::app()->createAbsoluteUrl('klient/update/'.$klient->id),)));
+			Yii::app()->end();
+		}
+		
+		$klient = new Klient();
+		$klient->nazwa = $domain->client;
+		$klient->telefon = $domain->phone;
+		$klient->email = $domain->email;
+		$klient->status_id = 2;
+		$klient->users_id = Yii::app()->user->id;
+		$klient_id = $klient->save();
+		
+		if ($klient_id) {
+			$klientHasDomains = new KlientHasDomains();
+			$klientHasDomains->klient_id = $klient->id;
+			$klientHasDomains->domains_id = $domain->id;
+			$kd = $klientHasDomains->save();
+			if ($kd) {
+			
+				echo BsHtml::alert(BsHtml::ALERT_COLOR_INFO, "Utworzono klienta na podstawie domeny ". $domain->name."<P>". BsHtml::linkButton("Aktualizuj klienta $klient->nazwa",
+					  array('color' => BsHtml::BUTTON_COLOR_PRIMARY, 'url'=>Yii::app()->createAbsoluteUrl('klient/update/'.$klient->id),)));
+			} else {
+				//var_dump($klientHasDomains->errors);
+				echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, "Nie przypisałem klientowi $klient->nazwa domeny ". $domain->name);
+			}
+			
+		} else {
+			var_dump($klient->errors);
+			echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, "Nie utworzyłem klienta na podstawie domeny ". $domain->name);
+			Yii::app()->end();
+		}
+		
 	}
 }

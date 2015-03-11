@@ -5,6 +5,18 @@
  */
 $items = array (
 		array (
+				'label' => 'Panel telemarketera',
+				'icon' => BsHtml::GLYPHICON_COMMENT,
+				'url'=>array('site/PanelTelemarketera'),
+				'visible' => Yii::app ()->user->checkAccess ( array( 'telemarketer') ),
+		),
+		array (
+				'label' => 'Panel koordynatora',
+				'icon' => BsHtml::GLYPHICON_COMMENT,
+				 'url'=>array('site/panelKoordynatora'),
+				'visible' => Yii::app ()->user->checkAccess ( array( 'administrator','koordynator') ),
+		),
+		array (
 				'label' => 'Klienci',
 				'icon' => BsHtml::GLYPHICON_USER,
 				'items' => array (
@@ -48,7 +60,6 @@ $items = array (
 					
 				)
 				,
-				
 				
 		),
 		array (

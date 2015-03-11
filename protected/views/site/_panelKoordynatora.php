@@ -1,6 +1,3 @@
-<?php
-?>
-<h2>Panel koordynatora</h2>
 <div class="row">
 
 	<div class="panel panel-default">
@@ -12,9 +9,12 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 		'id' => 'users-grid',
 		'dataProvider' => $pracownicy->search (),
 		'filter' => $pracownicy,
+		'type'=>BsHtml::GRID_TYPE_HOVER,
 		'columns' => array (
 				'imie',
 				'nazwisko',
+				'email',
+				'functions.name',
 				'roles',
 				array (
 						'name' => 'id',
@@ -60,7 +60,7 @@ if (! empty ( $przydzielenie->users_id )) {
 			'id' => 'domenyPrzydzielone-grid',
 			'dataProvider' => $przydzielenie->search (),
 			'filter' => $przydzielenie,
-			
+			'type'=>BsHtml::GRID_TYPE_HOVER,
 			'columns' => array (
 					array (
 							'name' => 'kiedy',
@@ -228,7 +228,7 @@ $('#buttonSzujakDostepneDomeny').click(function(){
 			'id' => 'domenyDostepne-grid',
 			'dataProvider' => $domains_dostepne->searchPrzydzielanie (),
 			// 'filter'=>$domains_dostepne,
-			
+			'type'=>BsHtml::GRID_TYPE_HOVER,
 			'columns' => array (
 					array (
 							'class' => 'bootstrap.widgets.BsButtonColumn',
@@ -278,7 +278,7 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 		'id' => 'klienci-grid',
 		'dataProvider' => $klienci->search (),
 		'filter' => $klienci,
-		
+		'type'=>BsHtml::GRID_TYPE_HOVER,
 		'columns' => array (
 				array (
 						'name' => 'bez_telefonu',
@@ -322,46 +322,99 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 	</div>
 
 	<div class="col-sm-12">
+	 <div id="createklientbydomain"></div>
 		<div class="panel panel-default">
 			<div class="panel-heading">
   Domeny bez klienta (data wygaśniecia od: <?php echo date('Y-m-d',$expiry_data_od); ?>)
   
     </div>
+   
 			<div class="panel-body">
+		
   <?php
 		
 		$this->widget ( 'bootstrap.widgets.BsGridView', array (
 				'id' => 'domains-grid',
 				'dataProvider' => $domains->searchBezKlienow (),
 				'filter' => $domains,
-				
+				'type'=>BsHtml::GRID_TYPE_HOVER,
+				'afterAjaxUpdate' => 'reinstallDatePicker',
 				'columns' => array (
 						
 						'name',
 						'client',
-						'expiry_date',
+						array('name'=>'expiry_date','filter'=> $this->widget ( 'zii.widgets.jui.CJuiDatePicker', array (
+									'model' => $domains,
+									'attribute' => 'expiry_date',
+									'language' => 'pl',
+									'htmlOptions' => array (
+											'id'=>'expiry_date',
+											'size' => '10',
+											'class'=>'form-control'
+									),
+									'options' => array ( 
+											// 'showOn' => 'focus',
+											'dateFormat' => 'yy-mm-dd',
+											'showOtherMonths' => true,
+											'selectOtherMonths' => true,
+											'changeMonth' => true,
+											'changeYear' => true,
+											'showButtonPanel' => false 
+									) 
+							), true )),
+						array('name'=>'added_date', 'filter'=> $this->widget ( 'zii.widgets.jui.CJuiDatePicker', array (
+									'model' => $domains,
+									'attribute' => 'added_date',
+									'language' => 'pl',
+									'htmlOptions' => array (
+											'id'=>'added_date',
+											'size' => '10',
+											'class'=>'form-control'
+									),
+									'options' => array ( 
+											// 'showOn' => 'focus',
+											'dateFormat' => 'yy-mm-dd',
+											'showOtherMonths' => true,
+											'selectOtherMonths' => true,
+											'changeMonth' => true,
+											'changeYear' => true,
+											'showButtonPanel' => false 
+									) 
+							), true )
+						 ),
+						'phone',
 						array (
 								'class' => 'bootstrap.widgets.BsButtonColumn',
-								'template' => '{przydziel} {view}',
+								'template' => '{dodajklient} {view}',
 								'buttons' => array (
-										'przydziel' => array (
-												'url' => 'Yii::app()->controller->createUrl("/domains/przydziel/",array("id"=>$data->id))',
+										'dodajklient' => array (
+												'url' => 'Yii::app()->controller->createUrl("/klient/createByDomain/",array("id"=>$data->id))',
 												'label' => BsHtml::icon ( BsHtml::GLYPHICON_USER ),
 												'options' => array (
-														'title' => 'przydziel',
-														'data-title' => 'przydziel',
-														'data-original-title' => '' 
-												) 
+														'title' => 'Utwórz klienta',
+														'data-title' => 'Utwórz klienta',
+														'ajax' => array('method'=>'POST','url' => 'js:$(this).attr("href")', 
+																
+															'success' => 'js:function(data) {  $("#createklientbydomain").html(data); $.fn.yiiGridView.update("domains-grid"); }' )
+												),
+												'update' =>'$("#createklientbydomain")',
 										),
 										
 										'view' => array (
-												'url' => 'Yii::app()->controller->createUrl("/klient/$data->id")' 
+												'url' => 'Yii::app()->controller->createUrl("/domains/$data->id")' 
 										) 
 								) 
 						) 
 				) 
 		)
 		 );
+		
+		Yii::app()->clientScript->registerScript('re-install-date-picker', "
+function reinstallDatePicker(id, data) {
+    $('#added_date').datepicker(jQuery.extend({showMonthAfterYear:false},jQuery.datepicker.regional['pl'],{'dateFormat':'yy-mm-dd'}));
+	$('#expiry_date').datepicker(jQuery.extend({showMonthAfterYear:false},jQuery.datepicker.regional['pl'],{'dateFormat':'yy-mm-dd'}));
+}
+");
 		?>
 
    
@@ -369,29 +422,3 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
   </div>
 		</div>
 	</div>
-
-
-	<!-- Modal -->
-	<div id="modalPrzydziel" class="modal fade bs-example-modal-lg"
-		tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-		aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-body"></div>
-			</div>
-		</div>
-	</div>
-
-	<script type="text/javascript">
- 
-    // this will open the Modal with the given id
-    function openModal( id, header, body){
-        var closeButton = '<button data-dismiss="modal" class="close" type="button">×</button>';
- 
-        $("#" + id + " .modal-header").html( closeButton + '<h3>'+ header + '</h3>');
-        $("#" + id + " .modal-body").html(body);
-     // $("#" + id + " .modal-footer").html(footer data); // you can also change the footer
-        $("#" + id).modal("show");
-    }
- 
-</script>

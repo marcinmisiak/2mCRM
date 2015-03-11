@@ -57,7 +57,7 @@ class Klient extends CActiveRecord
 			array('adrrej_miasto', 'length', 'max'=>50),
 			array('adrrej_kraj', 'length', 'max'=>45),
 			array('nip, regon, krs', 'length', 'max'=>20),
-				array('telefon, users_id', 'length', 'max'=>11),
+				array('telefon, users_id', 'length', 'max'=>12),
 			array('www, email', 'length', 'max'=>250),
 			array('users_id', 'length', 'max'=>11),
 			array('notatka', 'safe'),
@@ -149,7 +149,7 @@ class Klient extends CActiveRecord
 		$criteria->compare('users_id',$this->users_id,true);
 		
 		if( $this->bez_telefonu == 1) {
-			$criteria->addCondition("telefon = ''");
+			$criteria->addCondition("telefon = '' or telefon is null");
 			//$criteria->addCondition("telefon is null");
 			//$criteria->addCondition('telefon IS NULL', 'OR');
 			

@@ -92,11 +92,19 @@ class Przydzielenie extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('kiedy',$this->kiedy,true);
 		$criteria->compare('wykonano',$this->wykonano);
-		$criteria->compare('domains_id',$this->domains_id,true);
-		$criteria->compare('users_id',$this->users_id,true);
+		$criteria->compare('domains_id',$this->domains_id);
+		$criteria->compare('users_id',$this->users_id);
 
 		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+			'criteria'=>$criteria, 
+				'sort'=>array(
+						'defaultOrder'=>array(
+								'kiedy'=>false
+						)
+				),
+				'pagination'=>array(
+						'pageSize'=>5,
+				),
 		));
 	}
 

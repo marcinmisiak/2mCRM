@@ -27,6 +27,7 @@ class SiteController extends Controller
 						'roles'=>array('administrator'),
 				),
 				array('allow','actions'=>array('PanelKoordynatora'), 'roles'=>array('koordynator')),
+				array('allow','actions'=>array('PanelTelemarketera'), 'roles'=>array('telemarketer')),
 				array('deny',  // deny all users
 						'users'=>array('*'),
 				),
@@ -165,15 +166,15 @@ class SiteController extends Controller
 		$date_od = strtotime("-1 day");
 		$domains->expiry_date_od = date('Y-m-d', $date_od);
 		
-		$date = strtotime("+100 years");
-		$domains->expiry_date_do = date('Y-m-d', $date);
-		
+		$date_do = strtotime("+12 mouth"); //+100 years nie dziala???
+		$domains->expiry_date_do = date('Y-m-d', $date_do);
+		//var_dump($domains);exit;
 		// $domains->klients = array('id'=>NULL);
 		if(isset($_GET['Domains']))
 			$domains->attributes=$_GET['Domains'];
 		
 		//	$domains = new Domains();
-		$domains->unsetAttributes();
+		//$domains->unsetAttributes();
 		//$domains->user_id = $id;
 		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domains-grid') {
 			$domains->attributes=$_GET['Domains'];
@@ -183,7 +184,7 @@ class SiteController extends Controller
 		$domains_dostepne->unsetAttributes();
 		$date_dostepne_od = strtotime("-1 day");
 		$domains_dostepne->expiry_date_od = date('Y-m-d', $date_dostepne_od);
-		$date_dostepne_do = strtotime("+10 years");
+		$date_dostepne_do = strtotime("+1 month");
 		$domains_dostepne->expiry_date_do = date('Y-m-d', $date_dostepne_do);
 		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domenyDostepne-grid' ) {
 			$domains_dostepne->attributes = $_GET['Domains'];
@@ -204,6 +205,31 @@ class SiteController extends Controller
 		}
 		
 		$this->render('_panelKoordynatora',array('przydzielenie'=>$przydzielenie, 'pracownicy'=>$pracownicy,  'klienci'=>$klienci,'domains'=>$domains,'expiry_data_od'=>$date_od, 'domains_dostepne'=>$domains_dostepne));
+		
+	}
+	
+	/**
+	 * 
+	 * @param string $id domains_id
+	 */
+	public function actionPanelTelemarketera($id=null){
+		$przydzielanie = new Przydzielenie();
+		$przydzielanie->users_id = Yii::app()->user->id;
+		$przydzielanie->wykonano=0;
+	
+		$domains = null;
+		$klient=null;
+	if (!empty($id)) {
+		$domains = Domains::model()->findByPk($id);
+	//	var_dump($domains);
+		$klientHasDomain = KlientHasDomains::model()->findByAttributes(array('domains_id'=>$id));
+	//	var_dump($klientHasDomain['domains_id']);
+		$klient = Klient::model()->with(array('domains'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
+	//	var_dump($klient);
+		
+	}
+			$this->render('_panelTeleparketera',array('domains'=>$domains,'przydzielanie'=>$przydzielanie, 'klient'=>$klient));
+		
 		
 	}
 }

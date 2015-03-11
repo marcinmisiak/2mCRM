@@ -217,7 +217,7 @@ class Domains extends CActiveRecord
 						)
 				),
 				'pagination'=>array(
-						'pageSize'=>5,
+						'pageSize'=>20,
 				),
 	
 		));

@@ -8858,3 +8858,865 @@ Stack trace:
 REQUEST_URI=/2mCRM/index.php/przydzielenie/admin
 HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora?user_id=466
 ---
+2015/03/11 07:57:42 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 07:57:42 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:01 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:01 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:16 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:16 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:26 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:26 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:37 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:37 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:49 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:03:49 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (173)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 08:46:04 [error] [exception.CException] exception 'CException' with message 'Kontroler DomainsController nie może znaleźć wymaganego widoku "_przydziel".' in C:\xampp\htdocs\yii\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_przydziel', Array, true)
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\DomainsController.php(191): CController->render('_przydziel', Array)
+#2 [internal function]: DomainsController->actionPrzydziel('3167')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(DomainsController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(DomainsController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('przydziel')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('domains/przydzi...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/2mCRM/index.php/domains/przydziel/3167
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora
+---
+2015/03/11 08:47:09 [error] [exception.CException] exception 'CException' with message 'Właściwość "BsGridView.layout" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWidgetFactory.php(161): CComponent->__set('layout', 'hover')
+#1 C:\xampp\htdocs\yii\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(SiteController), 'bootstrap.widge...', Array)
+#2 C:\xampp\htdocs\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#3 C:\xampp\htdocs\2mCRM\protected\views\site\_panelKoordynatora.php(365): CBaseController->widget('bootstrap.widge...', Array)
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_panelKoordynat...', Array, true)
+#8 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(206): CController->render('_panelKoordynat...', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelKoordynatora()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelKoordynato...')
+#19 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelKoord...')
+#20 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelKoordynatora
+HTTP_REFERER=http://localhost/2mCRM/
+---
+2015/03/11 08:58:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php:204
+Stack trace:
+#0 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(56): KlientController->loadModel('3167')
+#1 [internal function]: KlientController->actionView('3167')
+#2 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#3 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('view')
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/view')
+#14 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/2mCRM/index.php/klient/3167
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora?user_id=466
+---
+2015/03/11 09:12:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Nie jesteś upoważniony do wykonania tej akcji.' in C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(WebUser), 'Nie jeste?? upo...')
+#1 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('createByDomain')
+#8 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/createBy...')
+#9 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/2mCRM/index.php/klient/createByDomain/3167
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora?user_id=466
+---
+2015/03/11 09:21:16 [error] [php] Undefined variable: klientHasDomains (C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php:318)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): KlientController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): KlientController->filterAccessControl()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(265): KlientController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): KlientController->run()
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/klient/createByDomain/3167
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (318)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:21:34 [error] [exception.CException] exception 'CException' with message 'Klasa Klient i jej zachowania nie posiadają metody lub domknięcia "errors".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('errors', Array)
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(318): CActiveRecord->__call('errors', Array)
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(318): Klient->errors()
+#3 [internal function]: KlientController->actioncreateByDomain('3167')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('createByDomain')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/createBy...')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/2mCRM/index.php/klient/createByDomain/3167
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora?user_id=466
+---
+2015/03/11 09:22:12 [error] [exception.CException] exception 'CException' with message 'Klasa Klient i jej zachowania nie posiadają metody lub domknięcia "errors".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('errors', Array)
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(318): CActiveRecord->__call('errors', Array)
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(318): Klient->errors()
+#3 [internal function]: KlientController->actioncreateByDomain('3167')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('createByDomain')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/createBy...')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/2mCRM/index.php/klient/createByDomain/3167
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelKoordynatora?user_id=466
+---
+2015/03/11 09:26:39 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=14.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:26:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=14' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('14')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('14')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/14?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:26:43 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=11.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:26:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=11' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('11')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('11')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/11?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:27:01 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=7.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:27:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=7' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('7')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('7')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/7?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:27:04 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=5.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:27:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=5' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('5')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('5')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/5?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:27:07 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=8.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:27:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=8' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('8')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('8')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/8?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:27:10 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=9.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:27:10 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=9' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('9')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('9')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/9?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:27:13 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=10.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:27:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=10' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('10')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('10')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/10?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 09:27:17 [error] [system.db.CDbCommand] Wywołanie CDbCommand::execute() nie powiodło się: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). Wykonywana instrukcja SQL to: DELETE FROM `klient` WHERE `klient`.`id`=11.
+in C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php (157)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 09:27:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand nie zdołał wykonać instrukcji SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mjkr`.`klient_has_domains`, CONSTRAINT `fk_klient_has_domains_klient1` FOREIGN KEY (`klient_id`) REFERENCES `klient` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: DELETE FROM `klient` WHERE `klient`.`id`=11' in C:\xampp\htdocs\yii\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1807): CDbCommand->execute()
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1227): CActiveRecord->deleteByPk('11')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\KlientController.php(157): CActiveRecord->delete()
+#3 [internal function]: KlientController->actionDelete('11')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(KlientController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(KlientController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('klient/delete')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/klient/delete/11?ajax=klient-grid
+HTTP_REFERER=http://localhost/2mCRM/index.php/klient/admin
+---
+2015/03/11 11:37:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'System nie może odnaleźć żądanej akcji "panelTelemarketera".' in C:\xampp\htdocs\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(270): CController->missingAction('panelTelemarket...')
+#1 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#3 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera
+HTTP_REFERER=http://localhost/2mCRM/
+---
+2015/03/11 11:45:04 [error] [exception.CException] exception 'CException' with message 'Klasa Przydzielenie i jej zachowania nie posiadają metody lub domknięcia "getData".' in C:\xampp\htdocs\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(227): CComponent->__call('getData', Array)
+#1 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(125): CActiveRecord->__call('getData', Array)
+#2 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(125): Przydzielenie->getData()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(339): CBaseListView->init()
+#4 C:\xampp\htdocs\2mCRM\protected\extensions\bootstrap\widgets\BsGridView.php(49): CGridView->init()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(147): BsGridView->init()
+#6 C:\xampp\htdocs\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('bootstrap.widge...', Array)
+#7 C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php(30): CBaseController->widget('bootstrap.widge...', Array)
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_panelTeleparke...', Array, true)
+#12 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(221): CController->render('_panelTeleparke...', Array)
+#13 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelTelemarketera()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#15 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#23 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#24 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#25 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#26 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelTelemarketera
+---
+2015/03/11 11:46:51 [error] [exception.CException] exception 'CException' with message 'Właściwość "Przydzielenie.nazwa" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nazwa')
+#1 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2728): CActiveRecord->__get('nazwa')
+#2 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(2451): CHtml::resolveValue(Object(Przydzielenie), 'nazwa')
+#3 C:\xampp\htdocs\yii\framework\web\helpers\CHtml.php(1533): CHtml::activeInputField('text', Object(Przydzielenie), 'nazwa', Array)
+#4 C:\xampp\htdocs\2mCRM\protected\extensions\bootstrap\widgets\BsDataColumn.php(108): CHtml::activeTextField(Object(Przydzielenie), 'nazwa', Array)
+#5 C:\xampp\htdocs\2mCRM\protected\extensions\bootstrap\widgets\BsDataColumn.php(68): BsDataColumn->renderFilterCellContent()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(538): BsDataColumn->renderFilterCell()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(516): CGridView->renderFilter()
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(486): CGridView->renderTableHeader()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#10 [internal function]: CBaseListView->renderSection(Array)
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\w+)}/', Array, '{items}?{pager}...')
+#12 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(181): CBaseListView->run()
+#14 C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php(30): CBaseController->widget('bootstrap.widge...', Array)
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#16 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#17 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#18 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_panelTeleparke...', Array, true)
+#19 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(221): CController->render('_panelTeleparke...', Array)
+#20 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelTelemarketera()
+#21 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#22 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#23 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#24 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#26 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#27 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#28 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#29 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#30 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#31 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#32 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#33 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/panelTelemarketera
+---
+2015/03/11 11:51:51 [error] [exception.CException] exception 'CException' with message 'Właściwość "Przydzielenie.klient" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('klient')
+#1 C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code(1): CActiveRecord->__get('klient')
+#2 C:\xampp\htdocs\yii\framework\base\CComponent.php(612): eval()
+#3 C:\xampp\htdocs\2mCRM\protected\extensions\bootstrap\widgets\BsButtonColumn.php(67): CComponent->evaluateExpression('Yii::app()->con...', Array)
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CButtonColumn.php(321): BsButtonColumn->renderButton('wybierz', Array, 0, Object(Przydzielenie))
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(231): CButtonColumn->getDataCellContent(0)
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(154): CGridColumn->renderDataCellContent(0, Object(Przydzielenie))
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(638): CGridColumn->renderDataCell(0)
+#8 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(622): CGridView->renderDataCell(Object(BsButtonColumn), 0)
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(578): CGridView->renderTableRow(0)
+#10 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(488): CGridView->renderTableBody()
+#11 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(181): CGridView->renderItems()
+#12 [internal function]: CBaseListView->renderSection(Array)
+#13 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback('/{(\w+)}/', Array, '{items}?{pager}...')
+#14 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(149): CBaseListView->renderContent()
+#15 C:\xampp\htdocs\yii\framework\web\CBaseController.php(181): CBaseListView->run()
+#16 C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php(43): CBaseController->widget('bootstrap.widge...', Array)
+#17 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#18 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#20 C:\xampp\htdocs\yii\framework\web\CController.php(782): CController->renderPartial('_panelTeleparke...', Array, true)
+#21 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(221): CController->render('_panelTeleparke...', Array)
+#22 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelTelemarketera()
+#23 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#24 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#25 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#27 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#28 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#29 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#30 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#31 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('PanelTelemarket...')
+#32 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/PanelTelem...')
+#33 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#34 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#35 {main}
+REQUEST_URI=/2mCRM/index.php/site/PanelTelemarketera
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 11:53:21 [error] [php] Object of class Domains could not be converted to string (C:\xampp\htdocs\yii\framework\base\CComponent.php(612) : eval()'d code:1)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CButtonColumn.php(321): BsButtonColumn->renderButton()
+#1 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(231): BsButtonColumn->getDataCellContent()
+#2 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridColumn.php(154): BsButtonColumn->renderDataCellContent()
+#3 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(638): BsButtonColumn->renderDataCell()
+#4 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(622): BsGridView->renderDataCell()
+#5 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(578): BsGridView->renderTableRow()
+#6 C:\xampp\htdocs\yii\framework\zii\widgets\grid\CGridView.php(488): BsGridView->renderTableBody()
+#7 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(181): BsGridView->renderItems()
+#8 unknown(0): BsGridView->renderSection()
+#9 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(164): preg_replace_callback()
+#10 C:\xampp\htdocs\yii\framework\zii\widgets\CBaseListView.php(149): BsGridView->renderContent()
+#11 C:\xampp\htdocs\yii\framework\web\CBaseController.php(181): BsGridView->run()
+#12 C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php(43): SiteController->widget()
+#13 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#14 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#17 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(221): SiteController->render()
+#18 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelTelemarketera()
+#19 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#20 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#21 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#22 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#23 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#24 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#25 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#26 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#27 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#28 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#29 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#30 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/site/PanelTelemarketera
+in C:\xampp\htdocs\2mCRM\protected\extensions\bootstrap\widgets\BsButtonColumn.php (67)
+in C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php (43)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (221)
+2015/03/11 11:55:49 [error] [exception.CException] exception 'CException' with message 'Właściwość "CActiveDataProvider.domains" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(215): CComponent->__get('domains')
+#1 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionPanelTelemarketera()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('PanelTelemarket...')
+#11 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/PanelTelem...')
+#12 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/2mCRM/index.php/site/PanelTelemarketera
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:04:37 [error] [exception.CDbException] exception 'CDbException' with message 'Tabela "klient" nie posiada kolumny o nazwie "KlientHasDomains.domains_id".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(222): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: SiteController->actionPanelTelemarketera('24100')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:05:31 [error] [exception.CDbException] exception 'CDbException' with message 'Tabela "klient" nie posiada kolumny o nazwie "domains.domains_id".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(222): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: SiteController->actionPanelTelemarketera('24100')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:06:18 [error] [exception.CDbException] exception 'CDbException' with message 'Tabela "klient" nie posiada kolumny o nazwie "KlientHasDomains.domains_id".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(222): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: SiteController->actionPanelTelemarketera('24100')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:07:07 [error] [exception.CDbException] exception 'CDbException' with message 'Tabela "klient" nie posiada kolumny o nazwie "khd.domains_id".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(222): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: SiteController->actionPanelTelemarketera('24100')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:28:00 [error] [exception.CDbException] exception 'CDbException' with message 'Tabela "klient" nie posiada kolumny o nazwie "Domains.domains_id".' in C:\xampp\htdocs\yii\framework\db\schema\CDbCommandBuilder.php:697
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1523): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(222): CActiveRecord->findByAttributes(Array)
+#2 [internal function]: SiteController->actionPanelTelemarketera('24100')
+#3 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:29:44 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php:223)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#6 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (223)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:29:59 [error] [exception.CDbException] exception 'CDbException' with message 'Relacja "Domains" nie jest zdefiniowana w klasie rekordu aktywnego "Klient".' in C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php:226
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(299): CActiveFinder->buildJoinTree(Object(CJoinElement), 'Domains')
+#1 C:\xampp\htdocs\yii\framework\db\ar\CActiveFinder.php(48): CActiveFinder->buildJoinTree(Object(CJoinElement), Array)
+#2 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(912): CActiveFinder->__construct(Object(Klient), Array)
+#3 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1360): CActiveRecord->getActiveFinder(Array)
+#4 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(1524): CActiveRecord->query(Object(CDbCriteria))
+#5 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(223): CActiveRecord->findByAttributes(Array)
+#6 [internal function]: SiteController->actionPanelTelemarketera('24100')
+#7 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#18 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#19 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:36:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (174)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:36:32 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (174)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:36:53 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (174)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:36:53 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (174)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:37:17 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_od" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (174)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:37:17 [warning] [application] Ustawianie niebezpiecznego (ang. unsafe) atrybutu "expiry_date_do" klasy "Domains" nie powiodło się
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (174)
+in C:\xampp\htdocs\2mCRM\index.php (13)
+2015/03/11 12:37:59 [error] [exception.CException] exception 'CException' with message 'Właściwość "KlientHasDomains.users_id" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('users_id')
+#1 C:\xampp\htdocs\yii\framework\base\CModel.php(596): CActiveRecord->__get('users_id')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(226): CModel->offsetGet('users_id')
+#3 [internal function]: SiteController->actionPanelTelemarketera('32186')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/32186
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:38:00 [error] [exception.CException] exception 'CException' with message 'Właściwość "KlientHasDomains.users_id" nie jest zdefiniowana.' in C:\xampp\htdocs\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('users_id')
+#1 C:\xampp\htdocs\yii\framework\base\CModel.php(596): CActiveRecord->__get('users_id')
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(226): CModel->offsetGet('users_id')
+#3 [internal function]: SiteController->actionPanelTelemarketera('32186')
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): CController->run('panelTelemarket...')
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/panelTelem...')
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\2mCRM\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/32186
+HTTP_REFERER=http://localhost/2mCRM/index.php/site/PanelTelemarketera
+---
+2015/03/11 12:52:00 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php:14)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php(230): SiteController->render()
+#3 unknown(0): SiteController->actionPanelTelemarketera()
+#4 C:\xampp\htdocs\yii\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(133): SiteController->runAction()
+#8 C:\xampp\htdocs\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii\framework\web\filters\CInlineFilter.php(58): SiteController->filterAccessControl()
+#11 C:\xampp\htdocs\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii\framework\base\CApplication.php(184): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\2mCRM\index.php(13): CWebApplication->run()
+REQUEST_URI=/2mCRM/index.php/site/panelTelemarketera/24100
+in C:\xampp\htdocs\2mCRM\protected\views\site\_panelTeleparketera.php (14)
+in C:\xampp\htdocs\2mCRM\protected\controllers\SiteController.php (230)
+in C:\xampp\htdocs\2mCRM\index.php (13)
