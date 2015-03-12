@@ -212,7 +212,7 @@ class SiteController extends Controller
 	 * 
 	 * @param string $id domains_id
 	 */
-	public function actionPanelTelemarketera($id=null){
+	public function actionPanelTelemarketera($id=null, $przydzielanie_id =null){
 		$przydzielanie = new Przydzielenie();
 		$przydzielanie->users_id = Yii::app()->user->id;
 		$przydzielanie->wykonano=0;
@@ -224,10 +224,75 @@ class SiteController extends Controller
 	//	var_dump($domains);
 		$klientHasDomain = KlientHasDomains::model()->findByAttributes(array('domains_id'=>$id));
 	//	var_dump($klientHasDomain['domains_id']);
-		$klient = Klient::model()->with(array('domains'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
+		$klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
 	//	var_dump($klient);
+	
+		//kliknal dalej
+		if(isset($_POST['Klient']) && !empty($klient)) {
+			
+			
+			$klient->attributes = $_POST['Klient'];
+			if ($klient->status->zamkniety==0) {
+				$klient->scenario = 'niezamnkienty';
+			}
+			 $klient->validate();
+			if (!empty($klient->errors)) {
+				$this->render('_panelTeleparketera',array('domains'=>$domains,'przydzielanie'=>$przydzielanie, 'klient'=>$klient));
+				Yii::app()->end();
+			}
+		//	$klient->uslugisZaint =  $_POST['Klient']['uslugisZaint'];
+			$klient->save();
+			
+			
+			if (empty($klient->uslugisZaint)) {
+				$uz =  KlientZainteresowanyUslugi::model()->findAll("klient_id=:klient_id",array(':klient_id'=>$klient->id));
+				foreach ($uz as $uzs){
+					$uzs->delete();
+				}
+			} 
+			foreach ($klient->uslugisZaint as $usluga_id) {
+				$uz =  KlientZainteresowanyUslugi::model()->find("klient_id=:klient_id and uslugi_id=:uslugi_id",array(':klient_id'=>$klient->id, ':uslugi_id'=>$usluga_id ));
+				if (!empty($uz)) {
+						$uz->delete();
+				}
+				$uz = new KlientZainteresowanyUslugi();
+				$uz->klient_id = $klient->id;
+				$uz->uslugi_id = $usluga_id;
+				//var_dump($uz);
+				$uz->save();
+			}
+			
+// 			Klient[notatka]	qwe
+// 			Klient[rozmowa_konczaca]	0
+// 			Klient[rozmowa_konczaca]	1
+// 			Klient[status_id]	1
+// 			Klient[uslugis]
+// 			Klient[uslugis][]	1
+// 			Przydzielenie[kiedy]	2015-03-27 10:24
+			
+			
+			
+			$klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
+			$przydzielenie = Przydzielenie::model()->findByPk($przydzielanie_id);
+			if ($klient->status->zamkniety == 1) {
+				// $przydzielenie->kiedy = $_POST['Przydzielenie']['kiedy'];
+				$przydzielenie->wykonano=1;
+				$zapis_przydzielanie =	$przydzielenie->save();
+				
+			} else {
+				$przydzielenie->scenario = "niezamnkienty";
+				$przydzielenie->kiedy = $klient->przydzielanie_kiedy;
+				$przydzielenie->wykonano=0;
+			$zapis_przydzielanie =	$przydzielenie->save();
+			}
+			if($zapis_przydzielanie) {
+			//	$this->redirect($url);
+			}
+		}
 		
 	}
+	
+	
 			$this->render('_panelTeleparketera',array('domains'=>$domains,'przydzielanie'=>$przydzielanie, 'klient'=>$klient));
 		
 		

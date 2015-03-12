@@ -34,6 +34,7 @@ class Klient extends CActiveRecord
 	const DNS_MX = 'MX'; // This will check for MX Records
 	const DNS_NS = 'NS'; // This will check for the NS Records
 	public $bez_telefonu;
+	public $przydzielanie_kiedy; //do from telemnarketera
 	/**
 	 * @return string the associated database table name
 	 */
@@ -60,9 +61,10 @@ class Klient extends CActiveRecord
 				array('telefon, users_id', 'length', 'max'=>12),
 			array('www, email', 'length', 'max'=>250),
 			array('users_id', 'length', 'max'=>11),
-			array('notatka', 'safe'),
+			array('notatka, uslugisZaint', 'safe'),
 				array('email','email'),
 				array('www','ext.validators.DomainValidator', 'type'=>self::DNS_A),
+				array('przydzielanie_kiedy', 'required','on'=>'niezamnkienty'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('bez_telefonu, id, nazwa, adrrej_adres, adrrej_kod, adrrej_miasto, adrrej_kraj, nip, regon, krs, www, email, notatka, rozmowa_konczaca, status_id, users_id', 'safe', 'on'=>'search'),
@@ -84,6 +86,7 @@ class Klient extends CActiveRecord
 			// 'osobas' => array(self::HAS_MANY, 'Osoba', 'klient_id'),
 			 'uslugis' => array(self::MANY_MANY, 'Uslugi', 'klient_has_uslugi(klient_id, uslugi_id)'),
 			'KlientHasDomains' => array(self::HAS_MANY, 'KlientHasDomains', 'klient_id'),
+			'uslugisZaint' => array(self::MANY_MANY, 'Uslugi', 'klient_zainteresowany_uslugi(klient_id, uslugi_id)'),
 		);
 	}
 
@@ -108,8 +111,10 @@ class Klient extends CActiveRecord
 			'rozmowa_konczaca' => 'Rozmowa kończaca',
 			'status_id' => 'Status',
 			'users_id' => 'Opiekun klienta',
+				
 				'telefon' => 'Telefon',
-				'bez_telefonu'=>'Klient bez telefonu'
+				'bez_telefonu'=>'Klient bez telefonu',
+				'uslugisZaint'=>'Zainteresowany - inne usługi',
 		);
 	}
 
