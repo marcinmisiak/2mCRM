@@ -11,6 +11,7 @@ $this->widget('bootstrap.widgets.BsGridView',array(
 		'columns'=>array(
 				'name',
 				'client',
+				'expiry_date',
 				array(
 						'class'=>'bootstrap.widgets.BsButtonColumn',
 						'template'=>'{usun}',

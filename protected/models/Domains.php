@@ -23,6 +23,8 @@ class Domains extends CActiveRecord
 {
 	public $expiry_date_od; //data wygasniecie od 
 	public $expiry_date_do;
+	
+	public $przydzielone; //01 czy przyczielone juz byly
 	/**
 	 * @return string the associated database table name
 	 */
@@ -44,7 +46,7 @@ class Domains extends CActiveRecord
 			array('name, registrar, client, phone, email', 'length', 'max'=>45),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, name, expiry_date, registrar, added_date, client, phone, email, expiry_date_do, expiry_date_od', 'safe', 'on'=>'search'),
+			array('id, user_id, name, expiry_date, registrar, added_date, client, phone, email, expiry_date_do, expiry_date_od, przydzielone', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,7 +60,7 @@ class Domains extends CActiveRecord
 		return array(
 			'user' => array(self::BELONGS_TO, 'Users', 'user_id'),
 			'klients' => array(self::MANY_MANY, 'Klient', 'klient_has_domains(domains_id, klient_id)'),
-			'not_in_hasDomains'=>array(self::HAS_MANY,'KlientHasDomains', 'domains_id', 'condition'=>'not_in_hasDomains.domains_id is null' ),
+			'not_in_hasDomains'=>array(self::HAS_MANY,'KlientHasDomains', 'domains_id'),
 			'przydzielenies' => array(self::HAS_MANY, 'Przydzielenie', 'domains_id'),
 		);
 	}
@@ -71,13 +73,16 @@ class Domains extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'user_id' => 'User',
-			'name' => 'Name',
-			'expiry_date' => 'Expiry Date',
+			'name' => 'Nazwa',
+			'expiry_date' => 'Data końca',
 			'registrar' => 'Registrar',
 			'added_date' => 'Added Date',
 			'client' => 'Client',
 			'phone' => 'Phone',
 			'email' => 'Email',
+				'expiry_date_od' =>'Data końca od',
+				'expiry_date_do'=>'Data końca do',
+			'przydzielone' => 'Przydzielone',
 		);
 	}
 
@@ -233,8 +238,14 @@ class Domains extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 	
 		$criteria=new CDbCriteria;
+		
+		//$this->relations(array('not_in_hasDomains'=>array(self::HAS_MANY,'KlientHasDomains', 'domains_id', 'condition'=>'not_in_hasDomains.domains_id is not null')));
 		 $criteria->together = true;
-		$criteria->with=array('przydzielenies');
+		$criteria->with=array('przydzielenies', 'not_in_hasDomains'=>array(	self::HAS_MANY,'KlientHasDomains', 'domains_id', 
+				'joinType' => 'INNER JOIN',
+				//'on' => "(not_in_hasDomains.domains_id is not null)",
+				'condition'=>'')
+		 );
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('user_id',$this->user_id,true);
 		$criteria->compare('name',$this->name);
@@ -246,8 +257,11 @@ class Domains extends CActiveRecord
 		$criteria->compare('email',$this->email,true);
 		$criteria->addBetweenCondition('expiry_date', $this->expiry_date_od, $this->expiry_date_do);
 	
+		if($this->przydzielone) {
 		$criteria->addCondition('przydzielenies.domains_id is null');
-	
+		}
+		
+		//$criteria->addCondition('klients  is null');
 		return new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
 				'sort'=>array(

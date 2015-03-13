@@ -183,7 +183,7 @@ class PrzydzielenieController extends Controller
 	public function actionPrzydziel($id,$users_id) {
 	
 		$model = new Przydzielenie();
-		$model->kiedy = date('Y-m-d H:i:s',time());
+		$model->kiedy = date('Y-m-d H:i:s',strtotime("+1 day"));
 		$model->wykonano=0;
 		$model->users_id=$users_id;
 		$model->domains_id =$id;

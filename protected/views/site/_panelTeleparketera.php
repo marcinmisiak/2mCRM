@@ -44,7 +44,9 @@
 							'enableAjaxValidation' => false,
 							'layout' => BsHtml::FORM_LAYOUT_HORIZONTAL 
 					) );
+					
 					?>
+					<?php echo $form->errorSummary($klient); ?>
    	 		   <div class="form-group">
   		   <div class="col-lg-2">
   		  <?php 

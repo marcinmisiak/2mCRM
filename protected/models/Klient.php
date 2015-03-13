@@ -64,7 +64,9 @@ class Klient extends CActiveRecord
 			array('notatka, uslugisZaint', 'safe'),
 				array('email','email'),
 				array('www','ext.validators.DomainValidator', 'type'=>self::DNS_A),
+				array('przydzielanie_kiedy', 'type', 'type'=>'datetime', 'datetimeFormat'=>'yyyy-MM-dd hh:mm'),
 				array('przydzielanie_kiedy', 'required','on'=>'niezamnkienty'),
+			
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('bez_telefonu, id, nazwa, adrrej_adres, adrrej_kod, adrrej_miasto, adrrej_kraj, nip, regon, krs, www, email, notatka, rozmowa_konczaca, status_id, users_id', 'safe', 'on'=>'search'),
@@ -217,4 +219,8 @@ class Klient extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	//public function setprzydzielanie_kiedy() {
+	//	$this->przydzielanie_kiedy = 
+	//}
 }

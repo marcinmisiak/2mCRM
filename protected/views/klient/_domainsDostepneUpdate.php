@@ -26,6 +26,7 @@ $this->widget('bootstrap.widgets.BsGridView',array(
 				),
 				'name',
 				'client',
+				'expiry_date',
 		),
 		 
 		 

@@ -100,7 +100,8 @@ class Przydzielenie extends CActiveRecord
 			'criteria'=>$criteria, 
 				'sort'=>array(
 						'defaultOrder'=>array(
-								'domains.expiry_date'=>false
+								'kiedy'=>false,
+								//'domains.expiry_date'=>false
 						)
 				),
 				'pagination'=>array(

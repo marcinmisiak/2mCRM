@@ -132,7 +132,7 @@ if (! empty ( $przydzielenie->users_id )) {
 					<div class="col-lg-6">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h4>Domeny nieprzydzielone pracownikom</h4>
+								<h4>Domeny nieprzydzielone pracownikom</h4><h5>Przypisane do klientów</h5>
 							</div>
 							<div class="panel-body">
 
@@ -168,7 +168,7 @@ $('#buttonSzujakDostepneDomeny').click(function(){
 			'htmlOptions' => array (
 					// 'id' => 'datepicker_for_expiry_date_do',
 					'size' => '10',
-					'class' => 'form-label' 
+					'class' => 'form-control' 
 			),
 			'options' => array (
 					
@@ -192,7 +192,7 @@ $('#buttonSzujakDostepneDomeny').click(function(){
 			'htmlOptions' => array (
 					// 'id' => 'datepicker_for_eexpiry_date_do',
 					'size' => '10',
-					'class' => 'form-label' 
+					'class' => 'form-control' 
 			),
 			'options' => array (
 					
@@ -210,6 +210,7 @@ $('#buttonSzujakDostepneDomeny').click(function(){
 	
 	echo $form->textFieldControlGroup ( $domains_dostepne, 'name' );
 	echo $form->textFieldControlGroup ( $domains_dostepne, 'client' );
+	echo $form->dropdownListControlGroup ( $domains_dostepne, 'przydzielone', array("Wszytkie", "Nie przydzielone") );
 	
 	?>
 <input type="hidden" value="domenyDostepne-grid" name="ajax">
@@ -242,8 +243,9 @@ $('#buttonSzujakDostepneDomeny').click(function(){
 													'ajax' => array (
 															'type' => 'POST',
 															'url' => 'js:$(this).attr("href")',
-															
-															'success' => 'js:function(data) { $.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid")}' 
+															//'url'=>'Yii::app()->controller->createUrl("/przydzielenie/przydziel/", array("id"=>"$data->id", "users_id"=>"' . $przydzielenie->users_id . '"))',
+															// 'success' => 'js:function(data) { $.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid"); }',
+															'complete'=>'js: function() {$.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid"); }',
 													) 
 											) 
 									) 

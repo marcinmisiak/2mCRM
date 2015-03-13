@@ -164,6 +164,7 @@ class SiteController extends Controller
 		$domains->unsetAttributes();
 		
 		$date_od = strtotime("-1 day");
+		
 		$domains->expiry_date_od = date('Y-m-d', $date_od);
 		
 		$date_do = strtotime("+12 mouth"); //+100 years nie dziala???
@@ -182,10 +183,14 @@ class SiteController extends Controller
 		
 		$domains_dostepne = new Domains('search');
 		$domains_dostepne->unsetAttributes();
-		$date_dostepne_od = strtotime("-1 day");
+		//$date_dostepne_od = strtotime("-1 day");
+		$date_dostepne_od = time();
 		$domains_dostepne->expiry_date_od = date('Y-m-d', $date_dostepne_od);
 		$date_dostepne_do = strtotime("+1 month");
 		$domains_dostepne->expiry_date_do = date('Y-m-d', $date_dostepne_do);
+		
+		$domains_dostepne->przydzielone = 1;
+		
 		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domenyDostepne-grid' ) {
 			$domains_dostepne->attributes = $_GET['Domains'];
 		}
@@ -219,37 +224,49 @@ class SiteController extends Controller
 	
 		$domains = null;
 		$klient=null;
-	if (!empty($id)) {
+	if (!empty($id) && !empty($przydzielanie_id)) {
 		$domains = Domains::model()->findByPk($id);
 	//	var_dump($domains);
 		$klientHasDomain = KlientHasDomains::model()->findByAttributes(array('domains_id'=>$id));
+		if(empty($klientHasDomain)) {
+			//nie ma klienta!!
+		}
 	//	var_dump($klientHasDomain['domains_id']);
 		$klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
-	//	var_dump($klient);
+		$przydzielenie = Przydzielenie::model()->findByPk($przydzielanie_id);
+		
+		$klient->przydzielanie_kiedy = date("Y-m-d h:i", strtotime($przydzielenie->kiedy));
 	
 		//kliknal dalej
 		if(isset($_POST['Klient']) && !empty($klient)) {
 			
-			
+// 			var_dump($_POST['Klient']);
+// 			var_dump($klient);
+// 			exit;
+
+			//TODO: obciąc sekundy w kiedy
+			$_POST['Klient']['przydzielanie_kiedy'] =date("Y-m-d h:i", strtotime($_POST['Klient']['przydzielanie_kiedy']));
+			 
 			$klient->attributes = $_POST['Klient'];
+			//$klient->przydzielanie_kiedy = $_POST['Klient']['przydzielanie_kiedy'];
+		//	var_dump($klient);exit;
 			if ($klient->status->zamkniety==0) {
 				$klient->scenario = 'niezamnkienty';
 			}
 			 $klient->validate();
-			if (!empty($klient->errors)) {
-				$this->render('_panelTeleparketera',array('domains'=>$domains,'przydzielanie'=>$przydzielanie, 'klient'=>$klient));
-				Yii::app()->end();
-			}
-		//	$klient->uslugisZaint =  $_POST['Klient']['uslugisZaint'];
-			$klient->save();
-			
+			// var_dump($klient);
+		$klientSave=$klient->save();
+
+		if($klientSave) {
 			
 			if (empty($klient->uslugisZaint)) {
 				$uz =  KlientZainteresowanyUslugi::model()->findAll("klient_id=:klient_id",array(':klient_id'=>$klient->id));
 				foreach ($uz as $uzs){
 					$uzs->delete();
 				}
-			} 
+			}  
+			
+			
 			foreach ($klient->uslugisZaint as $usluga_id) {
 				$uz =  KlientZainteresowanyUslugi::model()->find("klient_id=:klient_id and uslugi_id=:uslugi_id",array(':klient_id'=>$klient->id, ':uslugi_id'=>$usluga_id ));
 				if (!empty($uz)) {
@@ -262,37 +279,34 @@ class SiteController extends Controller
 				$uz->save();
 			}
 			
-// 			Klient[notatka]	qwe
-// 			Klient[rozmowa_konczaca]	0
-// 			Klient[rozmowa_konczaca]	1
-// 			Klient[status_id]	1
-// 			Klient[uslugis]
-// 			Klient[uslugis][]	1
-// 			Przydzielenie[kiedy]	2015-03-27 10:24
+
 			
 			
 			
-			$klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
-			$przydzielenie = Przydzielenie::model()->findByPk($przydzielanie_id);
+			// $klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
+			//$przydzielenie = Przydzielenie::model()->findByPk($przydzielanie_id);
 			if ($klient->status->zamkniety == 1) {
-				// $przydzielenie->kiedy = $_POST['Przydzielenie']['kiedy'];
+			
+				 $przydzielenie->kiedy = $klient->przydzielanie_kiedy;
 				$przydzielenie->wykonano=1;
-				$zapis_przydzielanie =	$przydzielenie->save();
+				$przydzielenie->save();
 				
 			} else {
-				$przydzielenie->scenario = "niezamnkienty";
+				
 				$przydzielenie->kiedy = $klient->przydzielanie_kiedy;
 				$przydzielenie->wykonano=0;
-			$zapis_przydzielanie =	$przydzielenie->save();
+				$przydzielenie->save();
 			}
-			if($zapis_przydzielanie) {
-			//	$this->redirect($url);
-			}
+		}
+			if($klientSave)  
+				$this->redirect(Yii::app()->createAbsoluteUrl('site/panelTelemarketera'));
+			
+			
 		}
 		
 	}
 	
-	
+	//$klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
 			$this->render('_panelTeleparketera',array('domains'=>$domains,'przydzielanie'=>$przydzielanie, 'klient'=>$klient));
 		
 		
