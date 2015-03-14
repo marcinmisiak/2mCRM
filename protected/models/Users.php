@@ -182,9 +182,10 @@ class Users extends CActiveRecord
 // 				)
 // 				);
 	
-	return 	 BsHtml::link(BsHtml::icon(BsHtml::GLYPHICON_ADJUST), Yii::app()->controller->createUrl('site/panelKoordynatora/', array('user_id'=>$this->id)));
-		 
-		 
+	 $buttons = BsHtml::link(BsHtml::icon(BsHtml::GLYPHICON_PHONE), Yii::app()->controller->createUrl('site/panelKoordynatora/', array('user_id'=>$this->id)), 
+	array('title'=>'Przydzialanie'));
+		 $buttons .="";
+	 	 return $buttons;
 	
 	}
 }

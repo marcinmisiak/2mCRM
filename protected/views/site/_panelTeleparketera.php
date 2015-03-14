@@ -12,7 +12,7 @@
    		<div class="row">
 					<div class="col-xs-6 pull-left">
 						Numer kontaktowy: <br> <?php echo $klient->telefon; ?></div>
-					<div class="col-xs-6"pull-right">Data: <?php echo date("Y-m-d H:i"); ?></div>
+					<div class="col-xs-6 pull-right">Data: <?php echo date("Y-m-d H:i"); ?><br>Data otwarcia przydzielenia: <?php echo Yii::app()->session['uzycie']->od; ?></div>
 				</div>
 				
 				<div class="row">

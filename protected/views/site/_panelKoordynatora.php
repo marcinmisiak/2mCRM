@@ -13,16 +13,33 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 		'columns' => array (
 				'imie',
 				'nazwisko',
+				'telefon',
 				'email',
 				'functions.name',
 				'roles',
-				array (
-						'name' => 'id',
-						'value' => '$data->getButtonK()',
-						'type' => 'raw',
-						'filter' => '',
-						'header' => '' 
-				) 
+					array (
+								'class' => 'bootstrap.widgets.BsButtonColumn',
+								'template' => '{uzycie} {przydzielanie} {update}',
+								'buttons' => array (
+										'update' =>array(
+												'url'=> 'Yii::app()->controller->createUrl("users/update", array("id"=>"$data->id"))',
+										),
+										'uzycie' => array(
+												'label' => BsHtml::icon ( BsHtml::GLYPHICON_LIST_ALT ),
+												'url'=> 'Yii::app()->controller->createUrl("uzycie/byUser", array("id"=>"$data->id"))',
+												'options' => array (
+														'title' => 'Raport wykonania'
+												)
+										),
+										'przydzielanie' => array(
+												'label' => BsHtml::icon ( BsHtml::GLYPHICON_PHONE ),
+												'url'=> 'Yii::app()->controller->createUrl("site/panelKoordynatora/", array("user_id"=>"$data->id"))',
+												'options' => array (
+														'title' => 'Przydziel'
+												)
+										)
+								) 
+						)
 		)
 		 
 )
@@ -53,7 +70,7 @@ if (! empty ( $przydzielenie->users_id )) {
 								<h5><?php echo $pracownik->imie . " ".$pracownik->nazwisko ." ". $pracownik->email; ?></h5>
 							</div>
 							<div class="panel-body">
-
+<div id="przydzielenie_info"></div>
 <?php
 	
 	$this->widget ( 'bootstrap.widgets.BsGridView', array (
@@ -100,6 +117,7 @@ if (! empty ( $przydzielenie->users_id )) {
 									'delete' => array (
 											'url' => 'Yii::app()->controller->createUrl("/przydzielenie/delete/",array("id"=>$data->id))',
 											'options' => array (
+													
 													'ajax' => array (
 															'type' => 'POST',
 															'url' => 'js:$(this).attr("href")',
@@ -237,17 +255,33 @@ $('#buttonSzujakDostepneDomeny').click(function(){
 							'buttons' => array (
 									'add' => array (
 											'label' => BsHtml::icon ( BsHtml::GLYPHICON_ARROW_LEFT ),
+											 
+											'click' => "function() {
+											 $.fn.yiiGridView.update('domenyDostepne-grid', {
+                                       		 type:'POST',
+                                       		 url:$(this).attr('href'),
+                                        	success:function(data) {
+                                              $('#przydzielenie_info').html(data).fadeIn().animate({opacity: 1.0}, 5000).fadeOut('slow');
+ 
+                                              $.fn.yiiGridView.update('domenyDostepne-grid');
+											 $.fn.yiiGridView.update('domenyPrzydzielone-grid');
+                                        	}
+                                   			 })
+                                   			return false;
+											}",
 											'url' => 'Yii::app()->controller->createUrl("/przydzielenie/przydziel/", array("id"=>"$data->id", "users_id"=>"' . $przydzielenie->users_id . '"))',
-											'options' => array (
-													'title' => 'Przydziel pracownikowi',
-													'ajax' => array (
-															'type' => 'POST',
-															'url' => 'js:$(this).attr("href")',
-															//'url'=>'Yii::app()->controller->createUrl("/przydzielenie/przydziel/", array("id"=>"$data->id", "users_id"=>"' . $przydzielenie->users_id . '"))',
-															// 'success' => 'js:function(data) { $.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid"); }',
-															'complete'=>'js: function() {$.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid"); }',
-													) 
-											) 
+											'options' => array ('title' => 'Przydziel pracownikowi',),
+													
+// 											'options' => array (
+// 													'title' => 'Przydziel pracownikowi',
+// 													'ajax' => array (
+// 															'type' => 'POST',
+// 															'url' => 'js:$(this).attr("href")',
+// 															//'url'=>'Yii::app()->controller->createUrl("/przydzielenie/przydziel/", array("id"=>"$data->id", "users_id"=>"' . $przydzielenie->users_id . '"))',
+// 															// 'success' => 'js:function(data) { $.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid"); }',
+// 															'complete'=>'js: function() {$.fn.yiiGridView.update("domenyDostepne-grid"); $.fn.yiiGridView.update("domenyPrzydzielone-grid"); }',
+// 													) 
+// 											) 
 									) 
 							) 
 					),

@@ -120,4 +120,6 @@ class Przydzielenie extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+	
+	
 }

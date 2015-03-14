@@ -1,6 +1,6 @@
 <?php
 /* @author Marcin Misiak 2mmarcinmisiak@gmail.com */
-class PrzydzielenieController extends Controller
+class UzycieController extends Controller
 {
 	/**
 	* @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -28,14 +28,22 @@ class PrzydzielenieController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('view'),
-				'users'=>array('@'),
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('przydziel','delete'),
-				'roles'=>array('koordynator'),
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
 			),
-		
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+				
+				array('allow',
+						'actions'=>array('byUser'),
+						'roles'=>array('administrator','koordynator'),
+				),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
@@ -59,14 +67,14 @@ class PrzydzielenieController extends Controller
 	*/
 	public function actionCreate()
 	{
-		$model=new Przydzielenie;
+		$model=new Uzycie;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Przydzielenie']))
+		if(isset($_POST['Uzycie']))
 		{
-			$model->attributes=$_POST['Przydzielenie'];
+			$model->attributes=$_POST['Uzycie'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -88,9 +96,9 @@ class PrzydzielenieController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Przydzielenie']))
+		if(isset($_POST['Uzycie']))
 		{
-			$model->attributes=$_POST['Przydzielenie'];
+			$model->attributes=$_POST['Uzycie'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -113,9 +121,8 @@ class PrzydzielenieController extends Controller
 			$this->loadModel($id)->delete();
 
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			//if(!isset($_GET['ajax']))
-			//	 $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-			Yii::app()->end();
+			if(!isset($_GET['ajax']))
+				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 		}
 		else
 			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
@@ -126,7 +133,7 @@ class PrzydzielenieController extends Controller
 	*/
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Przydzielenie');
+		$dataProvider=new CActiveDataProvider('Uzycie');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -137,10 +144,10 @@ class PrzydzielenieController extends Controller
 	*/
 	public function actionAdmin()
 	{
-		$model=new Przydzielenie('search');
+		$model=new Uzycie('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Przydzielenie']))
-			$model->attributes=$_GET['Przydzielenie'];
+		if(isset($_GET['Uzycie']))
+			$model->attributes=$_GET['Uzycie'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -151,12 +158,12 @@ class PrzydzielenieController extends Controller
 	* Returns the data model based on the primary key given in the GET variable.
 	* If the data model is not found, an HTTP exception will be raised.
 	* @param integer $id the ID of the model to be loaded
-	* @return Przydzielenie the loaded model
+	* @return Uzycie the loaded model
 	* @throws CHttpException
 	*/
 	public function loadModel($id)
 	{
-		$model=Przydzielenie::model()->findByPk($id);
+		$model=Uzycie::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -164,36 +171,29 @@ class PrzydzielenieController extends Controller
 
 	/**
 	* Performs the AJAX validation.
-	* @param Przydzielenie $model the model to be validated
+	* @param Uzycie $model the model to be validated
 	*/
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='przydzielenie-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='uzycie-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
 	
-	/**
-	 * przydzielanie domeny na panelu koordynatora
-	 * @param unknown $id
-	 * @param unknown $users_id
-	 */
-	public function actionPrzydziel($id,$users_id) {
-	
-		$model = new Przydzielenie();
-		$model->kiedy = date('Y-m-d H:i:s',strtotime("+1 day"));
-		$model->wykonano=0;
-		$model->users_id=$users_id;
-		$model->domains_id =$id;
-		
-		
-		if ($model->save()) {
-		echo	BsHtml::alert(BsHtml::ALERT_COLOR_SUCCESS, "Dodano do kolejki pracownika. Planowany czas wykonania kontaktu: ".$model->kiedy);
-		}
-	
-		Yii::app()->end();
-	
+	public function actionByUser($id){
+		$model=new Uzycie('search');
+		$model->unsetAttributes();  // clear any default values
+		$model->users_id = $id;
+		//$model->wykonano="0";
+		$model->od=date('Y-m-d');
+		//$model->do=date("Y-m-d");
+		if(isset($_GET['Uzycie']))
+			$model->attributes=$_GET['Uzycie'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
 	}
 }

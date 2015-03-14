@@ -225,6 +225,8 @@ class SiteController extends Controller
 		$domains = null;
 		$klient=null;
 	if (!empty($id) && !empty($przydzielanie_id)) {
+		$uzycie = new Uzycie();
+		
 		$domains = Domains::model()->findByPk($id);
 	//	var_dump($domains);
 		$klientHasDomain = KlientHasDomains::model()->findByAttributes(array('domains_id'=>$id));
@@ -236,25 +238,18 @@ class SiteController extends Controller
 		$przydzielenie = Przydzielenie::model()->findByPk($przydzielanie_id);
 		
 		$klient->przydzielanie_kiedy = date("Y-m-d h:i", strtotime($przydzielenie->kiedy));
-	
+		
+		
+		
 		//kliknal dalej
 		if(isset($_POST['Klient']) && !empty($klient)) {
-			
-// 			var_dump($_POST['Klient']);
-// 			var_dump($klient);
-// 			exit;
-
-			//TODO: obciąc sekundy w kiedy
 			$_POST['Klient']['przydzielanie_kiedy'] =date("Y-m-d h:i", strtotime($_POST['Klient']['przydzielanie_kiedy']));
 			 
 			$klient->attributes = $_POST['Klient'];
-			//$klient->przydzielanie_kiedy = $_POST['Klient']['przydzielanie_kiedy'];
-		//	var_dump($klient);exit;
 			if ($klient->status->zamkniety==0) {
 				$klient->scenario = 'niezamnkienty';
 			}
 			 $klient->validate();
-			// var_dump($klient);
 		$klientSave=$klient->save();
 
 		if($klientSave) {
@@ -298,15 +293,23 @@ class SiteController extends Controller
 				$przydzielenie->save();
 			}
 		}
-			if($klientSave)  
+			if($klientSave) { 
+				$uzycie = Yii::app()->session['uzycie'] ;
+				$uzycie->do=date("Y-m-d h:i:s");
+				$uzycie->status_id = $klient->status_id;
+				$uzycie->save();
+				
 				$this->redirect(Yii::app()->createAbsoluteUrl('site/panelTelemarketera'));
-			
+			}
 			
 		}
-		
+		$uzycie->przydzielenie_id = $przydzielanie_id;
+		$uzycie->od=date('Y-m-d h:i:s');
+		$uzycie->users_id=Yii::app()->user->id;
+		Yii::app()->session['uzycie'] = $uzycie;
 	}
 	
-	//$klient = Klient::model()->with(array('domains','uslugisZaint'))->findByAttributes(array('id'=>$klientHasDomain['klient_id']));
+	
 			$this->render('_panelTeleparketera',array('domains'=>$domains,'przydzielanie'=>$przydzielanie, 'klient'=>$klient));
 		
 		

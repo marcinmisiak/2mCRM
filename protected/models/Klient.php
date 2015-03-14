@@ -85,7 +85,7 @@ class Klient extends CActiveRecord
 			'users' => array(self::BELONGS_TO, 'Users', 'users_id'),
 			'domains' => array(self::MANY_MANY, 'Domains', 'klient_has_domains(klient_id, domains_id)'),
 			'klientHasUslugis' => array(self::HAS_MANY, 'KlientHasUslugi', 'klient_id'),
-			// 'osobas' => array(self::HAS_MANY, 'Osoba', 'klient_id'),
+			 'osobas' => array(self::HAS_MANY, 'Osoba', 'klient_id'),
 			 'uslugis' => array(self::MANY_MANY, 'Uslugi', 'klient_has_uslugi(klient_id, uslugi_id)'),
 			'KlientHasDomains' => array(self::HAS_MANY, 'KlientHasDomains', 'klient_id'),
 			'uslugisZaint' => array(self::MANY_MANY, 'Uslugi', 'klient_zainteresowany_uslugi(klient_id, uslugi_id)'),
