@@ -16,7 +16,8 @@
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
     <?php echo $form->errorSummary($model); ?>
-
+<?php echo $form->textFieldControlGroup($model,'ilosc_domen',array('maxlength'=>11)); ?>
+<?php echo $form->checkBoxControlGroup($model,'automat_domen',array('maxlength'=>11)); ?>
     <?php echo $form->textFieldControlGroup($model,'email',array('maxlength'=>254)); ?>
     <?php echo $form->textFieldControlGroup($model,'username',array('maxlength'=>32)); ?>
     <?php echo $form->passwordFieldControlGroup($model,'password',array('maxlength'=>64)); ?>

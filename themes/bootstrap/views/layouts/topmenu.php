@@ -68,7 +68,13 @@ $items = array (
 				'url' => '#',
 				'visible'=>Yii::app ()->user->checkAccess('administrator'),
 				'items' => array (
-						
+						array (
+								'label' => 'Konfiguracja',
+								'url' => array (
+										'konfiguracja/update/1'
+								),
+								'visible' => Yii::app ()->user->checkAccess ( 'administrator' ),
+						),
 						array (
 								'label' => 'Typ usługi',
 								'url' => array (

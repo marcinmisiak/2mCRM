@@ -18,6 +18,7 @@
  * @property string $opis
  * @property string $roles
  * @property integer $functions_id
+ * @property integer $ilosc_domen
  *
  * The followings are the available model relations:
  * @property Domains[] $domains
@@ -45,7 +46,7 @@ class Users extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('email', 'required'),
-			array('last_login, functions_id', 'numerical', 'integerOnly'=>true),
+			array('last_login, functions_id, ilosc_domen, automat_domen', 'numerical', 'integerOnly'=>true),
 			array('email', 'length', 'max'=>254),
 			array('username', 'length', 'max'=>32),
 			array('password', 'length', 'max'=>64),
@@ -63,7 +64,7 @@ class Users extends CActiveRecord
 				
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('maRole ,id, email, username, password, logins, last_login, imie, nazwisko, telefon, email_pryw, skype, opis, roles, functions_id', 'safe', 'on'=>'search'),
+			array('maRole ,id, email, username, password, logins, last_login, imie, nazwisko, telefon, email_pryw, skype, opis, roles, functions_id, ilosc_domen', 'safe', 'on'=>'search'),
 		);
 	}
 

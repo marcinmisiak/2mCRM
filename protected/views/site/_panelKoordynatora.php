@@ -1,5 +1,5 @@
 <div class="row">
-
+<div id="ajaxUsers"></div>
 	<div class="panel panel-default">
 		<div class="panel-heading">Pracownicy</div>
 		<div class="panel-body">
@@ -19,7 +19,8 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 				'roles',
 					array (
 								'class' => 'bootstrap.widgets.BsButtonColumn',
-								'template' => '{uzycie} {przydzielanie} {update}',
+								'template' => '{uzycie} {update} <br> {przydzielanie}  {przydzel_masowo}',
+								
 								'buttons' => array (
 										'update' =>array(
 												'url'=> 'Yii::app()->controller->createUrl("users/update", array("id"=>"$data->id"))',
@@ -37,6 +38,21 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 												'options' => array (
 														'title' => 'Przydziel'
 												)
+										),
+										'przydzel_masowo' => array(
+												'label' => BsHtml::icon ( BsHtml::GLYPHICON_COG ),
+												'url'=> 'Yii::app()->controller->createUrl("przydzielenie/masowo", array("id"=>"$data->id"))',
+												//'url'=>"#",
+												'options' => array (
+														'title' => 'Przydziel masowo',
+												
+												'ajax'=>array(
+														'type'=>'POST',
+														'url'=>"js:$(this).attr('href')", // ajax post will use 'url' specified above
+														'update'=>'#ajaxUsers',
+												),
+														)
+												
 										)
 								) 
 						)
@@ -428,13 +444,19 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 												'label' => BsHtml::icon ( BsHtml::GLYPHICON_USER ),
 												'options' => array (
 														'title' => 'Utwórz klienta',
-														'data-title' => 'Utwórz klienta',
-														'ajax' => array('method'=>'POST','url' => 'js:$(this).attr("href")', 
+														'ajax' => array(
+																'type'=>'POST',
+																'url' => 'js:$(this).attr("href")', 
+																'update' =>'#createklientbydomain',
 																
-															'success' => 'js:function(data) {  $("#createklientbydomain").html(data); $.fn.yiiGridView.update("domains-grid"); }' )
+															 'success' => 'js:function(data) { $("#createklientbydomain").html(data);  $.fn.yiiGridView.update("domains-grid"); }',
+															
+															)
 												),
-												'update' =>'$("#createklientbydomain")',
+												
 										),
+										
+									
 										
 										'view' => array (
 												'url' => 'Yii::app()->controller->createUrl("/domains/$data->id")' 

@@ -32,7 +32,7 @@ class PrzydzielenieController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('przydziel','delete'),
+				'actions'=>array('przydziel','delete','Masowo'),
 				'roles'=>array('koordynator'),
 			),
 		
@@ -190,10 +190,95 @@ class PrzydzielenieController extends Controller
 		
 		
 		if ($model->save()) {
-		echo	BsHtml::alert(BsHtml::ALERT_COLOR_SUCCESS, "Dodano do kolejki pracownika. Planowany czas wykonania kontaktu: ".$model->kiedy);
+			echo BsHtml::alert(BsHtml::ALERT_COLOR_SUCCESS, "Dodano do kolejki pracownika. Planowany czas wykonania kontaktu: ".$model->kiedy);
 		}
 	
 		Yii::app()->end();
 	
+	}
+	
+	/**
+	 * przydzielanie masowo domen
+	 * @param unknown $iser_id
+	 */
+	public function actionMasowo($id) {
+		$user = Users::model()->findByPk($id);
+		$time = strtotime("+8 days");
+		$wykonaj = Yii::app()->request->getParam('wykonaj', false);
+		
+		if ($wykonaj) {
+			//przydzielam
+			$cmd = Yii::app()->db->createCommand();
+			$cmd->select ="domains.id, domains.name";
+			$cmd->from="domains";
+			$cmd->leftJoin('przydzielenie', 'domains.id=przydzielenie.domains_id');
+			$cmd->join("klient_has_domains", 'domains.id = klient_has_domains.domains_id');
+			if (!empty($user->ilosc_domen)) {
+				$cmd->limit($user->ilosc_domen);
+			}
+			$cmd->where("przydzielenie.domains_id is null and expiry_date = :expiry_date", array(":expiry_date"=>date('Y-m-d', $time)));
+			$domeny = $cmd->queryAll();
+			$przydzielenie_muliti = array();
+			foreach ($domeny as $d) {
+				$przydzielenie_muliti[]=array('kiedy' => date("Y-m-d"), 'domains_id' => $d['id'], 'users_id'=>$id);
+				
+			}
+			
+			$builder=Yii::app()->db->schema->commandBuilder;
+			$command=$builder->createMultipleInsertCommand('przydzielenie', $przydzielenie_muliti);
+			$liczba_przydzielonych = $command->execute();
+			echo BsHtml::alert(BsHtml::ALERT_COLOR_INFO, "Przydzielono " . $liczba_przydzielonych ." domen do kolejki na ". date("Y-m-d") );
+			Yii::app()->end();
+		}
+		
+		$txt ="<h3>Przydzelanie masowe</h3><P>Pracownik: $user->imie $user->nazwisko $user->email</p>";
+		if(!empty($user->ilosc_domen)) {
+		$txt .= "<P>Pracownik przydzielone będzie miał maksyalmie <strong>$user->ilosc_domen</strong> domen na dzień.</p>";
+		} else {
+			$txt.="<P class='text-danger'>Pracownik nie ma oksreślonej maksymalnej ilości domen na dzień</P>";
+		}
+		
+		
+		/*		
+		$cmd = Yii::app()->db->createCommand();
+		$cmd->select ="*";
+		$cmd->from="domains";
+		$cmd->leftJoin("klient_has_domains", 'domains.id = klient_has_domains.domains_id');
+		if (!empty($user->ilosc_domen)) {
+		$cmd->limit($user->ilosc_domen);
+		}
+		$cmd->where("klient_has_domains.domains_id is null and expiry_date = :expiry_date", array(":expiry_date"=>date('Y-m-d', $time)));
+		$domeny = $cmd->queryAll();
+		*/
+		//tylko liczbe domen nieprzydzielonych
+		
+		
+		$cmd = Yii::app()->db->createCommand("SELECT count(*) as liczba FROM `domains` `t` 
+LEFT OUTER JOIN `przydzielenie` `przydzielenies` ON
+(`przydzielenies`.`domains_id`=`t`.`id`)
+				 INNER JOIN `klient_has_domains`
+`not_in_hasDomains` ON (`not_in_hasDomains`.`domains_id`=`t`.`id`) WHERE
+((expiry_date = :expiry_date) AND (przydzielenies.domains_id is
+null))");
+		$domeny = $cmd->queryRow(true, array(":expiry_date"=>date('Y-m-d', $time)));
+		//var_dump($cmd->getText());exit;
+		$txt .= "Domen przypisanych do klientów nieprzydzielonych pracownikom z datą wygaśnięcia " . date('Y-m-d', $time) . " jest <strong>". $domeny['liczba'] . "</strong><p>";
+		
+		//$txt .= BsHtml::ajaxLink("Przydziel masowo domeny pracownikowi",
+		//		Yii::app()->createAbsoluteUrl('przydzielenie/masowo/'.$id, array("wykonaj"=>1)),
+		//		 array('update'=>'#ajaxUsers'));
+		
+		$txt .= BsHtml::linkButton('Przydziel masowo domeny pracownikowi do wykonania na '.  date("Y-m-d"),
+		 array(
+		 'url'=>Yii::app()->createAbsoluteUrl('przydzielenie/masowo', array("id"=>$id, "wykonaj"=>1)),
+			'ajax'=>array(
+			'type'=>'POST',
+			'update'=>'#ajaxUsers'
+		 	)
+		 )
+		 );
+		
+		echo BsHtml::alert(BsHtml::ALERT_COLOR_INFO, $txt);
+		
 	}
 }

@@ -167,9 +167,9 @@ class SiteController extends Controller
 		
 		$domains->expiry_date_od = date('Y-m-d', $date_od);
 		
-		$date_do = strtotime("+12 mouth"); //+100 years nie dziala???
+		$date_do = strtotime("+12 month"); //+100 years nie dziala???
 		$domains->expiry_date_do = date('Y-m-d', $date_do);
-		//var_dump($domains);exit;
+		// var_dump($domains);exit;
 		// $domains->klients = array('id'=>NULL);
 		if(isset($_GET['Domains']))
 			$domains->attributes=$_GET['Domains'];
@@ -178,8 +178,13 @@ class SiteController extends Controller
 		//$domains->unsetAttributes();
 		//$domains->user_id = $id;
 		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domains-grid') {
+			
 			$domains->attributes=$_GET['Domains'];
+			if($_GET['Domains']['expiry_date'])
+			$domains->expiry_date_do =  $_GET['Domains']['expiry_date'];
+		
 		}
+		
 		
 		$domains_dostepne = new Domains('search');
 		$domains_dostepne->unsetAttributes();
@@ -193,6 +198,7 @@ class SiteController extends Controller
 		
 		if(isset($_GET['Domains']) && $_GET['ajax'] == 'domenyDostepne-grid' ) {
 			$domains_dostepne->attributes = $_GET['Domains'];
+			// var_dump($domains_dostepne);
 		}
 		
 		

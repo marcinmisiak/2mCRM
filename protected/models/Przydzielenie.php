@@ -122,4 +122,6 @@ class Przydzielenie extends CActiveRecord
 	}
 	
 	
+	
+	
 }
