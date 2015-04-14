@@ -14,9 +14,13 @@ $this->widget('bootstrap.widgets.BsGridView',array(
 						'template'=>'{add}',
 						'buttons'=>array(
 								'add'=>array(
-										'label'=>BsHtml::icon(BsHtml::GLYPHICON_ARROW_LEFT),
+										'title'=>"Dodaj domene",
+										'label'=>'',
 										'url'=>'Yii::app()->controller->createUrl("klient/createAddDomain/",array("id"=>$data->id))',
-										'options' => array('ajax' =>
+										'options' => array(
+												'class'=>"glyphicon " . BsHtml::GLYPHICON_ARROW_LEFT,
+												'title'=>"Dodaj domene",
+												'ajax' =>
 												array('type' => 'POST',
 														'url'=>'js:$(this).attr("href")',
 														'success' => 'js:function(data) { $.fn.yiiGridView.update("domains-grid"); $.fn.yiiGridView.update("domainsWybrane-grid")}')

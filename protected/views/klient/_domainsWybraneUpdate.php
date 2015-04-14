@@ -17,10 +17,13 @@ $this->widget('bootstrap.widgets.BsGridView',array(
 						'template'=>'{usun}',
 						'buttons'=>array(
 								'usun'=>array(
-										'label'=>BsHtml::icon(BsHtml::GLYPHICON_CIRCLE_ARROW_RIGHT),
+										'label'=>'',
 										
 										'url'=>'Yii::app()->controller->createUrl("klient/updateDeleteDomain/",array("id"=>$data->id,"klient_id"=>'.$klient_id.'))',
-										'options' => array('ajax' =>
+										'options' => array(
+										'class'=>"glyphicon " . BsHtml::GLYPHICON_CIRCLE_ARROW_RIGHT,
+										'title'=>"Usuń domene",
+										'ajax' =>
 												array('type' => 'POST',
 														'url'=>'js:$(this).attr("href")',
 														'success' => 'js:function(data) { $.fn.yiiGridView.update("domains-grid"); $.fn.yiiGridView.update("domainsWybrane-grid")}'),

@@ -41,7 +41,8 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 										),
 										'przydzel_masowo' => array(
 												'label' => BsHtml::icon ( BsHtml::GLYPHICON_COG ),
-												'url'=> 'Yii::app()->controller->createUrl("przydzielenie/masowo", array("id"=>"$data->id"))',
+												//'url'=> 'Yii::app()->controller->createUrl("przydzielenie/masowo", array("id"=>"$data->id"))',
+												'url'=> 'Yii::app()->controller->createUrl("przydzielenie/masowoModal", array("id"=>"$data->id"))',
 												//'url'=>"#",
 												'options' => array (
 														'title' => 'Przydziel masowo',
@@ -49,7 +50,12 @@ $this->widget ( 'bootstrap.widgets.BsGridView', array (
 												'ajax'=>array(
 														'type'=>'POST',
 														'url'=>"js:$(this).attr('href')", // ajax post will use 'url' specified above
-														'update'=>'#ajaxUsers',
+														// 'update'=>'#ajaxUsers',
+														'success' => 'js:function(data){
+														$("#PrzydzelMasowoModal .modal-body-form").html(data);
+														$("#PrzydzelMasowoModal").modal("show");
+														}
+														'
 												),
 														)
 												
@@ -480,3 +486,57 @@ function reinstallDatePicker(id, data) {
   </div>
 		</div>
 	</div>
+	
+<div id="PrzydzelMasowoModal" role="dialog" tabindex="-1" class="modal fade">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button data-dismiss="modal" class="close" type="button">&times;</button><h3>Przydzielanie masowe klientów do pracownika</h3></div>
+<div class="modal-body">
+<?php
+
+$form=$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
+				'id'=>'PrzydzielanieModal-form',
+				'enableAjaxValidation'=>false,
+				'action'=>'#',
+				//'layout'=>BsHtml::FORM_LAYOUT_HORIZONTAL,
+				
+		)); 
+
+?>
+<div class="modal-body-form"></div>
+<?php 
+
+
+
+$this->endWidget('PrzydzielanieModal-form');
+?>
+
+</div>
+<div class="modal-footer">
+<?php echo BsHtml::ajaxButton('Szukaj nieprzydzielonych',
+		array('przydzielenie/MasowoModal' ),
+		array(
+				'type'=>'POST',
+				'url'=> Yii::app()->createAbsoluteUrl('przydzielenie/szukajNieprzydzielonychAjax' ),
+				'data' => 'js:$("#PrzydzielanieModal-form").serialize()',
+				'update'=>'#PrzydzelMasowoModal .modal-body-form',
+				// 'success'=>'js:alert("ok")',
+		),
+		array('color' => BsHtml::BUTTON_COLOR_PRIMARY));
+?>
+
+<?php echo BsHtml::ajaxButton('Przydziel',
+		array('przydzielenie/PrzydzielMasowo' ),
+		array(
+				'type'=>'POST',
+				//'url'=> Yii::app()->createAbsoluteUrl('przydzielenie/PrzydzielMasowo' ),
+				'data' => 'js:$("#PrzydzielanieModal-form").serialize()',
+				'update'=>'#ajaxNieprzydzieloneInfo',
+				// 'success'=>'js:alert("ok")',
+		),
+		array('color' => BsHtml::BUTTON_COLOR_SUCCESS));
+?>
+
+&nbsp;<button data-dismiss="modal" class="btn btn-default" name="yt24" type="button">Zamnkij</button></div>
+</div></div></div>
