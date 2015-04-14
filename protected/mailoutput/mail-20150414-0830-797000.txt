@@ -1,0 +1,73 @@
+To: marcin.misiak@wseip.edu.pl
+Subject: Przydzielenia autometyczne z dnia: 2015-04-14
+Date: Tue, 14 Apr 2015 10:30:04 +0200
+From: 2M CRM <marcin@wseip.edu.pl>
+Message-ID: <dd5f7eacf0e80abd59b650a09cc4666c@POD1>
+X-Priority: 3
+X-Mailer: PHPMailer 5.2.8 (https://github.com/PHPMailer/PHPMailer/)
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_dd5f7eacf0e80abd59b650a09cc4666c"
+Content-Transfer-Encoding: 8bit
+
+--b1_dd5f7eacf0e80abd59b650a09cc4666c
+Content-Type: text/plain; charset=us-ascii
+
+Automat 2mCRM            
+			
+			
+				
+            	            
+			
+			
+				
+				Brak domen do przydzielenia (liczba domen: 0)
+Brak domen do przydzielenia (liczba domen: 0)
+            
+			
+			
+				
+					ZK CRM
+
+
+--b1_dd5f7eacf0e80abd59b650a09cc4666c
+Content-Type: text/html; charset=us-ascii
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+</head>
+<body>
+	<table cellspacing="0" cellpadding="10"
+		style="color: #666; font: 13px Arial; line-height: 1.4em; width: 100%;">
+		<tbody>
+			<tr>
+				<td
+					style="color: #4D90FE; font-size: 22px; border-bottom: 2px solid #4D90FE;">
+				Automat 2mCRM            </td>
+			</tr>
+			<tr>
+				<td style="color: #777; font-size: 16px; padding-top: 5px;">
+            	            </td>
+			</tr>
+			<tr>
+				<td>
+				Brak domen do przydzielenia (liczba domen: 0)
+Brak domen do przydzielenia (liczba domen: 0)
+            </td>
+			</tr>
+			<tr>
+				<td
+					style="padding: 15px 20px; text-align: right; padding-top: 5px; border-top: solid 1px #dfdfdf">
+					<a href="">ZK CRM</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+
+
+
+--b1_dd5f7eacf0e80abd59b650a09cc4666c--
+

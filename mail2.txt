@@ -1,0 +1,39 @@
+Cześć,
+
+ 
+
+Sprawdziłem system i nasunęło mi się trochę zmian:
+
+ 
+
+1.       Trzeba wykluczyć automatycznie wolne dni z kalendarza a oprócz tego trzeba dać możliwość żeby koordynator sam zaznaczył wolny dzień
+
+2.       Kwestia przydzielania rekordów:
+
+- automatycznie(domyślnie) program musi przydzielać z bazy domen taką ilość rekordów jaką koordynator przypisze do konsultanta
+
+- metoda przyznawania to FIFO czyli edytuje konsultanta i wpisuje mu ile rekordów ma obdzwonić i rekordy będą przyznawane wg daty wygaśnięcia domeny (8 dni przed wygaśnięciem)
+
+- koordynator musi mieć też możliwość wyłączenia automatu i ręczne przydzielanie rekordów
+
+- jeżeli konsultant zaznaczył przy kontakcie status – „próba kontaktu” – to przydziel ten rekord innemu konsultantowi za 4h
+
+        3.    Z poziomu wyszukiwania dostępnych domen trzeba dorobić przycisk – przypisz klienta i wyszukać klienta i dopisać mu domenę
+
+ 
+
+Na razie tyle J
+
+ 
+
+Później przejdziemy do raportów J
+
+ 
+
+ 
+
+Pozdrawiam
+
+Maciej Krawczyk
+
+Kom: 532 505 000
