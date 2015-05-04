@@ -32,7 +32,7 @@ class KlientController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','createAddDomain','createDeleteDomain','updateDeleteDomain','updateAddDomain','createByDomain'),
+				'actions'=>array('create','update','createAddDomain','createDeleteDomain','updateDeleteDomain','updateAddDomain','createByDomain','CreateDomain'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -328,10 +328,41 @@ class KlientController extends Controller
 			}
 			
 		} else {
-			var_dump($klient->errors);
-			echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, "Nie utworzyłem klienta na podstawie domeny ". $domain->name);
+			$txt = "";
+			foreach($klient->errors as $e) {
+				$txt.= $e[0]; 
+			}
+			echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, "Nie utworzyłem klienta na podstawie domeny ". $domain->name. "<P>$txt");
 			Yii::app()->end();
 		}
+		
+	}
+	
+	function actionCreateDomain(){
+		$session = Yii::app()->session;
+		$domaindID = array();
+		$domena = new Domains();
+		$domena->unsetAttributes();
+		
+		if(isset($_POST['Domains'])) {
+			$domena->attributes=$_POST['Domains'];
+			
+			if($domena->save()) {
+				if (!empty($session['domainsID']))
+					$domaindID = $session['domainsID'];
+				
+				array_push($domaindID, $domena->id);
+				$session['domainsID']=$domaindID;
+				echo BsHtml::alert(BsHtml::ALERT_COLOR_SUCCESS, "Dodano nową domenę");
+			} else {
+				$txt="";
+				foreach ($domena->getErrors() as $e) {
+					$txt.=$e[0]."<br>";
+				}
+				echo BsHtml::alert(BsHtml::ALERT_COLOR_ERROR, "Nie dodano domeny. <P>$txt");
+			}
+		}
+		
 		
 	}
 }

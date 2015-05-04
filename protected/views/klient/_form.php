@@ -78,6 +78,8 @@ $form = $this->beginWidget ( 'bootstrap.widgets.BsActiveForm', array (
 					<h3 class="panel-title">Domeny klienta</h3>
 				</div>
 				<div class="panel-body" id="domeny_obecne">
+			
+				
    
      <?php
 					if ($model->id) {
@@ -116,6 +118,8 @@ $form = $this->beginWidget ( 'bootstrap.widgets.BsActiveForm', array (
 					}
 					
 					?>
+			
+				
    </div>
 
 			</div>

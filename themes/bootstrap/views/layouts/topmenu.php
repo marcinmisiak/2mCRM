@@ -21,17 +21,26 @@ $items = array (
 				'icon' => BsHtml::GLYPHICON_USER,
 				'items' => array (
 						array (
-								'label' => 'Nowy',
+								'label' => 'Nowa domena',
+								'url' => array (
+										'/domains/create'
+								)
+						),
+						array (
+								'label' => 'Nowy klient',
 								'url' => array (
 										'/klient/create' 
 								) 
 						),
+					
+						/*
 						array (
 								'label' => 'Lista',
 								'url' => array (
 										'/klient/index' 
 								) 
 						),
+						*/
 						array (
 								'label' => 'Zarządzaj',
 								'url' => array (

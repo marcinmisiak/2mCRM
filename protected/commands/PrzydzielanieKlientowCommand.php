@@ -1,7 +1,10 @@
 <?php
 /**
  * 
- * C:\xampp\htdocs\2mCRM\protected>C:\xampp\php\php.exe c:\xampp\htdocs\2mCRM\cron.php przydzielanieklientow automat
+ * C:\xampp\htdocs\2mCRM\protected>C:\xampp\php\php.exe c:\xampp\htdocs\2mCRM\cron.php przydzielanieklientow automat 
+* utworzenie WSZYSTKICH klientow z nieprzydzielonych domen
+ * przydzielanieklientow utworzKlientow
+
  * @author marcin
  *
  */
@@ -109,4 +112,47 @@ class PrzydzielanieKlientowCommand extends CConsoleCommand
 		return true;
 	}
 	
+	public function actionUtworzKlientow() {
+
+	$user = Users::model()->find("roles='administrator'");
+	$domains = new Domains('searchBezKlienta');
+	$domains->unsetAttributes();
+	$date_od = strtotime("-1 day");
+	$domains->expiry_date_od = date('Y-m-d', $date_od);
+	$date_do = strtotime("+12 month"); //+100 years nie dziala???
+	$domains->expiry_date_do = date('Y-m-d', $date_do);
+	$doprzydzielenia = $domains->searchBezKlienow();
+	$doprzydzielenia->pagination=false;
+	$d = $doprzydzielenia->getData() ;
+	echo "Liczba domen bez klientów domen: " . count ($d) . "\n";
+	foreach ( $d as $domain ) {
+	    echo "\n Tworze klienta: " .$domain->client; 
+	    $klient = new Klient();
+	    $klient->nazwa = $domain->client; 
+	    $klient->telefon = $domain->phone;
+	    $klient->email = $domain->email;
+	    $klient->status_id = 2;
+	     $klient->users_id = $user->id;
+	    
+	    $klient_id = $klient->save();
+	    
+	    if ($klient_id) {
+		$klientHasDomains = new KlientHasDomains();
+		$klientHasDomains->klient_id = $klient->id;
+		$klientHasDomains->domains_id = $domain->id;
+		$kd = $klientHasDomains->save();
+		if ($kd) {
+			
+		    echo " Utworzono klienta na podstawie domeny";
+		} else {
+		    echo "\n Nie przypisałem klientowi $klient->nazwa domeny ". $domain->name ;
+		}
+		    
+	    } else {
+		 "\n Nie utworzyłem klienta na podstawie domeny ". $domain->name;
+	    //	Yii::app()->end();
+	    }
+	    
+	}
+    }
 }

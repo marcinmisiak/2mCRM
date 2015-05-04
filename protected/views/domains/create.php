@@ -6,16 +6,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Domains'=>array('index'),
+	'Domeny'=>array('index'),
 	'Utwórz',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Domains', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Zarządzaj Domains', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Domen', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Zarządzaj Domenami', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Utwórz','Domains') ?>
+<?php echo BsHtml::pageHeader('Utwórz','Domenę') ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

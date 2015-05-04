@@ -52,13 +52,14 @@ class Klient extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('nazwa, status_id, users_id', 'required'),
+			array('telefon', 'length', 'max'=>16),
 			array('rozmowa_konczaca, status_id', 'numerical', 'integerOnly'=>true),
 			array('nazwa, adrrej_adres', 'length', 'max'=>200),
 			array('adrrej_kod', 'length', 'max'=>6),
 			array('adrrej_miasto', 'length', 'max'=>50),
 			array('adrrej_kraj', 'length', 'max'=>45),
 			array('nip, regon, krs', 'length', 'max'=>20),
-				array('telefon, users_id', 'length', 'max'=>12),
+				array('users_id', 'length', 'max'=>12),
 			array('www, email', 'length', 'max'=>250),
 			array('users_id', 'length', 'max'=>11),
 			array('notatka, uslugisZaint', 'safe'),

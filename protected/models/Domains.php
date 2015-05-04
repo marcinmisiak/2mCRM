@@ -41,7 +41,9 @@ class Domains extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+		array('name', 'unique', 'className' => 'Domains'),
 			array('user_id, name, expiry_date, registrar, added_date, client, phone, email', 'required'),
+			array('email','email'),
 			array('user_id', 'length', 'max'=>10),
 			array('name, registrar, client, phone, email', 'length', 'max'=>45),
 			// The following rule is used by search().
@@ -76,9 +78,9 @@ class Domains extends CActiveRecord
 			'name' => 'Nazwa',
 			'expiry_date' => 'Data końca',
 			'registrar' => 'Registrar',
-			'added_date' => 'Added Date',
-			'client' => 'Client',
-			'phone' => 'Phone',
+			'added_date' => 'Data dodania',
+			'client' => 'Nazwa Klienta',
+			'phone' => 'Telefon',
 			'email' => 'Email',
 				'expiry_date_od' =>'Data końca od',
 				'expiry_date_do'=>'Data końca do',
