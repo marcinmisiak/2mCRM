@@ -148,7 +148,51 @@ class UzycieController extends Controller
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['Uzycie']))
 			$model->attributes=$_GET['Uzycie'];
-
+		
+		$exportType=Yii::app()->request->getParam('exportType');
+		if (isset($exportType)) {
+				
+			$dp=$model->search();
+			$dp->pagination=false;
+			$this->widget ( 'EExcelView', array (
+					'dataProvider' => $dp,
+					'grid_mode' => 'export',
+					'title' => 'RPT',
+					'filename' => 'RPT_' . date( "Y-m-d H:i" ),
+					'stream'=>true,
+					'autoWidth' => false,
+					'exportType'=>$exportType,
+					// 'template' => "{summary}\n{items}\n{exportbuttons}\n{pager}",
+					'columns' => array ( 
+							array('name' =>'users_id', 'header'=>'Pracownik', 'value'=>'$data->users->imie ." ". $data->users->nazwisko ." (".$data->users->email .")"', 'filter'=> CHtml::listData(Users::model()->findAll(array('condition'=>"roles is not null or roles !=''", 'order'=>'nazwisko')), 'id', 'nazwisko') )
+							,
+							'users.imie', 'users.nazwisko', 'users.email',
+							array('name'=> 'od','type' => 'datetime'),
+							array('name'=> 'do','type' => 'datetime'),
+							
+							array('header'=>'Czas otwartego przydzielenia', 'value'=>'$data->getCzasoddo()'  ),
+							array('header'=>'Czas od przydzielenia', 'value'=>'$data->getCzasodPrzydzielenia()' ),
+							'przydzielenie.domains.name',
+							
+							
+							array( 'header'=>'Abonent nazwa', 'value'=>'$data->przydzielenie->domains->klients[0]->nazwa'),
+							array( 'header'=>'Abonent telefon', 'value'=>'$data->przydzielenie->domains->klients[0]->telefon '),
+							array( 'header'=>'Abonent email', 'value'=>' $data->przydzielenie->domains->klients[0]->email'),
+							array('header'=>'Data końca','value'=>'$data->przydzielenie->domains->expiry_date' ),
+							array('header'=>'Rejestrator','value'=>'$data->przydzielenie->domains->registrar' ),
+							array('header'=>'Osoby kontaktowe','value'=>'$data->getOsoby()' ),
+								
+							array('name'=>'przydzielenie.wykonano',  'value'=>'($data->przydzielenie->wykonano) ? "Tak":"Nie"',
+									'filter'=>CHtml::dropDownList('Uzycie[wykonano]','', array('0'=>'Nie', '1'=>'Tak'),array('empty'=>'', 'class'=>'form-control') )
+							),
+							array('name' =>'status_id', 'value'=>'$data->status->nazwa', 'filter'=> CHtml::listData(Status::model()->findAll(array('order'=>'nazwa')), 'id', 'nazwa') ),
+							array('header'=>'Notatka', 'value'=>'$data->przydzielenie->domains->klients[0]->notatka'),
+							array('header'=>'Zainteresowany', 'value'=>'$data->getZaineteresowany()', 'type'=>'html'),
+							)
+							)
+					);
+		}
+		
 		$this->render('admin',array(
 			'model'=>$model,
 		));

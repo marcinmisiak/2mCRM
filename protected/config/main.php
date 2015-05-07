@@ -9,6 +9,7 @@ return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'MJKR CRM',
 	'language' => 'pl',
+	'timezone' => "Europe/Warsaw", 
 	'theme' => 'bootstrap',
 	'aliases' => array (
 			'bootstrap' => 'ext.bootstrap'
@@ -27,6 +28,7 @@ return array(
 		'bootstrap.widgets.*',
 		
 		'ext.YiiMailer.YiiMailer',
+		'ext.EExcelView.*',
 	),
 
 	'modules'=>array(
@@ -85,11 +87,12 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				
+				/*
 				array(
 					'class'=>'CWebLogRoute',
 						
 				),
+				*/
 				
 			),
 		),

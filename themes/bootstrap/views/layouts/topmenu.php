@@ -61,9 +61,9 @@ $items = array (
 				'visible' => Yii::app ()->user->checkAccess ( array( 'administrator','koordynator') ),
 				'items' => array (
 						array (
-								'label' => 'raport 1',
+								'label' => 'Raprot pracy telemarketera',
 								'url' => array (
-										'/raporty/akcjapromocyjnaList' 
+										'/uzycie/admin' 
 								) 
 						),
 					

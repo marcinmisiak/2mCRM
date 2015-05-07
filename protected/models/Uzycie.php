@@ -90,8 +90,8 @@ class Uzycie extends CActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-		//$criteria->together=true;
-		//$criteria->with=array('przydzielenie' =>array('alias'=>'p', 'select'=>'kiedy, wykonano'));
+		// $criteria->together=true;
+		 $criteria->with=array('przydzielenie' );
 		$criteria->compare('id',$this->id);
 		$criteria->compare('od',$this->od,true);
 		$criteria->compare('do',$this->do,true);
@@ -99,7 +99,7 @@ class Uzycie extends CActiveRecord
 		$criteria->compare('status_id',$this->status_id);
 		$criteria->compare('t.users_id',$this->users_id);
 		
-		//$criteria->compare('przydzielenie.wykonano',$this->wykonano);
+		$criteria->compare('przydzielenie.wykonano',$this->wykonano);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -135,8 +135,22 @@ class Uzycie extends CActiveRecord
 		$klient = Klient::model()->findByPk( $klientHD->klient_id);
 		
 		foreach ($klient->uslugisZaint as $z) {
-			echo "<p>". $z->nazwa ."</p>";
+			echo  $z->nazwa ."<br>";
 		}
 		
+	}
+	
+	public function getCzasoddo(){
+		$od = new DateTime($this->od);
+		$do = new DateTime($this->do);
+		$czas_otwartego_zgloszenia = $od->diff($do);
+		return $czas_otwartego_zgloszenia->format('%H:%I:%S');
+	}
+	
+	public function getCzasodPrzydzielenia(){
+		$do = new DateTime($this->do);
+		$kiedy_przydzielono = new DateTime($this->przydzielenie->kiedy);
+		$czas_odprzydzialenia = $kiedy_przydzielono->diff($do);
+		return $czas_odprzydzialenia->format('%H:%I:%S');
 	}
 }
